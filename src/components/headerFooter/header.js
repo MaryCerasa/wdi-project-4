@@ -8,17 +8,29 @@ class Header extends React.Component {
     this.state = {
     }
 
+    this.handleChange = this.handleChange.bind(this)
+
+  }
+  handleChange({ target: { value } }) {
+    this.setState({...this.state, query: value })
   }
 
   render() {
     return (
-      <div>
+      <div className = "headerWrapper">
         <header>
-          <nav className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Log In</Link>
-          </nav>
+          <select className="dropdown">
+            <option default value="home">Home</option>
+            <option value="login" onChange={this.handleChange}>Log In</option>
+            <option value="register">Register</option>
+            <option value="profile">Profile</option>
+          </select>
+          <div className="contains-title">
+            <h1>WellNest</h1>
+          </div>
+          <div className="contains-logo">
+            <Link to='/'><img src={'./assets/mh-logo.png'} alt="MentalHealth-logo"/></Link>
+          </div>
         </header>
       </div>
     )
