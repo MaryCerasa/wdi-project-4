@@ -10,6 +10,7 @@ import Register from './components/auth/register'
 import Login from './components/auth/login'
 import Profile from './components/profile'
 import NotFound from './components/notFound'
+import Footer from './components/headerFooter/footer'
 
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
       <Browser>
         <div>
           <Header />
+          <Home />
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/register" component={Register}/>
@@ -29,6 +31,7 @@ class App extends React.Component {
             <Route path="/profile" component={Profile}/>
             <Route component={NotFound} />
           </Switch>
+          <Footer />
         </div>
       </Browser>
     )
