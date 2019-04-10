@@ -1,19 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import axios from 'axios'
+import { BrowserRouter as Browser, Switch } from 'react-router-dom'
+
+import './style.scss'
+
+
+import Header from './components/headerFooter/header'
+
 
 class App extends React.Component {
   componentDidMount() {
-    axios.get('/api/planets')
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
+
   }
-
-
 
   render() {
     return (
-      <h1>Hello World</h1>
+      <Browser>
+        <div>
+          <Header />
+          <Switch>
+          </Switch>
+        </div>
+      </Browser>
     )
   }
 }
