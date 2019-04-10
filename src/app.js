@@ -4,11 +4,9 @@ import { BrowserRouter as Browser, Switch } from 'react-router-dom'
 
 import './style.scss'
 
-
+import Home from './components/home'
 import Header from './components/headerFooter/header'
 import Footer from './components/headerFooter/footer'
-import Home from './components/home'
-
 
 class App extends React.Component {
   componentDidMount() {
