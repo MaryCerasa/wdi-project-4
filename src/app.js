@@ -6,6 +6,7 @@ import './style.scss'
 
 
 import Header from './components/headerFooter/header'
+import Footer from './components/headerFooter/footer'
 
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
           <Header />
           <Switch>
           </Switch>
+          <Footer />
         </div>
       </Browser>
     )
