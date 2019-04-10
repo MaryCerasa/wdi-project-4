@@ -7,6 +7,7 @@ import './style.scss'
 
 import Header from './components/headerFooter/header'
 import Footer from './components/headerFooter/footer'
+import Home from './components/home'
 
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
       <Browser>
         <div>
           <Header />
+          <Home />
           <Switch>
           </Switch>
           <Footer />
