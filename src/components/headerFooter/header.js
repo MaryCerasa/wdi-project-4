@@ -17,6 +17,7 @@ class Header extends React.Component {
 
   render() {
     return (
+
       <div className = "headerWrapper">
         <header>
           <select className="dropdown">
@@ -25,11 +26,6 @@ class Header extends React.Component {
             <option value="register">Register</option>
             <option value="profile">Profile</option>
           </select>
-
-          <Link to='/register'>Register</Link>
-          <Link to='/login'>Login</Link>
-          <Link to='/profile'>Profile</Link>
-
           <div className="contains-title">
             <h1>WellNest</h1>
           </div>

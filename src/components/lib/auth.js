@@ -21,8 +21,10 @@ class Auth {
 
   static isAuthenticated() {
     const payload = this.getPayload()
-    const now = Math.round(Date.now() / 1000)
-    return now < payload.exp
+
+    const now = new Date()
+    return now < new Date(payload.exp * 1000)
+
   }
 }
 

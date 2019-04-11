@@ -6,11 +6,10 @@ blog_schema = BlogSchema()
 
 api = Blueprint('wellnest', __name__)
 
+#get all blogs
 @api.route('/latest_blogs', methods=['GET'])
 def latest_blogs():
     blogs = Blog.query.all()
-    # test_data.text = 'hello'
-    # test_data.title = 'world'
     return blog_schema.jsonify(blogs, many=True), 200
 
 @api.route('/wellnest', methods=['POST'])

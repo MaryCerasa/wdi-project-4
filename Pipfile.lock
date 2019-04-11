@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0927d52942ed5d8efcd99f4d29cc7db126f1bb1d6459a0ffebe9723e52a4eb83"
+            "sha256": "edac997851cfccd38fedf19a087e890c9b17223876211d6bb6d761d0fd3a73c3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -85,6 +85,7 @@
                 "sha256:2271c0070dbcb5275fad4a82e29f23ab92682dc45f9dfbc22c02ba9b9322ce48",
                 "sha256:a080b744b7e345ccfcbc77954861cb05b3c63786e93f2b3875e0913d44b43f05"
             ],
+            "index": "pypi",
             "version": "==1.0.2"
         },
         "flask-bcrypt": {
@@ -166,11 +167,11 @@
         },
         "marshmallow-sqlalchemy": {
             "hashes": [
-                "sha256:2f88d2020af00b8a12406009e8114f55b1788ea89a0bba6f8fbd0afd8de86b8f",
-                "sha256:99c50c570b6e89ffc9f9633ce4acb63f9e1bddf36839b07b9ae0f540588d6937"
+                "sha256:755e6e930c1ffe3430f62091085f0a51e0817b240986d931014f03b3556fff34",
+                "sha256:81144cd670df2b45742fd95b35d66118ebf12430a5dc3f545a4871ee8acb1545"
             ],
             "index": "pypi",
-            "version": "==0.16.1"
+            "version": "==0.16.2"
         },
         "psycopg2-binary": {
             "hashes": [
@@ -208,6 +209,7 @@
         },
         "pycparser": {
             "hashes": [
+                "sha256:36be36cc23313d7680800f2d5b5c55477623f1b1e0a4eaac72f003d5a3f04b2e",
                 "sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"
             ],
             "version": "==2.19"
