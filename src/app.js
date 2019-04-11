@@ -11,6 +11,7 @@ import Login from './components/auth/login'
 import Profile from './components/profile'
 import NotFound from './components/notFound'
 import Footer from './components/headerFooter/footer'
+import Nav from './components/lib/nav'
 
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
       <Browser>
         <div>
           <Header />
+          <Nav />
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/register" component={Register}/>
