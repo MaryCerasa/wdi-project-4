@@ -1,4 +1,4 @@
-import React from '1react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Browser, Route, Switch } from 'react-router-dom'
 
@@ -11,6 +11,7 @@ import Login from './components/auth/login'
 import Profile from './components/profile'
 import NotFound from './components/notFound'
 import Footer from './components/headerFooter/footer'
+import Nav from './components/lib/nav'
 
 
 class App extends React.Component {
@@ -23,7 +24,7 @@ class App extends React.Component {
       <Browser>
         <div>
           <Header />
-          <Home />
+          <Nav />
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/register" component={Register}/>

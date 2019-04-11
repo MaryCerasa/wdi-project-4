@@ -133,3 +133,44 @@ footer {
     text-align: center;
   }
 }
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid $blue;
+  width: 100%;
+  margin: 30px;
+  height: 60%;
+  align-items: center;
+}
+
+.loginForm {
+  display: inline-flex;
+  flex-direction: column;
+  border: 3px solid $blue;
+  width: 100%;
+  margin: 30px;
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+}
+
+.formWrapper {
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  background-color: $blue;
+  color: black;
+}
+
+.navbarLinks {
+display: inline-flex;
+flex-direction: column;
+width: 100%;
+height: 30%;
+}
