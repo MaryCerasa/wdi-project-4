@@ -6,16 +6,28 @@ class Blog(db.Model, BaseModel):
 
     __tablename__ = 'blogs'
 
-    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     text = db.Column(db.String(5000), nullable=False)
+    creator_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    creator = db.relationship('User', backref='created_wellnest')
 
 
 class BlogSchema(ma.ModelSchema):
-    # comments = fields.Nested('CommentSchema', many=True, exclude=('planet',))
-    # elements = fields.Nested('ElementSchema', many=True)
+    # comments = fields.Nested('CommentSchema', many=True, exclude=('blog',))
     # creator = fields.Nested('UserSchema', only=('id', 'username'))
-    # liked_by = fields.Nested('UserSchema', many=True, only=('id', 'username'))
 
     class Meta:
         model = Blog
+
+# class Comment(db.Model, BaseModel):
+#
+#     __tablename__ = 'comments'
+#
+#     content = db.Column(db.Text, nullable=False)
+#     blog_id = db.Column(db.Integer, db.ForeignKey('wellnest.id'))
+#     blog = db.relationship('Blog', backref='comments')
+#
+# class CommentSchema(ma.ModelSchema):
+#
+#     class Meta:
+#         model = Comment

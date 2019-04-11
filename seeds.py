@@ -33,13 +33,15 @@ with app.app_context():
 
 #pylint: disable=C0301
     # creating a blog
-    buse_blog = Blog(title='Buse', text="Buse's blog")
-    mary_blog = Blog(title='Mary', text="Mary's blog")
+    buse_blog = Blog(title="Buse's Blog", text='Hi I am Buse', creator=buse)
+    mary_blog = Blog(title="Mary's Blog", text="Hi I am Mary", creator=mary)
 
-    # comment1 = Comment(content='I love this planet', planet=mercury)
+    # comment1 = Comment(content='I love this blog', blog=buse_blog)
+    # comment2 = Comment(content='I love this blog too', blog=mary_blog)
 
     db.session.add(buse_blog)
     db.session.add(mary_blog)
     # db.session.add(comment1)
+    # db.session.add(comment2)
 
     db.session.commit()
