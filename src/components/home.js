@@ -26,11 +26,22 @@ class Home extends React.Component {
       .catch(err => this.setState({ error: err.messsage }))
   }
 
+  latestBlogs() {
+    console.log('getting the blogposts')
+    axios.get('/api/latest_blogs')
+      .then(res => {
+        this.setState({blogs: res.data })
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
   componentDidMount() {
     this.latestNews()
+    this.latestBlogs()
   }
 
   render() {
+    console.log(this.state)
     return(
       <div className="wrapper">
         <main>
@@ -58,6 +69,18 @@ class Home extends React.Component {
           </div>
           <div className="latestBlogs">
             <h1>Latest Blogs</h1>
+            <ul>
+              {this.state.blogs && this.state.blogs.map((item) =>
+                <li key={item.id}>
+                  <Link to={`/blogs/${item.id}`}>
+                    <h2>{item.title}</h2>
+                    <p>Written by: {item.creator.username}</p>
+                    <p>{item.text}</p>
+                    <p>{item.comments.content}</p>
+                  </Link>
+                </li>
+              )}
+            </ul>
           </div>
           <div className="rightSide">
             <div className="mapsOffices">

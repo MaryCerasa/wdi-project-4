@@ -1,4 +1,7 @@
 import React from 'react'
+import Search from '../components/search'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 // import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 
@@ -15,14 +18,25 @@ class Profile extends React.Component {
     super()
 
     this.state = {
-
     }
-    // this.handleChange = this.handleChange.bind(this)
-    // this.handleClick = this.handleClick.bind(this)
-    // this.handleClickButton = this.handleClickButton.bind(this)
-    // this.closePopup = this.closePopup.bind(this)
-    // this.handleClickButton = this.handleClickButton.bind(this)
-    // this.handleClickGames = this.handleClickGames.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(){
+    console.log('test')
+  }
+
+  myBlogs() {
+    console.log('getting the blogposts')
+    axios.get('/api/wellnest')
+      .then(res => {
+        this.setState({blogs: res.data })
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
+  componentDidMount() {
+    this.myBlogs()
   }
 
   // addUserImage() {
@@ -60,6 +74,16 @@ class Profile extends React.Component {
           </div>
           <div className="myBlogPosts">
             <h1>My Blog Posts</h1>
+            <ul>
+              {this.state.blogs && this.state.blogs.map((item) =>
+                <li key={item.id}>
+                  <Link to={`/myblogs/${item.id}`}>
+                    <h2>{item.title}</h2>
+                    <p>{item.text}</p>
+                  </Link>
+                </li>
+              )}
+            </ul>
           </div>
           <div className="rightSide">
             <div className="faveBlogs">

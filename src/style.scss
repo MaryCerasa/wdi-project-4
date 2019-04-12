@@ -112,6 +112,7 @@ footer {
     margin: 30px;
     height: auto;
     text-align: center;
+    overflow: scroll;
   }
   .mapsOffices {
     border: 3px solid $blue;
@@ -194,6 +195,22 @@ button {
     flex-direction: column;
     width: 33%;
   }
+<<<<<<< HEAD
+=======
+  .searchBar {
+    border: 3px solid $blue;
+    width: 75%;
+    height: 400px;
+    margin: 30px;
+    text-align: center;
+    .searchInput {
+          margin: 5px;
+    }
+    .buttonDiv {
+      margin: 5px;
+    }
+  }
+>>>>>>> development
 
 .aboutMe{
   border: 3px solid $blue;
@@ -208,6 +225,7 @@ button {
   margin: 30px;
   height: auto;
   text-align: center;
+  overflow: scroll;
 }
 .faveBlogs {
   border: 3px solid $blue;
@@ -224,6 +242,7 @@ button {
   text-align: center;
 }
 }
+<<<<<<< HEAD
 
 .search {
   border: 3px solid $blue;
@@ -241,4 +260,11 @@ button {
 
 .popup {
   border: 1px solid $blue;
+=======
+.aboutPage {
+  background-color: $blue;
+  p {
+    color: black;
+  }
+>>>>>>> development
 }

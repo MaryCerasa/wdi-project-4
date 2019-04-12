@@ -134,7 +134,7 @@ with app.app_context():
 
     phoebe_blog = Blog(title="11 Instagram Accounts That Never Fail To Give Me a Lift", text="One thing we love about the Internet is that it opens the door for conversation about mental health.", creator=phoebe)
 
-    paul_blog = Blog(title="How I made work, work for me", text="Learning a new skill and starting my own business has transformed my life!", creator=paul)
+    paul_blog = Blog(title="How I Made Work, Work For Me", text="Learning a new skill and starting my own business has transformed my life!", creator=paul)
 
     buse_blog = Blog(title="9 No-Nonsense Self-Care Ideas", text="Set time for yourself each week.", creator=buse)
 

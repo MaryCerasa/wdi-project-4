@@ -17,6 +17,12 @@ def latest_blogs():
     blogs = Blog.query.all()
     return blog_schema.jsonify(blogs, many=True), 200
 
+#  Get blog by user id
+# @api.route('/user_blogs/<int:creator>', methods=['GET'])
+# def user_blogs(creator):
+#     blogs = Blog.query.get(creator)
+#     return blog_schema.jsonify(blogs), 200
+
 @api.route('/wellnest', methods=['POST'])
 @secure_route
 def create():
