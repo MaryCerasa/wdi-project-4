@@ -127,34 +127,32 @@ with app.app_context():
 
     db.session.add(jason)
 
-#pylint: disable=C0301, R1707
-    # creating a blog
+#pylint: disable=C0301
     buse_blog = Blog(title="Buse's Blog", text='Hi I am Buse', creator=buse)
-    mary_blog = Blog(title="Mary's Blog", text="Hi I am Mary", creator=mary),
 
-    mary_blog = Blog(title="Women across England and Wales will get vital mental health support as part of a major new programme launched by mental health charity Mind and Agenda, the alliance for women and girls at risk.", text="This is a great initative that I wanted to blog about!", creator=mary),
+    mary_blog = Blog(title="Mary's Blog", text="Hi I am Mary", creator=mary)
 
-    phoebe_blog = Blog(title="11 Instagram Accounts That Never Fail To Give Me a Lift", text="One thing we love about the Internet is that it opens the door for conversation about mental health.", creator=phoebe),
+    phoebe_blog = Blog(title="11 Instagram Accounts That Never Fail To Give Me a Lift", text="One thing we love about the Internet is that it opens the door for conversation about mental health.", creator=phoebe)
 
-    paul_blog = Blog(title="How I made work, work for me", text="Learning a new skill and starting my own business has transformed my life!", creator=paul),
+    paul_blog = Blog(title="How I made work, work for me", text="Learning a new skill and starting my own business has transformed my life!", creator=paul)
 
-    buse_blog = Blog(title="9 No-Nonsense Self-Care Ideas", text="Set time for yourself each week.", creator=buse),
+    buse_blog = Blog(title="9 No-Nonsense Self-Care Ideas", text="Set time for yourself each week.", creator=buse)
 
-    chris_blog = Blog(title="How To Be Mindful Of Your Digital Boundaries", text="Limit the social media content you access.", creator=chris),
+    chris_blog = Blog(title="How To Be Mindful Of Your Digital Boundaries", text="Limit the social media content you access.", creator=chris)
 
-    jade_blog = Blog(title="How To Start Openly Talking About Your Mental Health", text=" Deciding to be open about our mental health is a very personal decision. There is no right or wrong answer, and nobody can make the decision for us.", creator=jade),
+    jade_blog = Blog(title="How To Start Openly Talking About Your Mental Health", text=" Deciding to be open about our mental health is a very personal decision. There is no right or wrong answer, and nobody can make the decision for us.", creator=jade)
 
-    ryan_blog = Blog(title="How Does Postnatal Depression Affect Us?", text="Being a new parent can be a somewhat daunting experience. Our hormones, the after effects of giving birth, of supporting our loved one in giving birth, and having a new little one to care for, can all lead to a rollercoaster of emotions.", creator=ryan),
+    ryan_blog = Blog(title="How Does Postnatal Depression Affect Us?", text="Being a new parent can be a somewhat daunting experience. Our hormones, the after effects of giving birth, of supporting our loved one in giving birth, and having a new little one to care for, can all lead to a rollercoaster of emotions.", creator=ryan)
 
-    celine_blog = Blog(title="Understanding The Difference Between Nervousness and Anxiety", text="Nervousness is a human emotion that everyone experiences from time to time. Anxiety can be a diagnosable medical condition.", creator=celine),
+    celine_blog = Blog(title="Understanding The Difference Between Nervousness and Anxiety", text="Nervousness is a human emotion that everyone experiences from time to time. Anxiety can be a diagnosable medical condition.", creator=celine)
 
-    charlotte_blog = Blog(title="Mental Health Recovery Is Never Linear", text="When things go awry, we like to know what to do and how to do it, so that it can be sorted out, it is a totally natural response. With some illnesses, the treatment is simple and we are able to move on. Unfortunately, mental ill health is not so straightforward.", creator=charlotte),
+    charlotte_blog = Blog(title="Mental Health Recovery Is Never Linear", text="When things go awry, we like to know what to do and how to do it, so that it can be sorted out, it is a totally natural response. With some illnesses, the treatment is simple and we are able to move on. Unfortunately, mental ill health is not so straightforward.", creator=charlotte)
 
-    jason_blog = Blog(title="The Mental Health Benefits of Having a Daily Routine", text="It can sound counter-intuitive but developing a daily routine can help us to feel more in control of everything.", creator=jason),
+    jason_blog = Blog(title="The Mental Health Benefits of Having a Daily Routine", text="It can sound counter-intuitive but developing a daily routine can help us to feel more in control of everything.", creator=jason)
 
-    ryan_blog = Blog(title="Why the Words We Use Matter & Mental Health", text="When it comes to mental health and mental illness, language can be a very tricky landscape to navigate. ", creator=ryan),
+    ryan_blog = Blog(title="Why the Words We Use Matter & Mental Health", text="When it comes to mental health and mental illness, language can be a very tricky landscape to navigate. ", creator=ryan)
 
-    jade_blog = Blog(title="365 Days of Self Care, My Journal", text="Lists of ideas and tips", creator=jade),
+    jade_blog = Blog(title="365 Days of Self Care, My Journal", text="Lists of ideas and tips", creator=jade)
 
     comment1 = Comment(content='I love this blog!!', blog=buse_blog)
     comment2 = Comment(content='I love this blog too, great content here!', blog=mary_blog)

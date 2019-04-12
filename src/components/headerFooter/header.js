@@ -20,12 +20,8 @@ class Header extends React.Component {
 
       <div className = "headerWrapper">
         <header>
-          <select className="dropdown">
-            <option default value="home">Home</option>
-            <option value="login" onChange={this.handleChange}>Log In</option>
-            <option value="register">Register</option>
-            <option value="profile">Profile</option>
-          </select>
+          <div className="photo">photo
+          </div>
           <div className="contains-title">
             <h1>WellNest</h1>
           </div>

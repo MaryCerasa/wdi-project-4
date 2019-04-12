@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Auth from '../lib/auth'
 
 class Nav extends React.Component {
   constructor() {
@@ -7,6 +8,13 @@ class Nav extends React.Component {
 
     this.state = {}
 
+    this.logout = this.logout.bind(this)
+
+  }
+
+  logout() {
+    Auth.logout()
+    this.props.history.push('/')
   }
 
   render() {
@@ -29,7 +37,7 @@ class Nav extends React.Component {
             <Link to="/register">Register</Link>
           </div>
           <div className="logout">
-            <Link to="/" className="navbarLogout" onClick={this.handleSubmit}>Logout</Link>
+            <Link to="/" className="navbarLogout" onClick={this.logout}>Logout</Link>
           </div>
         </div>
       </div>
