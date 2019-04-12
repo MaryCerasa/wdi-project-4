@@ -13,21 +13,21 @@ class Blog(db.Model, BaseModel):
 
 
 class BlogSchema(ma.ModelSchema):
-    # comments = fields.Nested('CommentSchema', many=True, exclude=('blog',))
-    # creator = fields.Nested('UserSchema', only=('id', 'username'))
+    comments = fields.Nested('CommentSchema', many=True, exclude=('blog',))
+    creator = fields.Nested('UserSchema', only=('id', 'username'))
 
     class Meta:
         model = Blog
 
-# class Comment(db.Model, BaseModel):
-#
-#     __tablename__ = 'comments'
-#
-#     content = db.Column(db.Text, nullable=False)
-#     blog_id = db.Column(db.Integer, db.ForeignKey('wellnest.id'))
-#     blog = db.relationship('Blog', backref='comments')
-#
-# class CommentSchema(ma.ModelSchema):
-#
-#     class Meta:
-#         model = Comment
+class Comment(db.Model, BaseModel):
+
+    __tablename__ = 'comments'
+
+    content = db.Column(db.Text, nullable=False)
+    blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id'))
+    blog = db.relationship('Blog', backref='comments')
+
+class CommentSchema(ma.ModelSchema):
+
+    class Meta:
+        model = Comment

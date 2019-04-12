@@ -11,23 +11,27 @@ class Nav extends React.Component {
 
   render() {
     return(
-      <div className="navBarLinks">
-        <div className="navbarHome">
-          <Link to="/">Home</Link>
+      <div className="navbar">
+        <div className="links">
+          <div className="navbarHome">
+            <Link to="/">Home</Link>
+          </div>
+          <div className="navbarAbout">
+            <Link to="/about">About</Link>
+          </div>
+          <div className="navbarProfile">
+            <Link to="/profile">My Profile</Link>
+          </div>
+          <div className="navbarLogin">
+            <Link to="/login">Login</Link>
+          </div>
+          <div className="navbarLogin">
+            <Link to="/register">Register</Link>
+          </div>
+          <div className="logout">
+            <Link to="/" className="navbarLogout" onClick={this.handleSubmit}>Logout</Link>
+          </div>
         </div>
-        <div className="navbarAbout">
-          <Link to="/about">About</Link>
-        </div>
-        <div className="navbarProfile">
-          <Link to="/profile">My Profile</Link>
-        </div>
-        <div className="navbarNews">
-          <Link to="/news">News</Link>
-        </div>
-        <div className="navbarLogin">
-          <Link to="/login">Login/Register</Link>
-        </div>
-        <Link to="/" className="navbarLogout" onClick={this.handleSubmit}>Logout</Link>
       </div>
     )
   }

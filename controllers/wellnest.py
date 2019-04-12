@@ -1,8 +1,13 @@
+import os
+import requests
 from lib.secure_route import secure_route
 from flask import Blueprint, request, jsonify, g
-from models.blog import Blog, BlogSchema
+from models.blog import Blog, BlogSchema, Comment, CommentSchema
+
+NHS_KEY = os.environ["NHS_NEWS_KEY"]
+
 blog_schema = BlogSchema()
-# comment_schema = CommentSchema()
+comment_schema = CommentSchema()
 
 api = Blueprint('wellnest', __name__)
 
@@ -51,21 +56,34 @@ def delete(blog_id):
     blog.remove()
     return '', 204
 
-# @api.route('/wellnest/<int:blog_id>/comments', methods=['POST'])
-# @secure_route
-# def comment_create(blog_id):
-#     data = request.get_json()
-#     blog = Blog.query.get(blog_id)
-#     comment, errors = comment_schema.load(data)
-#     if errors:
-#         return jsonify(errors), 422
-#     comment.blog = blog
-#     comment.save()
-#     return comment_schema.jsonify(comment)
-#
-# @api.route('/wellnest/<int:blog_id>/comments/<int:comment_id>', methods=['DELETE'])
-# @secure_route
-# def comment_delete(**kwargs):
-#     comment = Comment.query.get(kwargs['comment_id'])
-#     comment.remove()
-#     return '', 204
+@api.route('/wellnest/<int:blog_id>/comments', methods=['POST'])
+@secure_route
+def comment_create(blog_id):
+    data = request.get_json()
+    blog = Blog.query.get(blog_id)
+    comment, errors = comment_schema.load(data)
+    if errors:
+        return jsonify(errors), 422
+    comment.blog = blog
+    comment.save()
+    return comment_schema.jsonify(comment)
+
+@api.route('/wellnest/<int:blog_id>/comments/<int:comment_id>', methods=['DELETE'])
+@secure_route
+def comment_delete(**kwargs):
+    comment = Comment.query.get(kwargs['comment_id'])
+    comment.remove()
+    return '', 204
+
+@api.route('/latest-news', methods=['GET'])
+def latest_news():
+    url = "https://api.nhs.uk/news/?order=newest&page=1"
+    resp = requests.get(url, headers={'subscription-key': NHS_KEY})
+    return jsonify(resp.json())
+
+@api.route('/news-article', methods=['POST'])
+def news_article():
+    data = request.get_json()
+    url = data['url']
+    resp = requests.get(url, headers={'subscription-key': NHS_KEY})
+    return jsonify(resp.json())

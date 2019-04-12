@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
+import { Link } from 'react-router-dom'
 
 class Register extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ class Register extends React.Component {
         username: '',
         email: '',
         password: '',
-        passwordConfirmation: ''
+        password_confirmation: ''
       }
     }
 
@@ -30,8 +31,11 @@ class Register extends React.Component {
       .then(res => {
         Auth.setToken(res.data.token)
       })
-      .then(() => this.props.history.push('/'))
-      .catch(err => console.log(err.message))
+      .then(() => this.props.history.push('/login'))
+      .catch(err => {
+        console.log(err)
+        console.log(err.message)
+      })
   }
 
   render() {
@@ -44,42 +48,39 @@ class Register extends React.Component {
             <div className="username">Username
             </div>
             <input
+              name="username"
               placeholder="Username"
-              value={this.state.data.username}
               onChange={this.handleChange}
-            >
-            </input>
+            />
             <div className="email">Email
             </div>
             <input
+              name="email"
               placeholder="Email"
-              value={this.state.data.email}
               onChange={this.handleChange}
-            >
-            </input>
+            />
             <div className="password">Password
             </div>
             <input
+              name="password"
+              type="password"
               placeholder="Password"
-              value={this.state.data.password}
               onChange={this.handleChange}
-            >
-            </input>
+            />
             <div className="password-confirmation">Confirm Password
             </div>
             <input
+              name="password_confirmation"
+              type="password"
               placeholder="Confirm Password"
-              value={this.state.data.passwordConfirmation}
               onChange={this.handleChange}
-            >
-            </input>
+            />
             <div className="submitButton">
               <button>Submit</button>
             </div>
-            <div className="logInInstead">
-              <button>Log In Instead</button>
-            </div>
+            <p> Already signed up? Click <Link to='/login'>here</Link> to login! </p>
           </div>
+
         </form>
       </main>
     )

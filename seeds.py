@@ -1,5 +1,5 @@
 from app import app, db
-from models.blog import Blog
+from models.blog import Blog, Comment
 from models.user import UserSchema
 user_schema = UserSchema()
 
@@ -36,12 +36,12 @@ with app.app_context():
     buse_blog = Blog(title="Buse's Blog", text='Hi I am Buse', creator=buse)
     mary_blog = Blog(title="Mary's Blog", text="Hi I am Mary", creator=mary)
 
-    # comment1 = Comment(content='I love this blog', blog=buse_blog)
-    # comment2 = Comment(content='I love this blog too', blog=mary_blog)
+    comment1 = Comment(content='I love this blog', blog=buse_blog)
+    comment2 = Comment(content='I love this blog too', blog=mary_blog)
 
     db.session.add(buse_blog)
     db.session.add(mary_blog)
-    # db.session.add(comment1)
-    # db.session.add(comment2)
+    db.session.add(comment1)
+    db.session.add(comment2)
 
     db.session.commit()

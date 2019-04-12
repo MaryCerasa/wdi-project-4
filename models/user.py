@@ -7,7 +7,6 @@ from marshmallow import validates_schema, ValidationError, validate, fields
 from .base import BaseModel, BaseSchema
 
 
-
 class User(db.Model, BaseModel):
 
     __tablename__ = 'users'

@@ -1,5 +1,8 @@
 import React from 'react'
 import Search from '../components/search'
+import { Link } from 'react-router-dom'
+
+import axios from 'axios'
 
 class Home extends React.Component {
   constructor() {
@@ -7,6 +10,24 @@ class Home extends React.Component {
 
     this.state = {}
 
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(){
+    console.log('test')
+  }
+
+  latestNews() {
+    console.log('getting the news')
+    axios.get('/api/latest-news')
+      .then(res => {
+        this.setState({articles: res.data.significantLink })
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
+  componentDidMount() {
+    this.latestNews()
   }
 
   render() {
@@ -19,6 +40,20 @@ class Home extends React.Component {
             </div>
             <div className="news">
               <h1>News</h1>
+              <ul>
+                {this.state.articles && this.state.articles.map((item) =>
+                  <li key={item.url}>
+                    <Link to={{
+                      pathname: '/news',
+                      state: {
+                        articleURL: item.url
+                      }
+                    }}>
+                      {item.name}
+                    </Link>
+                  </li>
+                )}
+              </ul>
             </div>
           </div>
           <div className="latestBlogs">

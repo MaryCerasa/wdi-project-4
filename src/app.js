@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Browser, Route, Switch } from 'react-router-dom'
+import axios from 'axios'
 
 import './style.scss'
 
@@ -9,10 +10,13 @@ import Header from './components/headerFooter/header'
 import Register from './components/auth/register'
 import Login from './components/auth/login'
 import Profile from './components/profile'
+import News from './components/news'
 import NotFound from './components/notFound'
+import About from './components/about'
 import Footer from './components/headerFooter/footer'
 import Nav from './components/lib/nav'
 
+axios.defaults.baseURL = 'http://localhost:5000'
 
 class App extends React.Component {
   componentDidMount() {
@@ -30,6 +34,8 @@ class App extends React.Component {
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/news" component={News}/>
+            <Route path="/about" component={About}/>
             <Route component={NotFound} />
           </Switch>
           <Footer />

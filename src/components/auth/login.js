@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
+import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
   constructor() {
@@ -25,7 +26,7 @@ class Login extends React.Component {
     axios.post('/api/login', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
-        this.props.history.push('/groups')
+        this.props.history.push('/')
       })
       .catch(() => {
         this.setState({ error: 'Invalid Credentials, login Fail.'})
@@ -42,26 +43,31 @@ class Login extends React.Component {
             <div className="email">Email
             </div>
             <input
+              name="email"
               placeholder="Email"
-              value={this.state.data.email}
               onChange={this.handleChange}
             >
             </input>
             <div className="password">Password
             </div>
             <input
+              name="password"
+              type="password"
               placeholder="Password"
-              value={this.state.data.password}
               onChange={this.handleChange}
             >
             </input>
             <div className="logInButton">
               <button>Submit</button>
             </div>
-            <div className="registerInstead">
-              <button>Register Instead</button>
+            <br />
+            <div className="invalidcredentials">
+              {this.state.error && this.state.error}
             </div>
+            <p> Not signed up? Click <Link to='/register'>here</Link> to register! </p>
           </div>
+
+
         </form>
       </main>
     )
