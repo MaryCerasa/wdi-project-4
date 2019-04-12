@@ -126,6 +126,7 @@ footer {
     margin: 30px;
     height: auto;
     text-align: center;
+    overflow: scroll;
   }
   .mapsOffices {
     border: 3px solid $blue;
@@ -220,7 +221,7 @@ button {
       margin: 5px;
     }
   }
-  
+
 .aboutMe{
   border: 3px solid $blue;
     width: 75%;
@@ -234,6 +235,7 @@ button {
   margin: 30px;
   height: auto;
   text-align: center;
+  overflow: scroll;
 }
 .faveBlogs {
   border: 3px solid $blue;
@@ -249,4 +251,10 @@ button {
   height: 600px;
   text-align: center;
 }
+}
+.aboutPage {
+  background-color: $blue;
+  p {
+    color: black;
+  }
 }
