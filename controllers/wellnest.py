@@ -2,7 +2,7 @@ import os
 import requests
 from lib.secure_route import secure_route
 from flask import Blueprint, request, jsonify, g
-from models.user import User
+from models.user import User, UserSchema
 from models.blog import Blog, BlogSchema, Comment, CommentSchema, Profile, ProfileSchema
 
 NHS_KEY = os.environ["NHS_NEWS_KEY"]
@@ -10,6 +10,7 @@ NHS_KEY = os.environ["NHS_NEWS_KEY"]
 blog_schema = BlogSchema()
 comment_schema = CommentSchema()
 profile_schema = ProfileSchema()
+user_schema = UserSchema()
 
 
 api = Blueprint('wellnest', __name__)
@@ -24,7 +25,6 @@ def latest_blogs():
 @secure_route
 def current_user_blogs():
     blogs = Blog.query.filter(Blog.creator_id == g.current_user.id).all()
-    print(blogs)
     return blog_schema.jsonify(blogs, many=True)
 
 @api.route('/user-blogs/<int:user_id>', methods=['GET'])
@@ -33,9 +33,9 @@ def user_blogs(user_id):
     blogs = Blog.query.filter(Blog.creator_id == user_id).all()
     return blog_schema.jsonify(blogs, many=True)
 
-@api.route('/wellnest', methods=['POST'])
+@api.route('/wellnest/blog', methods=['POST'])
 @secure_route
-def create():
+def create_blog():
     data = request.get_json()
     blog, errors = blog_schema.load(data)
     if errors:
@@ -45,6 +45,7 @@ def create():
     return blog_schema.jsonify(blog)
 
 @api.route('/wellnest/<int:blog_id>', methods=['GET'])
+@secure_route
 def show(blog_id):
     blog = Blog.query.get(blog_id)
     return blog_schema.jsonify(blog), 200
@@ -81,6 +82,7 @@ def comment_create(blog_id):
     if errors:
         return jsonify(errors), 422
     comment.blog = blog
+    comment.creator = g.current_user
     comment.save()
     return comment_schema.jsonify(comment)
 
@@ -125,6 +127,19 @@ def update_profile():
     profile.save()
     return profile_schema.jsonify(profile)
 
+@api.route('/wellnest/profile/image', methods=['POST'])
+@secure_route
+def update_profile_image():
+    data = request.get_json()
+    image_url = data["image_url"]
+    profile = Profile.query.filter(Profile.user_id == g.current_user.id).first()
+    if profile is None:
+        profile = Profile()
+    profile.user_id = g.current_user.id
+    profile.image_url = image_url
+    profile.save()
+    return profile_schema.jsonify(profile)
+
 @api.route('/wellnest/profile', methods=['GET'])
 @secure_route
 def get_own_profile():
@@ -136,3 +151,8 @@ def get_own_profile():
 def get_profile(user_id):
     profile = Profile.query.filter(Profile.user_id == user_id).first()
     return profile_schema.jsonify(profile)
+
+@api.route('/wellnest/profile/user', methods=['GET'])
+@secure_route
+def get_user():
+    return user_schema.jsonify(g.current_user)

@@ -9,7 +9,7 @@ class Blog(db.Model, BaseModel):
     title = db.Column(db.String(100), nullable=False)
     text = db.Column(db.String(5000), nullable=False)
     creator_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    creator = db.relationship('User', backref='created_wellnest')
+    creator = db.relationship('User', backref='blogs')
 
 
 class BlogSchema(ma.ModelSchema):
@@ -25,9 +25,12 @@ class Comment(db.Model, BaseModel):
 
     content = db.Column(db.Text, nullable=False)
     blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id'))
+    creator_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     blog = db.relationship('Blog', backref='comments')
+    creator = db.relationship('User', backref='comments')
 
 class CommentSchema(ma.ModelSchema):
+    creator = fields.Nested('UserSchema', only=('id', 'username'))
 
     class Meta:
         model = Comment
@@ -38,6 +41,7 @@ class Profile(db.Model, BaseModel):
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     content = db.Column(db.Text, nullable=False)
+    image_url = db.Column(db.Text)
 
 class ProfileSchema(ma.ModelSchema):
 

@@ -3,11 +3,12 @@ import axios from 'axios'
 import Auth from './lib/auth'
 
 class Blog extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
-      comment: {}
+      blog: this.props.location.state.blog,
+      comment: ''
     }
 
     this.handleSubmitComment = this.handleSubmitComment.bind(this)
@@ -16,19 +17,31 @@ class Blog extends React.Component {
 
   handleSubmitComment(e) {
     e.preventDefault()
-    axios.post('/api/wellnest/profile',
-      this.state.comment,
+    axios.post('/api/wellnest/' + this.state.blog.id + '/comments',
+      {content: this.state.comment},
       {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
-      .then((res) => {
-        this.setState({profile: res.data})
+      .then(() => {
+        this.getBlog()
       })
-      .then(console.log(this.state))
+
   }
 
-  handleChange({ target: { name, value }}) {
-    const data = {...this.state.comment, [name]: value }
-    const error = ''
-    this.setState({ data, error })
+  handleChange({ target: { value }}) {
+    this.setState({...this.state, comment: value })
+  }
+
+  getBlog() {
+    axios.get('/api/wellnest/' + this.state.blog.id,
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(res => {
+        console.log(res.data)
+        this.setState({blog: res.data })
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
+  componentDidMount() {
+    this.getBlog()
   }
 
   render() {
@@ -36,14 +49,14 @@ class Blog extends React.Component {
       <div className="blogs">
         <main>
           <div className="myBlogPosts">
-            {this.props.location.state.blog.title}
-            {this.props.location.state.blog.text}
+            {this.state.blog.title}
+            {this.state.blog.text}
             Comments:
             <br/>
-            {this.props.location.state.blog.comments &&
-              this.props.location.state.blog.comments.map((comment) =>
+            {this.state.blog.comments &&
+              this.state.blog.comments.map((comment) =>
                 <li key={comment.id}>
-                  <p>{comment.content}</p>
+                  <p>{comment.creator && comment.creator.username}: {comment.content}</p>
                 </li>
               )}
             <form onSubmit={this.handleSubmitComment}>

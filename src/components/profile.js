@@ -3,16 +3,13 @@ import Search from '../components/search'
 import Auth from './lib/auth'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-// import axios from 'axios'
+
 import { withRouter } from 'react-router-dom'
 
+const apikey = 'Arty0sPVQwOloa7ilF8fSz'
 
-// import Auth from '../lib/auth'
-
-// const apikey = process.env.REACT_APP_FILE_STACK_API
-//
-// import * as filestack from 'filestack-js'
-// const client = filestack.init(apikey)
+import * as filestack from 'filestack-js'
+const client = filestack.init(apikey)
 
 class Profile extends React.Component {
   constructor() {
@@ -22,13 +19,14 @@ class Profile extends React.Component {
       data: {about_me: ''},
       error: ''
     }
-    this.handleClick = this.handleClick.bind(this)
+    this.handleImageUpload = this.handleImageUpload.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleBlogSubmit = this.handleBlogSubmit.bind(this)
   }
 
-  handleClick(){
-    console.log('test')
+  handleImageUpload(){
+    this.addUserImage()
   }
 
   myBlogs() {
@@ -72,21 +70,34 @@ class Profile extends React.Component {
       .then(console.log(this.state))
   }
 
-  // addUserImage() {
-  //   const options = {
-  //     accept: ['image/*'],
-  //     onFileUploadFinished: file => {
-  //       this.setState({...this.state, image: file.url}, () => this.pushImageToBackEnd(this.state))
-  //     }
-  //   }
-  //   client.picker(options).open()
-  // }
+  handleBlogSubmit(e){
+    e.preventDefault()
+    axios.post('/api/wellnest/blog',
+      {text: this.state.data.blogText, title: this.state.data.blogTitle},
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(() => {
+        this.myBlogs()
+      })
+      .then(console.log(this.state))
+  }
 
-  // pushAvatarToBackEnd (avatarLink) {
-  //   axios.post('api/users', avatarLink, { headers: { Authorization: `Bearer ${Auth.getToken()}`} } )
-  //     .then((res) => this.setState(res.data))
-  //     .then(console.log(this.state))
-  // }
+  addUserImage() {
+    const options = {
+      accept: ['image/*'],
+      onFileUploadFinished: file => {
+        this.setState({...this.state, image: file.url}, () => {
+          axios.post('/api/wellnest/profile/image',
+            {image_url: file.url},
+            {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+            .then((res) => {
+              this.setState({profile: res.data})
+            })
+            .then(console.log(this.state))
+        })
+      }
+    }
+    client.picker(options).open()
+  }
 
   render() {
     return (
@@ -95,13 +106,15 @@ class Profile extends React.Component {
           <div className="leftSide">
             <div className="aboutMe">
               <h1>About Me</h1>
-              <img className="avatar" src={this.state.image} />
               <h4 className="userName"> </h4>
               <button
-                onClick={this.handleClick}>
+                onClick={this.handleImageUpload}>
                 Upload image
               </button>
-              <div className="profilePhoto">Photo
+              <div className="profilePhoto">
+                {this.state.profile &&
+                  <img src={this.state.profile.image_url} />
+                }
               </div>
 
               {this.state.profile &&
@@ -116,25 +129,31 @@ class Profile extends React.Component {
                     onChange={this.handleChange}
                     placeholder="Type here..."
                   />
-                  <button
-                    onSubmit={this.handleClick}>
+                  <button>
                     Submit
                   </button>
                 </form>
               </div>
             </div>
           </div>
+
+
           <div className="myBlogPosts">
             <h1>My Blog Posts</h1>
             <div className="textarea-blogs">
-              <form>
+              <form onSubmit={this.handleBlogSubmit}>
+                Title:
+                <input type="text"
+                  name="blogTitle"
+                  onChange={this.handleChange} />
+
+                Blog:
                 <textarea
-                  name="myblogs"
+                  name="blogText"
                   onChange={this.handleChange}
                   placeholder="Type here..."
                 />
-                <button
-                  onSubmit={this.handleClick}>
+                <button>
                   Submit
                 </button>
               </form>
@@ -148,6 +167,8 @@ class Profile extends React.Component {
               )}
             </ul>
           </div>
+
+
           <div className="rightSide">
             <div className="faveBlogs">
               <h1>Favorite Blogs</h1>

@@ -154,14 +154,14 @@ with app.app_context():
 
     jade_blog = Blog(title="365 Days of Self Care, My Journal", text="Lists of ideas and tips", creator=jade)
 
-    comment1 = Comment(content='I love this blog!!', blog=buse_blog)
-    comment2 = Comment(content='I love this blog too, great content here!', blog=mary_blog)
-    comment3 = Comment(content='Great article, I can totally relate.', blog=jason_blog)
-    comment4 = Comment(content='Brilliant article ladies.', blog=paul_blog)
-    comment5 = Comment(content='Such relevant advice..', blog=charlotte_blog)
-    comment6 = Comment(content='Wow, excellent post surrounding anxiety', blog=celine_blog)
-    comment7 = Comment(content='Can someone do a followup post on this? Love it.', blog=ryan_blog)
-    comment8 = Comment(content='This is my favorite article so far.', blog=jason_blog)
+    comment1 = Comment(content='I love this blog!!', blog=buse_blog, creator=buse)
+    comment2 = Comment(content='I love this blog too, great content here!', blog=mary_blog, creator=buse)
+    comment3 = Comment(content='Great article, I can totally relate.', blog=jason_blog, creator=mary)
+    comment4 = Comment(content='Brilliant article ladies.', blog=paul_blog, creator=buse)
+    comment5 = Comment(content='Such relevant advice..', blog=charlotte_blog, creator=mary)
+    comment6 = Comment(content='Wow, excellent post surrounding anxiety', blog=celine_blog, creator=buse)
+    comment7 = Comment(content='Can someone do a followup post on this? Love it.', blog=ryan_blog, creator=mary)
+    comment8 = Comment(content='This is my favorite article so far.', blog=jason_blog, creator=buse)
 
     db.session.add(buse_blog)
     db.session.add(mary_blog)

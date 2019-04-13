@@ -11,7 +11,6 @@ import Register from './components/auth/register'
 import Login from './components/auth/login'
 import Profile from './components/profile'
 import News from './components/news'
-import Blogs from './components/blogs'
 import MyBlogs from './components/myBlogs'
 import NotFound from './components/notFound'
 import About from './components/about'
@@ -39,7 +38,6 @@ class App extends React.Component {
             <Route path="/login" component={Login}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/news" component={News}/>
-            <Route path="/blogs" component={Blogs}/>
             <Route path="/myblogs" component={MyBlogs}/>
             <Route path="/about" component={About}/>
             <Route path="/view-profile" component={ViewProfile}/>

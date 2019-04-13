@@ -83,7 +83,6 @@ class Home extends React.Component {
                     }}>
                       <h2>{item.title}</h2>
                       <p>Written by: {item.creator.username}</p>
-                      <p>{item.text}</p>
 
                   --------------------------------------------------
                     </Link>
@@ -95,7 +94,7 @@ class Home extends React.Component {
                     }}>
                       <h2>{item.title}</h2>
                       <p>Written by: {item.creator.username}</p>
-                      <p>{item.text}</p>
+                  
 
                   --------------------------------------------------
                     </Link>

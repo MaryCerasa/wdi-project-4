@@ -39,7 +39,7 @@ header {
   .contains-title {
 
   }
-  .photo {
+  .welcomeback {
     padding-left: 30px;
   }
   .contains-logo {
@@ -211,41 +211,41 @@ button {
   }
 
 
-.aboutMe{
-  border: 3px solid $blue;
+  .aboutMe {
+    border: 3px solid $blue;
     width: 75%;
-  height: 500px;
-  margin: 30px;
-  text-align: center;
-}
-.myBlogPosts {
-  border: 3px solid $blue;
-  width: 75%;
-  margin: 30px;
-  height: auto;
-  text-align: center;
-  overflow: scroll;
-}
-.faveBlogs {
-  border: 3px solid $blue;
-  width: 75%;
-  margin: 30px;
-  height: 600px;
-  text-align: center;
-}
-.mySocial {
-  border: 3px solid $blue;
-  width: 75%;
-  margin: 30px;
-  height: 600px;
-  text-align: center;
-}
+    height: 500px;
+    margin: 30px;
+    text-align: center;
+  }
+  .myBlogPosts {
+    border: 3px solid $blue;
+    width: 75%;
+    margin: 30px;
+    height: auto;
+    text-align: center;
+    overflow: scroll;
+  }
+  .faveBlogs {
+    border: 3px solid $blue;
+    width: 75%;
+    margin: 30px;
+    height: 600px;
+    text-align: center;
+  }
+  .mySocial {
+    border: 3px solid $blue;
+    width: 75%;
+    margin: 30px;
+    height: 600px;
+    text-align: center;
+  }
 }
 
 .popup {
   border: 1px solid $blue;
-  
 }
+
 .aboutPage {
   background-color: $blue;
   p {

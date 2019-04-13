@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import Auth from '../lib/auth'
+import axios from 'axios'
 
 class Header extends React.Component {
   constructor() {
@@ -15,12 +17,33 @@ class Header extends React.Component {
     this.setState({...this.state, query: value })
   }
 
+  getUser() {
+    axios.get('/api/wellnest/profile/user', {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(res => {
+        this.setState({user: res.data })
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
+
+  componentDidMount() {
+    this.getUser()
+  }
+
   render() {
     return (
 
       <div className = "headerWrapper">
         <header>
-          <div className="photo">photo
+          <div className="welcomeback">
+            {Auth.isAuthenticated() &&
+            <Link to={{
+              pathname: '/profile'
+            }}>
+              <h4>Welcome back, {this.state.user && this.state.user.username}!</h4>
+            </Link>
+            }
+
           </div>
           <div className="contains-title">
             <h1>WellNest</h1>
