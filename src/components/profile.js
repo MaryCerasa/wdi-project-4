@@ -1,5 +1,6 @@
 import React from 'react'
 import Search from '../components/search'
+import Auth from './lib/auth'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 // import axios from 'axios'
@@ -18,8 +19,12 @@ class Profile extends React.Component {
     super()
 
     this.state = {
+      data: {about_me: ''},
+      error: ''
     }
     this.handleClick = this.handleClick.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleClick(){
@@ -27,8 +32,9 @@ class Profile extends React.Component {
   }
 
   myBlogs() {
-    console.log('getting the blogposts')
-    axios.get('/api/wellnest')
+    console.log('getting the blog posts')
+    axios.get('/api/user-blogs',
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
       .then(res => {
         this.setState({blogs: res.data })
       })
@@ -37,6 +43,33 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.myBlogs()
+    this.getProfile()
+  }
+
+  handleChange({ target: { name, value }}) {
+    const data = {...this.state.data, [name]: value }
+    const error = ''
+    this.setState({ data, error })
+  }
+
+  getProfile() {
+    axios.get('/api/wellnest/profile',
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(res => {
+        this.setState({profile: res.data})
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+    axios.post('/api/wellnest/profile',
+      {about_me: this.state.data.about_me},
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then((res) => {
+        this.setState({profile: res.data})
+      })
+      .then(console.log(this.state))
   }
 
   // addUserImage() {
@@ -70,17 +103,47 @@ class Profile extends React.Component {
               </button>
               <div className="profilePhoto">Photo
               </div>
+
+              {this.state.profile &&
+                <div>
+                  {this.state.profile.content}
+                </div>
+              }
+              <div className="textarea-aboutme">
+                <form onSubmit={this.handleSubmit}>
+                  <textarea
+                    name="about_me"
+                    onChange={this.handleChange}
+                    placeholder="Type here..."
+                  />
+                  <button
+                    onSubmit={this.handleClick}>
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
           <div className="myBlogPosts">
             <h1>My Blog Posts</h1>
+            <div className="textarea-blogs">
+              <form>
+                <textarea
+                  name="myblogs"
+                  onChange={this.handleChange}
+                  placeholder="Type here..."
+                />
+                <button
+                  onSubmit={this.handleClick}>
+                  Submit
+                </button>
+              </form>
+            </div>
             <ul>
               {this.state.blogs && this.state.blogs.map((item) =>
                 <li key={item.id}>
-                  <Link to={`/myblogs/${item.id}`}>
-                    <h2>{item.title}</h2>
-                    <p>{item.text}</p>
-                  </Link>
+                  <h2>{item.title}</h2>
+                  <p>{item.text}</p>
                 </li>
               )}
             </ul>

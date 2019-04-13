@@ -1,6 +1,7 @@
 import React from 'react'
 import Search from '../components/search'
 import { Link } from 'react-router-dom'
+import Auth from './lib/auth'
 
 import axios from 'axios'
 
@@ -28,7 +29,7 @@ class Home extends React.Component {
 
   latestBlogs() {
     console.log('getting the blogposts')
-    axios.get('/api/latest_blogs')
+    axios.get('/api/latest-blogs')
       .then(res => {
         this.setState({blogs: res.data })
       })
@@ -72,12 +73,34 @@ class Home extends React.Component {
             <ul>
               {this.state.blogs && this.state.blogs.map((item) =>
                 <li key={item.id}>
-                  <Link to={`/blogs/${item.id}`}>
-                    <h2>{item.title}</h2>
-                    <p>Written by: {item.creator.username}</p>
-                    <p>{item.text}</p>
-                    <p>{item.comments.content}</p>
-                  </Link>
+
+                  {Auth.isAuthenticated() &&
+                    <Link to={{
+                      pathname: '/view-profile',
+                      state: {
+                        userId: item.creator.id
+                      }
+                    }}>
+                      <h2>{item.title}</h2>
+                      <p>Written by: {item.creator.username}</p>
+                      <p>{item.text}</p>
+
+                  --------------------------------------------------
+                    </Link>
+                  }
+
+                  {!Auth.isAuthenticated() &&
+                    <Link to={{
+                      pathname: '/login'
+                    }}>
+                      <h2>{item.title}</h2>
+                      <p>Written by: {item.creator.username}</p>
+                      <p>{item.text}</p>
+
+                  --------------------------------------------------
+                    </Link>
+                  }
+
                 </li>
               )}
             </ul>

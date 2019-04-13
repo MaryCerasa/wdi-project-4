@@ -2,26 +2,36 @@ import os
 import requests
 from lib.secure_route import secure_route
 from flask import Blueprint, request, jsonify, g
-from models.blog import Blog, BlogSchema, Comment, CommentSchema
+from models.user import User
+from models.blog import Blog, BlogSchema, Comment, CommentSchema, Profile, ProfileSchema
 
 NHS_KEY = os.environ["NHS_NEWS_KEY"]
 
 blog_schema = BlogSchema()
 comment_schema = CommentSchema()
+profile_schema = ProfileSchema()
+
 
 api = Blueprint('wellnest', __name__)
 
 #get all blogs
-@api.route('/latest_blogs', methods=['GET'])
+@api.route('/latest-blogs', methods=['GET'])
 def latest_blogs():
     blogs = Blog.query.all()
     return blog_schema.jsonify(blogs, many=True), 200
 
-#  Get blog by user id
-# @api.route('/user_blogs/<int:creator>', methods=['GET'])
-# def user_blogs(creator):
-#     blogs = Blog.query.get(creator)
-#     return blog_schema.jsonify(blogs), 200
+@api.route('/user-blogs', methods=['GET'])
+@secure_route
+def current_user_blogs():
+    blogs = Blog.query.filter(Blog.creator_id == g.current_user.id).all()
+    print(blogs)
+    return blog_schema.jsonify(blogs, many=True)
+
+@api.route('/user-blogs/<int:user_id>', methods=['GET'])
+@secure_route
+def user_blogs(user_id):
+    blogs = Blog.query.filter(Blog.creator_id == user_id).all()
+    return blog_schema.jsonify(blogs, many=True)
 
 @api.route('/wellnest', methods=['POST'])
 @secure_route
@@ -85,11 +95,44 @@ def comment_delete(**kwargs):
 def latest_news():
     url = "https://api.nhs.uk/news/?order=newest&page=1"
     resp = requests.get(url, headers={'subscription-key': NHS_KEY})
-    return jsonify(resp.json())
+    return jsonify(resp.json()), 200
 
 @api.route('/news-article', methods=['POST'])
 def news_article():
     data = request.get_json()
     url = data['url']
     resp = requests.get(url, headers={'subscription-key': NHS_KEY})
-    return jsonify(resp.json())
+    return jsonify(resp.json()), 200
+
+@api.route('/search', methods=['POST'])
+def search():
+    data = request.get_json()
+    query = data["text"]
+    url = "https://api.nhs.uk/search/?query=" + query
+    resp = requests.get(url, headers={'subscription-key': NHS_KEY})
+    return jsonify(resp.json()), 200
+
+@api.route('/wellnest/profile', methods=['POST'])
+@secure_route
+def update_profile():
+    data = request.get_json()
+    about_me = data["about_me"]
+    profile = Profile.query.filter(Profile.user_id == g.current_user.id).first()
+    if profile is None:
+        profile = Profile()
+    profile.user_id = g.current_user.id
+    profile.content = about_me
+    profile.save()
+    return profile_schema.jsonify(profile)
+
+@api.route('/wellnest/profile', methods=['GET'])
+@secure_route
+def get_own_profile():
+    profile = Profile.query.filter(Profile.user_id == g.current_user.id).first()
+    return profile_schema.jsonify(profile)
+
+@api.route('/wellnest/profile/<int:user_id>', methods=['GET'])
+@secure_route
+def get_profile(user_id):
+    profile = Profile.query.filter(Profile.user_id == user_id).first()
+    return profile_schema.jsonify(profile)

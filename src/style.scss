@@ -7,6 +7,7 @@ $blue: #D8F0FA;
   outline: none;
   list-style-type: none;
   font-family: 'Exo 2', sans-serif;
+  color: black;
 }
 
 body {
@@ -195,8 +196,6 @@ button {
     flex-direction: column;
     width: 33%;
   }
-<<<<<<< HEAD
-=======
   .searchBar {
     border: 3px solid $blue;
     width: 75%;
@@ -210,7 +209,7 @@ button {
       margin: 5px;
     }
   }
->>>>>>> development
+
 
 .aboutMe{
   border: 3px solid $blue;
@@ -242,29 +241,14 @@ button {
   text-align: center;
 }
 }
-<<<<<<< HEAD
-
-.search {
-  border: 3px solid $blue;
-  width: 75%;
-  height: 400px;
-  margin: 30px;
-  text-align: center;
-  .searchInput {
-        margin: 5px;
-  }
-  .buttonDiv {
-    margin: 5px;
-  }
-}
 
 .popup {
   border: 1px solid $blue;
-=======
+  
+}
 .aboutPage {
   background-color: $blue;
   p {
     color: black;
   }
->>>>>>> development
 }

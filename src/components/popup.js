@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter, Redirect } from 'react-router-dom'
+import { Link, withRouter, Redirect } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -31,16 +31,11 @@ class Popup extends React.Component {
       <div className="popup-backdrop">
         <div className="popup">
           <ul>
-            {this.props.search.map((item) =>
-              <li key={item.id} onClick={() => this.handleClick(item)}>
-                {this.state.redirect && <Redirect
-                  to={{
-                    pathname: '/search',
-                    state: {
-                      search: this.state.search,
-                      specificSearch: this.state.specificSearch
-                    }
-                  }}></Redirect>}{item.name}
+            {this.props.search.results.map((item) =>
+              <li key={item.id}>
+                <a target="_blank" rel="noopener noreferrer" href={item.url} >
+                  {item.title}
+                </a>
               </li>
             )}
           </ul>

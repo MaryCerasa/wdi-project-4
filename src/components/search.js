@@ -25,7 +25,7 @@ class Search extends React.Component {
 
   handleClick(e) {
     e.preventDefault()
-    axios.post('/api/search', {search: this.state.query})
+    axios.post('/api/search', {text: this.state.query})
       .then(search => {
         this.setState({results: search.data})
         this.openPopup()
@@ -48,7 +48,8 @@ class Search extends React.Component {
   render() {
     return(
       <div className="search">
-        <h2>Search for News</h2>
+        <h2>Search for Primary Cares/Hospitals/Healthcare professionals</h2>
+        <h4>Type below name or the location of a healthcare professional, hospital or primary care.</h4>
         <input className="searchInput" placeholder="Type here..."
           onChange={this.handleChange}
         />

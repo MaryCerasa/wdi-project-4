@@ -31,3 +31,15 @@ class CommentSchema(ma.ModelSchema):
 
     class Meta:
         model = Comment
+
+class Profile(db.Model, BaseModel):
+
+    __tablename__ = 'profiles'
+
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    content = db.Column(db.Text, nullable=False)
+
+class ProfileSchema(ma.ModelSchema):
+
+    class Meta:
+        model = Profile

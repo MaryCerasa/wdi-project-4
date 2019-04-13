@@ -6,7 +6,7 @@ class Nav extends React.Component {
   constructor() {
     super()
 
-    this.state = {}
+    this.state = {data: {}}
 
     this.logout = this.logout.bind(this)
 
@@ -16,6 +16,7 @@ class Nav extends React.Component {
     Auth.logout()
     this.props.history.push('/')
   }
+
 
   render() {
     return(
@@ -27,15 +28,22 @@ class Nav extends React.Component {
           <div className="navbarAbout">
             <Link to="/about">About</Link>
           </div>
-          <div className="navbarProfile">
-            <Link to="/profile">My Profile</Link>
-          </div>
-          <div className="navbarLogin">
-            <Link to="/login">Login</Link>
-          </div>
-          <div className="navbarLogin">
-            <Link to="/register">Register</Link>
-          </div>
+          {Auth.isAuthenticated() &&
+            <div className="navbarProfile">
+              <Link to="/profile">My Profile</Link>
+            </div>
+          }
+
+          {!Auth.isAuthenticated() &&
+            <div className="navbarLogin">
+              <Link to="/login">Login</Link>
+            </div>
+          }
+          {!Auth.isAuthenticated() &&
+            <div className="navbarLogin">
+              <Link to="/register">Register</Link>
+            </div>
+          }
           <div className="logout">
             <Link to="/" className="navbarLogout" onClick={this.logout}>Logout</Link>
           </div>

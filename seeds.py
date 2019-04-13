@@ -128,7 +128,7 @@ with app.app_context():
     db.session.add(jason)
 
 #pylint: disable=C0301
-    buse_blog = Blog(title="Buse's Blog", text='Hi I am Buse', creator=buse)
+    buse_blog = Blog(title="Buse's Blog", text='Hi there, I am Buse', creator=buse)
 
     mary_blog = Blog(title="Mary's Blog", text="Hi I am Mary", creator=mary)
 
