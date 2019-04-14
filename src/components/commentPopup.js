@@ -33,16 +33,21 @@ class CommentPopup extends React.Component {
     {this.props.search && console.log(this.props.search )}
     {this.state.search && console.log(this.state.search )}
     return (
+
       <div className="popup-backdrop">
-        <div className="popup">
-          <form onSubmit={this.handleSubmitComment}>
-            <textarea
-              name="myblogs"
-              placeholder="Type here..."
-            />
-            <button>Submit</button>
-          </form>
-        </div>
+        <main>
+          <div className="popup">
+            <form onSubmit={this.handleSubmitComment}>
+              <textarea
+                name="myblogs"
+                placeholder="Type here..."
+              />
+              <button>Submit</button>
+              
+
+            </form>
+          </div>
+        </main>
       </div>
 
     )

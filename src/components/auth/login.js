@@ -39,7 +39,7 @@ class Login extends React.Component {
       <main>
         <form className="formWrapper" onSubmit={this.handleSubmit}>
           <div className="loginForm">
-            <h2>Welcome back to WellNest!</h2>
+            <h2>Welcome to WellNest!</h2>
             <h3>Please sign in below.</h3>
             <div className="email">Email
             </div>

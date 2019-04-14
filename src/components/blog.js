@@ -51,15 +51,21 @@ class Blog extends React.Component {
           <div className="myBlogPosts">
             {this.state.blog.title}
             {this.state.blog.text}
-            Comments:
+            <button className="edit-blog">Edit</button>
+            <button className="delete-blog">Delete</button>
             <br/>
+
             {this.state.blog.comments &&
               this.state.blog.comments.map((comment) =>
                 <li key={comment.id}>
                   <p>{comment.creator && comment.creator.username}: {comment.content}</p>
+                  <button className="edit-comment">Edit</button>
+                  <button className="delete-comment">Delete</button>
                 </li>
+
               )}
             <form onSubmit={this.handleSubmitComment}>
+              <h3>Comments</h3>
               <textarea
                 onChange={this.handleChange}
                 name='content'
@@ -68,7 +74,6 @@ class Blog extends React.Component {
               <button>Submit</button>
             </form>
           </div>
-          {this.props.location.state.text}
         </main>
       </div>
     )

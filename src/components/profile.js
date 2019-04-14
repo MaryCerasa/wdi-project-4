@@ -106,16 +106,17 @@ class Profile extends React.Component {
           <div className="leftSide">
             <div className="aboutMe">
               <h1>About Me</h1>
-              <h4 className="userName"> </h4>
-              <button
-                onClick={this.handleImageUpload}>
-                Upload image
-              </button>
-              <div className="profilePhoto">
+              <h4 className="userName">Username</h4>
+              <div className="profileImage">
                 {this.state.profile &&
-                  <img src={this.state.profile.image_url} />
+                  <img src={this.state.profile.image_url}
+                    className="img"/>
                 }
               </div>
+              <button className="imageButton"
+                onClick={this.handleImageUpload}>
+                Upload Image
+              </button>
 
               {this.state.profile &&
                 <div>
@@ -129,8 +130,8 @@ class Profile extends React.Component {
                     onChange={this.handleChange}
                     placeholder="Type here..."
                   />
-                  <button>
-                    Submit
+                  <button className="button-aboutme">
+                    Update
                   </button>
                 </form>
               </div>
@@ -163,6 +164,8 @@ class Profile extends React.Component {
                 <li key={item.id}>
                   <h2>{item.title}</h2>
                   <p>{item.text}</p>
+                  <button className="edit-myblog">Edit</button>
+                  <button className="delete-myblog">Delete</button>
                 </li>
               )}
             </ul>
