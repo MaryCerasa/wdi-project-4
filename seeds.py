@@ -132,6 +132,42 @@ with app.app_context():
 
     db.session.add(jason)
 
+    fabio, errors = user_schema.load({
+        'username': 'fabio',
+        'email': 'fabio@email.com',
+        'password': 'password',
+        'password_confirmation': 'password'
+    })
+
+    if errors:
+        raise Exception(errors)
+
+    db.session.add(fabio)
+
+    cag, errors = user_schema.load({
+        'username': 'cag',
+        'email': 'cag@email.com',
+        'password': 'password',
+        'password_confirmation': 'password'
+    })
+
+    if errors:
+        raise Exception(errors)
+
+    db.session.add(cag)
+
+    samantha, errors = user_schema.load({
+        'username': 'samantha',
+        'email': 'samantha@email.com',
+        'password': 'password',
+        'password_confirmation': 'password'
+    })
+
+    if errors:
+        raise Exception(errors)
+
+    db.session.add(samantha)
+
 #pylint: disable=C0301
     buse_blog = Blog(title="Buse's Blog", text='Hi there, I am Buse', creator=buse)
 
@@ -141,7 +177,7 @@ with app.app_context():
 
     paul_blog = Blog(title="How I Made Work, Work For Me", text="Learning a new skill and starting my own business has transformed my life!", creator=paul)
 
-    buse_blog = Blog(title="9 No-Nonsense Self-Care Ideas", text="Set time for yourself each week.", creator=buse)
+    samantha_blog = Blog(title="9 No-Nonsense Self-Care Ideas", text="Set time for yourself each week.", creator=samantha)
 
     chris_blog = Blog(title="How To Be Mindful Of Your Digital Boundaries", text="Limit the social media content you access.", creator=chris)
 
@@ -155,9 +191,9 @@ with app.app_context():
 
     jason_blog = Blog(title="The Mental Health Benefits of Having a Daily Routine", text="It can sound counter-intuitive but developing a daily routine can help us to feel more in control of everything.", creator=jason)
 
-    ryan_blog = Blog(title="Why the Words We Use Matter & Mental Health", text="When it comes to mental health and mental illness, language can be a very tricky landscape to navigate. ", creator=ryan)
+    cag_blog = Blog(title="Why the Words We Use Matter & Mental Health", text="When it comes to mental health and mental illness, language can be a very tricky landscape to navigate. ", creator=cag)
 
-    jade_blog = Blog(title="365 Days of Self Care, My Journal", text="Lists of ideas and tips", creator=jade)
+    fabio_blog = Blog(title="365 Days of Self Care, My Journal", text="Lists of ideas and tips", creator=fabio)
 
     comment1 = Comment(content='I love this blog!!', blog=buse_blog, creator=buse)
     comment2 = Comment(content='I love this blog too, great content here!', blog=mary_blog, creator=buse)
@@ -178,8 +214,9 @@ with app.app_context():
     db.session.add(paul_blog)
     db.session.add(chris_blog)
     db.session.add(phoebe_blog)
-    db.session.add(jade_blog)
-    db.session.add(ryan_blog)
+    db.session.add(fabio_blog)
+    db.session.add(cag_blog)
+    db.session.add(samantha_blog)
 
     db.session.add(comment1)
     db.session.add(comment2)
