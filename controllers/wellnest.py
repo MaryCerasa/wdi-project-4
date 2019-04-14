@@ -18,13 +18,13 @@ api = Blueprint('wellnest', __name__)
 #get all blogs
 @api.route('/latest-blogs', methods=['GET'])
 def latest_blogs():
-    blogs = Blog.query.all()
+    blogs = Blog.query.order_by(Blog.updated_at.desc()).limit(20).all()
     return blog_schema.jsonify(blogs, many=True), 200
 
 @api.route('/user-blogs', methods=['GET'])
 @secure_route
 def current_user_blogs():
-    blogs = Blog.query.filter(Blog.creator_id == g.current_user.id).all()
+    blogs = Blog.query.filter(Blog.creator_id == g.current_user.id).order_by(Blog.id).all()
     return blog_schema.jsonify(blogs, many=True)
 
 @api.route('/user-blogs/<int:user_id>', methods=['GET'])
@@ -50,7 +50,7 @@ def show(blog_id):
     blog = Blog.query.get(blog_id)
     return blog_schema.jsonify(blog), 200
 
-@api.route('/wellnest/<int:blog_id>', methods=['PUT'])
+@api.route('/wellnest/blog/<int:blog_id>', methods=['PUT'])
 @secure_route
 def update(blog_id):
     blog = Blog.query.get(blog_id)
@@ -64,7 +64,7 @@ def update(blog_id):
     blog.save()
     return blog_schema.jsonify(blog)
 
-@api.route('/wellnest/<int:blog_id>', methods=['DELETE'])
+@api.route('/wellnest/blog/<int:blog_id>', methods=['DELETE'])
 @secure_route
 def delete(blog_id):
     blog = Blog.query.get(blog_id)
@@ -86,10 +86,10 @@ def comment_create(blog_id):
     comment.save()
     return comment_schema.jsonify(comment)
 
-@api.route('/wellnest/<int:blog_id>/comments/<int:comment_id>', methods=['DELETE'])
+@api.route('/wellnest/comments/<int:comment_id>', methods=['DELETE'])
 @secure_route
-def comment_delete(**kwargs):
-    comment = Comment.query.get(kwargs['comment_id'])
+def comment_delete(comment_id):
+    comment = Comment.query.get(comment_id)
     comment.remove()
     return '', 204
 

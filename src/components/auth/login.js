@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../lib/auth'
 import { Link } from 'react-router-dom'
+import Nav from '../lib/nav'
+import Header from '../headerFooter/header'
 
 class Login extends React.Component {
   constructor() {
@@ -36,41 +38,43 @@ class Login extends React.Component {
 
   render() {
     return (
-      <main>
-        <form className="formWrapper" onSubmit={this.handleSubmit}>
-          <div className="loginForm">
-            <h2>Welcome to WellNest!</h2>
-            <h3>Please sign in below.</h3>
-            <div className="email">Email
+      <div>
+        <Header />
+        <Nav />
+        <main>
+          <form className="formWrapper" onSubmit={this.handleSubmit}>
+            <div className="loginForm">
+              <h2>Welcome to WellNest!</h2>
+              <h3>Please sign in below.</h3>
+              <div className="email">Email
+              </div>
+              <input
+                name="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+              >
+              </input>
+              <div className="password">Password
+              </div>
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              >
+              </input>
+              <div className="logInButton">
+                <button className="logInButtonClick"><strong>Submit</strong></button>
+              </div>
+              <br />
+              <div className="invalidcredentials">
+                {this.state.error && this.state.error}
+              </div>
+              <p> Not signed up? Click <Link className="registerLink" to='/register'>here</Link> to register! </p>
             </div>
-            <input
-              name="email"
-              placeholder="Email"
-              onChange={this.handleChange}
-            >
-            </input>
-            <div className="password">Password
-            </div>
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={this.handleChange}
-            >
-            </input>
-            <div className="logInButton">
-              <button className="logInButtonClick"><strong>Submit</strong></button>
-            </div>
-            <br />
-            <div className="invalidcredentials">
-              {this.state.error && this.state.error}
-            </div>
-            <p> Not signed up? Click <Link className="registerLink" to='/register'>here</Link> to register! </p>
-          </div>
-
-
-        </form>
-      </main>
+          </form>
+        </main>
+      </div>
     )
   }
 

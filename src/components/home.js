@@ -2,6 +2,8 @@ import React from 'react'
 import Search from '../components/search'
 import { Link } from 'react-router-dom'
 import Auth from './lib/auth'
+import Nav from './lib/nav'
+import Header from './headerFooter/header'
 
 import axios from 'axios'
 
@@ -44,37 +46,40 @@ class Home extends React.Component {
   render() {
     console.log(this.state)
     return(
-      <div className="wrapper">
-        <main>
-          <div className="leftSide">
-            <div className="searchBar">
-              <Search />
+      <div>
+        <Header />
+        <Nav />
+        <div className="wrapper">
+          <main>
+            <div className="leftSide">
+              <div className="searchBar">
+                <Search />
+              </div>
+              <div className="news">
+                <h1>News</h1>
+                <ul>
+                  {this.state.articles && this.state.articles.map((item) =>
+                    <li key={item.url}>
+                      <Link to={{
+                        pathname: '/news',
+                        state: {
+                          articleURL: item.url
+                        }
+                      }}>
+                        {item.name}
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </div>
             </div>
-            <div className="news">
-              <h1>News</h1>
+            <div className="latestBlogs">
+              <h1>Latest Blogs</h1>
               <ul>
-                {this.state.articles && this.state.articles.map((item) =>
-                  <li key={item.url}>
-                    <Link to={{
-                      pathname: '/news',
-                      state: {
-                        articleURL: item.url
-                      }
-                    }}>
-                      {item.name}
-                    </Link>
-                  </li>
-                )}
-              </ul>
-            </div>
-          </div>
-          <div className="latestBlogs">
-            <h1>Latest Blogs</h1>
-            <ul>
-              {this.state.blogs && this.state.blogs.map((item) =>
-                <li key={item.id}>
+                {this.state.blogs && this.state.blogs.map((item) =>
+                  <li key={item.id}>
 
-                  {Auth.isAuthenticated() &&
+                    {Auth.isAuthenticated() &&
                     <Link to={{
                       pathname: '/view-profile',
                       state: {
@@ -86,9 +91,9 @@ class Home extends React.Component {
 
                   --------------------------------------------------
                     </Link>
-                  }
+                    }
 
-                  {!Auth.isAuthenticated() &&
+                    {!Auth.isAuthenticated() &&
                     <Link to={{
                       pathname: '/login'
                     }}>
@@ -98,21 +103,22 @@ class Home extends React.Component {
 
                   --------------------------------------------------
                     </Link>
-                  }
+                    }
 
-                </li>
-              )}
-            </ul>
-          </div>
-          <div className="rightSide">
-            <div className="mapsOffices">
-              <h1>Maps</h1>
+                  </li>
+                )}
+              </ul>
             </div>
-            <div className="tweets">
-              <h1>Tweets</h1>
+            <div className="rightSide">
+              <div className="mapsOffices">
+                <h1>Maps</h1>
+              </div>
+              <div className="tweets">
+                <h1>Tweets</h1>
+              </div>
             </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
     )
   }

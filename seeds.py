@@ -1,5 +1,5 @@
 from app import app, db
-from models.blog import Blog, Comment
+from models.blog import Blog, Comment, Profile
 from models.user import UserSchema
 user_schema = UserSchema()
 
@@ -19,12 +19,17 @@ with app.app_context():
 
     db.session.add(buse)
 
+    buse_profile = Profile(creator=buse, user_id=buse.id)
+    db.session.add(buse_profile)
+
     mary, errors = user_schema.load({
         'username': 'mary',
         'email': 'mary@email.com',
         'password': 'password',
         'password_confirmation': 'password'
     })
+    mary_profile = Profile(creator=mary, user_id=mary.id)
+    db.session.add(mary_profile)
 
     if errors:
         raise Exception(errors)

@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from './lib/auth'
+import Nav from './lib/nav'
+import Header from './headerFooter/header'
 
 class Blog extends React.Component {
   constructor(props) {
@@ -13,6 +15,15 @@ class Blog extends React.Component {
 
     this.handleSubmitComment = this.handleSubmitComment.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
+  }
+
+  handleDeleteComment(commentId) {
+    axios.delete('/api/wellnest/comments/' + commentId,
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(() => {
+        this.getBlog()
+      })
   }
 
   handleSubmitComment(e) {
@@ -34,47 +45,67 @@ class Blog extends React.Component {
     axios.get('/api/wellnest/' + this.state.blog.id,
       {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
       .then(res => {
-        console.log(res.data)
         this.setState({blog: res.data })
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
+  getUser() {
+    axios.get('/api/wellnest/profile/user',
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(res => {
+        this.setState({user: res.data })
       })
       .catch(err => this.setState({ error: err.messsage }))
   }
 
   componentDidMount() {
     this.getBlog()
+    this.getUser()
   }
 
   render() {
     return(
-      <div className="blogs">
-        <main>
-          <div className="myBlogPosts">
-            {this.state.blog.title}
-            {this.state.blog.text}
-            <button className="edit-blog">Edit</button>
-            <button className="delete-blog">Delete</button>
-            <br/>
+      <div>
+        <Header />
+        <Nav />
+        <div className="blogs">
+          <main>
+            <div className="myBlogPosts">
+              {this.state.blog.title}
+              {this.state.blog.text}
+              <br/>
 
-            {this.state.blog.comments &&
-              this.state.blog.comments.map((comment) =>
-                <li key={comment.id}>
-                  <p>{comment.creator && comment.creator.username}: {comment.content}</p>
-                  <button className="edit-comment">Edit</button>
-                  <button className="delete-comment">Delete</button>
-                </li>
+              {this.state.blog.comments &&
+                this.state.blog.comments.map((comment) =>
+                  <li key={comment.id}>
+                    <p>{comment.creator && comment.creator.username}: {comment.content}</p>
 
-              )}
-            <form onSubmit={this.handleSubmitComment}>
-              <h3>Comments</h3>
-              <textarea
-                onChange={this.handleChange}
-                name='content'
-                placeholder="Type here..."
-              />
-              <button>Submit</button>
-            </form>
-          </div>
-        </main>
+                    {this.state.user &&
+                      this.state.user.id === comment.creator.id &&
+                      <div>
+                        <button className="delete-comment" onClick={()=>{
+                          this.handleDeleteComment(comment.id)
+                        }}>Delete</button>
+                      </div>
+                    }
+
+
+                  </li>
+
+                )}
+              <form onSubmit={this.handleSubmitComment}>
+                <h3>Comments</h3>
+                <textarea
+                  onChange={this.handleChange}
+                  name='content'
+                  placeholder="Type here..."
+                />
+                <button>Submit</button>
+              </form>
+            </div>
+          </main>
+        </div>
       </div>
     )
   }

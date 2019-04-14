@@ -11,7 +11,6 @@ import Register from './components/auth/register'
 import Login from './components/auth/login'
 import Profile from './components/profile'
 import News from './components/news'
-import MyBlogs from './components/myBlogs'
 import NotFound from './components/notFound'
 import About from './components/about'
 import Footer from './components/headerFooter/footer'
@@ -19,6 +18,7 @@ import Nav from './components/lib/nav'
 import ViewProfile from './components/viewProfile'
 import Blog from './components/blog'
 import Contact from './components/contact'
+import EditBlog from './components/editBlog'
 
 axios.defaults.baseURL = 'http://localhost:5000'
 
@@ -31,19 +31,16 @@ class App extends React.Component {
     return (
       <Browser>
         <div>
-          <Header />
-          <Nav />
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login}/>
             <Route path="/profile" component={Profile}/>
-            <Route path="/news" component={News}/>
-            <Route path="/myblogs" component={MyBlogs}/>
             <Route path="/about" component={About}/>
             <Route path="/view-profile" component={ViewProfile}/>
             <Route path="/blog" component={Blog}/>
             <Route path="/contact" component={Contact}/>
+            <Route path="/editBlog" component={EditBlog}/>
             <Route component={NotFound} />
           </Switch>
           <Footer />

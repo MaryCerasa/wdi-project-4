@@ -3,6 +3,8 @@ import Search from '../components/search'
 import Auth from './lib/auth'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Nav from './lib/nav'
+import Header from './headerFooter/header'
 
 import { withRouter } from 'react-router-dom'
 
@@ -22,11 +24,19 @@ class Profile extends React.Component {
     this.handleImageUpload = this.handleImageUpload.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleBlogSubmit = this.handleBlogSubmit.bind(this)
+    this.handleDeleteBlog = this.handleDeleteBlog.bind(this)
   }
 
   handleImageUpload(){
     this.addUserImage()
+  }
+
+  handleDeleteBlog(blogId) {
+    axios.delete('/api/wellnest/blog/' + blogId,
+      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(() => {
+        this.myBlogs()
+      })
   }
 
   myBlogs() {
@@ -70,17 +80,6 @@ class Profile extends React.Component {
       .then(console.log(this.state))
   }
 
-  handleBlogSubmit(e){
-    e.preventDefault()
-    axios.post('/api/wellnest/blog',
-      {text: this.state.data.blogText, title: this.state.data.blogTitle},
-      {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
-      .then(() => {
-        this.myBlogs()
-      })
-      .then(console.log(this.state))
-  }
-
   addUserImage() {
     const options = {
       accept: ['image/*'],
@@ -90,6 +89,8 @@ class Profile extends React.Component {
             {image_url: file.url},
             {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
             .then((res) => {
+              console.log('test')
+              console.log(res.data)
               this.setState({profile: res.data})
             })
             .then(console.log(this.state))
@@ -102,86 +103,97 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <main>
-          <div className="leftSide">
-            <div className="aboutMe">
-              <h1>About Me</h1>
-              <h4 className="userName">Username</h4>
-              <div className="profileImage">
+      <div>
+        <Header />
+        <Nav />
+        <div className="wrapper">
+          <main>
+            <div className="leftSide">
+              <div className="aboutMe">
+                <h1>About Me</h1>
                 {this.state.profile &&
-                  <img src={this.state.profile.image_url}
-                    className="img"/>
+                  <h4 className="userName">{this.state.profile.creator.username}</h4>
                 }
-              </div>
-              <button className="imageUpload"
-                onClick={this.handleImageUpload}>
-                Upload Image
-              </button>
-
-              {this.state.profile &&
-                <div>
-                  {this.state.profile.content}
+                <div className="profileImage">
+                  {this.state.profile &&
+                    <img src={this.state.profile.image_url}
+                      className="img"/>
+                  }
                 </div>
-              }
-              <div className="textarea-aboutme">
-                <form onSubmit={this.handleSubmit}>
-                  <textarea
-                    name="about_me"
-                    onChange={this.handleChange}
-                    placeholder="Type here..."
-                  />
-                  <button className="button-aboutme">
-                    Update
-                  </button>
-                </form>
+
+                <button className="imageUpload"
+                  onClick={this.handleImageUpload}>
+                  Upload Image
+                </button>
+
+                {this.state.profile &&
+                  <div>
+                    {this.state.profile.content}
+                  </div>
+                }
+                <div className="textarea-aboutme">
+                  <form onSubmit={this.handleSubmit}>
+                    <textarea
+                      name="about_me"
+                      onChange={this.handleChange}
+                      placeholder="Type here..."
+                    />
+                    <button className="button-aboutme">
+                      Update
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
 
 
-          <div className="myBlogPosts">
-            <h1>My Blog Posts</h1>
-            <div className="textarea-blogs">
-              <form onSubmit={this.handleBlogSubmit}>
-                Title:
-                <input type="text"
-                  name="blogTitle"
-                  onChange={this.handleChange} />
+            <div className="myBlogPosts">
+              <h1>My Blog Posts</h1>
+              <ul>
+                <Link to={{
+                  pathname: '/editBlog'
+                }}>
+                  <button className="create-myblog">Create a blog</button>
+                </Link>
+                {this.state.blogs && this.state.blogs.map((item) =>
+                  <li key={item.id}>
+                    <Link to={{
+                      pathname: '/blog',
+                      state: {
+                        blog: item
+                      }
+                    }}>
+                      <h2>{item.title}</h2>
+                      <p>{item.text}</p>
+                    </Link>
 
-                Blog:
-                <textarea
-                  name="blogText"
-                  onChange={this.handleChange}
-                  placeholder="Type here..."
-                />
-                <button>
-                  Submit
-                </button>
-              </form>
+                    <Link to={{
+                      pathname: '/editBlog',
+                      state: {
+                        blog: item
+                      }
+                    }}>
+                      <button className="edit-myblog">Edit</button>
+                    </Link>
+                    <button className="delete-myblog" onClick={()=>{
+                      this.handleDeleteBlog(item.id)
+                    }}>Delete</button>
+                  </li>
+                )}
+              </ul>
             </div>
-            <ul>
-              {this.state.blogs && this.state.blogs.map((item) =>
-                <li key={item.id}>
-                  <h2>{item.title}</h2>
-                  <p>{item.text}</p>
-                  <button className="edit-myblog">Edit</button>
-                  <button className="delete-myblog">Delete</button>
-                </li>
-              )}
-            </ul>
-          </div>
 
 
-          <div className="rightSide">
-            <div className="faveBlogs">
-              <h1>Favorite Blogs</h1>
+            <div className="rightSide">
+              <div className="faveBlogs">
+                <h1>Favorite Blogs</h1>
+              </div>
+              <div className="mySocial">
+                <h1>My Social Media</h1>
+              </div>
             </div>
-            <div className="mySocial">
-              <h1>My Social Media</h1>
-            </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
     )
   }

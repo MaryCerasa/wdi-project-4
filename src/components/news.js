@@ -1,4 +1,7 @@
 import React from 'react'
+import Nav from './lib/nav'
+import Header from './headerFooter/header'
+
 import axios from 'axios'
 
 class News extends React.Component {
@@ -26,14 +29,18 @@ class News extends React.Component {
 
   render() {
     return(
-      <main>
-        <div className="news">
-          <div className = "title">
-            <h1>{this.state.article && this.state.article.headline}</h1>
+      <div>
+        <Header />
+        <Nav />
+        <main>
+          <div className="news">
+            <div className = "title">
+              <h1>{this.state.article && this.state.article.headline}</h1>
+            </div>
+            <div dangerouslySetInnerHTML={{__html: this.state.article && this.state.article.mainContentOfPage[0].text}} />
           </div>
-          <div dangerouslySetInnerHTML={{__html: this.state.article && this.state.article.mainContentOfPage[0].text}} />
-        </div>
-      </main>
+        </main>
+      </div>
     )
   }
 }

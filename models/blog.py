@@ -40,10 +40,12 @@ class Profile(db.Model, BaseModel):
     __tablename__ = 'profiles'
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    content = db.Column(db.Text, nullable=False)
+    content = db.Column(db.Text)
     image_url = db.Column(db.Text)
+    creator = db.relationship('User', backref='profiles')
 
 class ProfileSchema(ma.ModelSchema):
+    creator = fields.Nested('UserSchema', only=('id', 'username'))
 
     class Meta:
         model = Profile
