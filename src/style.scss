@@ -24,8 +24,7 @@ main {
   display: flex;
 }
 
-
-
+// header
 header {
   display: flex;
   flex-direction: row;
@@ -53,6 +52,7 @@ header {
 }
 }
 
+// footer
 footer {
   display: flex;
   flex-direction: row;
@@ -75,6 +75,7 @@ footer {
   }
 }
 
+// Home page
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -93,7 +94,7 @@ footer {
   }
 
   .news{
-    border: 3px solid $blue;
+    border: 5px solid $blue;
     width: 75%;
     height: 500px;
     margin: 30px;
@@ -109,7 +110,7 @@ footer {
     }
   }
   .latestBlogs {
-    border: 3px solid $blue;
+    border: 5px solid $blue;
     width: 75%;
     margin: 30px;
     height: auto;
@@ -117,14 +118,14 @@ footer {
     overflow: scroll;
   }
   .mapsOffices {
-    border: 3px solid $blue;
+    border: 5px solid $blue;
     width: 75%;
     margin: 30px;
     height: 600px;
     text-align: center;
   }
   .tweets {
-    border: 3px solid $blue;
+    border: 5px solid $blue;
     width: 75%;
     margin: 30px;
     height: 600px;
@@ -132,27 +133,30 @@ footer {
   }
 }
 
-
+// Register page
 .registerForm {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: center;
-  border: 3px solid $blue;
-  width: 100%;
-  margin: 30px;
-  height: 60%;
+  justify-content: space-evenly;
+  border: 5px solid $blue;
+  width: 50%;
+  margin: 50px;
+  height: 100%;
   align-items: center;
+  background-color: $white;
 }
 
+// Login page
 .loginForm {
   display: inline-flex;
   flex-direction: column;
-  border: 3px solid $blue;
-  width: 100%;
-  margin: 30px;
-  height: 60%;
+  border: 5px solid $blue;
+  width: 50%;
+  margin: 50px;
+  height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  background-color: $white;
 }
 
 .formWrapper {
@@ -160,6 +164,58 @@ footer {
   display: inline-flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  margin: 100px;
+  height: 60%;
+}
+
+ // Buttons
+.imageUpload {
+  background-color: $blue;
+  color: black;
+}
+
+.imageUpload:hover {
+  cursor: pointer;
+  background: pink;
+}
+
+.registerLink:hover {
+  cursor: pointer;
+  background: pink;
+}
+.loginLink:hover {
+  cursor: pointer;
+  background: pink;
+}
+
+.searchButton {
+  background-color: $blue;
+  color: black;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  background: pink;
+}
+
+.logInButton {
+  background-color: $blue;
+  color: black;
+}
+
+.logInButtonClick:hover {
+  cursor: pointer;
+  background: pink;
+}
+
+.registerButtonClick {
+  background-color: $blue;
+  color: black;
+}
+.registerButtonClick:hover {
+  cursor: pointer;
+  background: pink;
 }
 
 button {
@@ -167,6 +223,7 @@ button {
   color: black;
 }
 
+// Navigation
 .navbar {
   background: $blue;
   .links {
@@ -179,14 +236,12 @@ button {
   }
 
 }
-
-
 .wrapper {
   display: flex;
   flex-direction: row;
   background-color: $white;
   font-size: 10px;
-  color: black;
+
   .leftSide {
     display: flex;
     flex-direction: column;
@@ -198,7 +253,7 @@ button {
     width: 33%;
   }
   .searchBar {
-    border: 3px solid $blue;
+    border: 5px solid $blue;
     width: 75%;
     height: 400px;
     margin: 30px;
@@ -210,17 +265,27 @@ button {
       margin: 5px;
     }
   }
-
-
-.aboutMe{
-  border: 3px solid $blue;
+}
+// Profile page
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    background-color: $white;
+    font-size: 10px;
+    .leftSide {
+      display: flex;
+      flex-direction: column;
+      width: 33%;
+    }
+.aboutMe {
+  border: 5px solid $blue;
     width: 75%;
   height: 500px;
   margin: 30px;
   text-align: center;
 }
 .myBlogPosts {
-  border: 3px solid $blue;
+  border: 5px solid $blue;
   width: 75%;
   margin: 30px;
   height: auto;
@@ -228,14 +293,14 @@ button {
   overflow: scroll;
 }
 .faveBlogs {
-  border: 3px solid $blue;
+  border: 5px solid $blue;
   width: 75%;
   margin: 30px;
   height: 600px;
   text-align: center;
 }
 .mySocial {
-  border: 3px solid $blue;
+  border: 5px solid $blue;
   width: 75%;
   margin: 30px;
   height: 600px;
@@ -243,18 +308,49 @@ button {
 }
 }
 
+// search bar
+.search {
+  border: 3px solid $blue;
+  width: 75%;
+  height: 400px;
+  margin: 30px;
+  text-align: center;
+  .searchInput {
+        margin: 5px;
+  }
+  .buttonDiv {
+    margin: 5px;
+  }
+}
+
+// popup
 .popup {
   border: 1px solid $blue;
-
 }
+
+// about page
 .aboutPage {
-  background-color: $blue;
+  background-color: $white;
+  border: 10px solid $blue;
+  margin: 20px;
+  padding: 10px;
   p {
     color: black;
   }
 }
 
-.img{
+// contact page
+.contactPage {
+  background-color: $white;
+  border: 10px solid $blue;
+  margin: 20px;
+  padding: 10px;
+  p {
+    color: black;
+  }
+}
+
+.img {
 
   width: 140px;
   height: 180px;

@@ -99,6 +99,7 @@ class Profile extends React.Component {
     client.picker(options).open()
   }
 
+
   render() {
     return (
       <div className="wrapper">
@@ -113,7 +114,7 @@ class Profile extends React.Component {
                     className="img"/>
                 }
               </div>
-              <button className="imageButton"
+              <button className="imageUpload"
                 onClick={this.handleImageUpload}>
                 Upload Image
               </button>

@@ -41,7 +41,7 @@ class Register extends React.Component {
   render() {
     return (
       <main>
-        <form onSubmit={this.handleSubmit}>
+        <form className="formWrapper" onSubmit={this.handleSubmit}>
           <div className="registerForm">
             <h2>Welcome to WellNest!</h2>
             <h3>To sign up, please fill in the details below.</h3>
@@ -76,9 +76,9 @@ class Register extends React.Component {
               onChange={this.handleChange}
             />
             <div className="submitButton">
-              <button>Submit</button>
+              <button className="registerButtonClick">Submit</button>
             </div>
-            <p> Already signed up? Click <Link to='/login'>here</Link> to login! </p>
+            <p> Already signed up? Click <Link className="loginLink" to='/login'>here</Link> to login! </p>
           </div>
 
         </form>

@@ -18,6 +18,7 @@ import Footer from './components/headerFooter/footer'
 import Nav from './components/lib/nav'
 import ViewProfile from './components/viewProfile'
 import Blog from './components/blog'
+import Contact from './components/contact'
 
 axios.defaults.baseURL = 'http://localhost:5000'
 
@@ -42,6 +43,7 @@ class App extends React.Component {
             <Route path="/about" component={About}/>
             <Route path="/view-profile" component={ViewProfile}/>
             <Route path="/blog" component={Blog}/>
+            <Route path="/contact" component={Contact}/>
             <Route component={NotFound} />
           </Switch>
           <Footer />
