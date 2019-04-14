@@ -1,6 +1,7 @@
 $white: whitesmoke;
 $grey: lightgrey;
 $blue: #D8F0FA;
+$green: #7BCCBA;
 
 * {
   text-decoration: none;
@@ -15,12 +16,14 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: $white;
 }
 
 main {
   width: 100%;
   height: 80vh;
   background-size: cover;
+
   display: flex;
 }
 
@@ -340,10 +343,10 @@ button {
 }
 
 // contact page
-.contactPage {
+.contacts {
+  margin: 0 auto;
   background-color: $white;
-  border: 10px solid $blue;
-  margin: 20px;
+  width: 50%;
   padding: 10px;
   p {
     color: black;
