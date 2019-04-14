@@ -58,13 +58,13 @@ class Login extends React.Component {
             >
             </input>
             <div className="logInButton">
-              <button>Submit</button>
+              <button className="logInButtonClick"><strong>Submit</strong></button>
             </div>
             <br />
             <div className="invalidcredentials">
               {this.state.error && this.state.error}
             </div>
-            <p> Not signed up? Click <Link to='/register'>here</Link> to register! </p>
+            <p> Not signed up? Click <Link className="registerLink" to='/register'>here</Link> to register! </p>
           </div>
 
 

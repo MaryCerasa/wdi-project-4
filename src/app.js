@@ -17,6 +17,7 @@ import NotFound from './components/notFound'
 import About from './components/about'
 import Footer from './components/headerFooter/footer'
 import Nav from './components/lib/nav'
+import Contact from './components/contact'
 
 axios.defaults.baseURL = 'http://localhost:5000'
 
@@ -40,6 +41,7 @@ class App extends React.Component {
             <Route path="/blogs" component={Blogs}/>
             <Route path="/myblogs" component={MyBlogs}/>
             <Route path="/about" component={About}/>
+            <Route path="/contact" component={Contact}/>
             <Route component={NotFound} />
           </Switch>
           <Footer />

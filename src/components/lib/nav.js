@@ -36,6 +36,9 @@ class Nav extends React.Component {
           <div className="navbarLogin">
             <Link to="/register">Register</Link>
           </div>
+          <div className="navbarLogin">
+            <Link to="/contact">Contact</Link>
+          </div>
           <div className="logout">
             <Link to="/" className="navbarLogout" onClick={this.logout}>Logout</Link>
           </div>

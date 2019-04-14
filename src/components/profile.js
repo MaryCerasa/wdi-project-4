@@ -64,7 +64,7 @@ class Profile extends React.Component {
               <h1>About Me</h1>
               <img className="avatar" src={this.state.image} />
               <h4 className="userName"> </h4>
-              <button
+              <button className="imageUpload"
                 onClick={this.handleClick}>
                 Upload image
               </button>
