@@ -33,7 +33,7 @@ class News extends React.Component {
         <Header />
         <Nav />
         <main>
-          <div className="news">
+          <div className="newsPage">
             <div className = "title">
               <h1>{this.state.article && this.state.article.headline}</h1>
             </div>

@@ -54,7 +54,7 @@ class Home extends React.Component {
           <main>
             <div className="leftSide">
               <div className="news">
-                <h1>News</h1>
+                <h1><i className="far fa-newspaper"></i>News</h1>
                 <ul>
                   {this.state.articles && this.state.articles.map((item) =>
                     <li key={item.url}>
@@ -75,7 +75,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="latestBlogs">
-              <h1>Latest Blogs</h1>
+              <h1><i className="fas fa-rss"></i>Latest Blogs</h1>
               <ul>
                 {this.state.blogs && this.state.blogs.map((item) =>
                   <li key={item.id}>

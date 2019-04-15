@@ -117,15 +117,15 @@ footer {
       overflow: scroll;
       padding: 10px;
       font-size: 16px;
+      i {
+        padding-right: 10px;
+      }
       h1 {
         text-align: center;
       }
       ul {
         a:hover {
           color: $red;
-        }
-        .news-page {
-          color:red;
         }
         i {
           font-size: 14px;
@@ -146,6 +146,9 @@ footer {
       background-color: rgba(253, 244, 169, 0.4);
       border-radius: 20px;
       text-align: center;
+      i {
+        padding-right: 5px;
+      }
       h2 {
         font-size: 22px;
       }
@@ -213,6 +216,9 @@ footer {
     text-align: center;
     overflow: scroll;
     padding: 10px;
+    i {
+      padding-right: 10px;
+    }
     h2 {
       padding-top: 10px;
       font-size: 18px;
@@ -267,12 +273,17 @@ footer {
   .links {
   display: flex;
   flex-direction: row;
+  font-size: 18px;
   width: 30%;
   background: $blue;
   justify-content: space-between;
   margin-left: 30px;
+    .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
+    .navbarContactLink:hover {
+    cursor: pointer;
+    color: #7BCCBA;
+    }
   }
-
 }
 //viewProfile
   .viewProfile {
@@ -393,13 +404,6 @@ footer {
 .img {
   width: 140px;
   height: 180px;
-
-}
-
-.navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
-.navbarContactLink:hover {
-  cursor: pointer;
-  color: #7BCCBA;
 }
 
 .editBlog {
@@ -415,5 +419,18 @@ footer {
     background-size: cover;
   // width: 1094px;
   // height: 729px;
+  }
+}
+
+.newsPage {
+  width: 50%;
+  height: 95%;
+  margin: auto;
+  border-radius: 20px;
+  padding: 20px;
+  background: rgba(123, 204, 186, 0.2);
+  overflow: scroll;
+  h1 {
+    text-align: center;
   }
 }
