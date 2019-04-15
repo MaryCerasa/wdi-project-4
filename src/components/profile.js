@@ -106,7 +106,7 @@ class Profile extends React.Component {
       <div>
         <Header />
         <Nav />
-        <div className="wrapper">
+        <div className="wrapperProfile">
           <main>
             <div className="leftSide">
               <div className="aboutMe">

@@ -63,7 +63,7 @@ class ViewProfile extends React.Component {
       <div>
         <Header />
         <Nav />
-        <div className="wrapper">
+        <div className="viewProfile">
           <main>
             <div className="leftSide">
               <div className="aboutMe">
