@@ -17,7 +17,6 @@ class Hero extends React.Component {
         <Nav />
         <div className="heroPage">
           <img src="./assets/bluebirdsky.jpg"/>
-          <p className="heroTitle">Welcome to WellNest.</p>
         </div>
       </div>
     )

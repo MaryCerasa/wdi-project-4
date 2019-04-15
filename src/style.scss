@@ -17,6 +17,12 @@ $dark-green: #136E37;
   padding: 0;
 }
 
+// Buttons
+button:hover {
+  cursor: pointer;
+  background: #7BCCBA;
+}
+
 body {
   background-color: $white;
 }
@@ -323,9 +329,9 @@ footer {
 
 // about page
 .aboutPage {
+  margin: 0 auto;
   background-color: $white;
-  border: 10px solid $blue;
-  margin: 20px;
+  width: 50%;
   padding: 10px;
   p {
     color: black;
@@ -347,4 +353,30 @@ footer {
 
   width: 140px;
   height: 180px;
+}
+
+.navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
+.navbarContactLink:hover {
+  cursor: pointer;
+  color: #7BCCBA;
+}
+
+.editBlog {
+  border: 5px solid $blue;
+  width: 75%;
+  margin: 30px;
+  height: 600px;
+  text-align: center;
+}
+
+.heroPage {
+img {
+  background-size: contain;
+  // width: 1094px;
+  // height: 729px;
+}
+}
+
+.heroTitle {
+font-size: 10px;
 }

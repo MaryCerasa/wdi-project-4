@@ -31,6 +31,6 @@
     "react-dom": "^16.7.0",
     "react-instagram-embed": "^1.5.0",
     "react-router-dom": "^5.0.0",
-    "react-twitter-embed": "^2.0.7"
+    "react-twitter-widgets": "^1.7.1"
   }
 }

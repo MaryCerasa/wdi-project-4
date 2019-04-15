@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Auth from './lib/auth'
 import Nav from './lib/nav'
 import Header from './headerFooter/header'
+import { Timeline } from 'react-twitter-widgets'
 
 import axios from 'axios'
 
@@ -116,7 +117,16 @@ class Home extends React.Component {
 
               <div className="tweets">
                 <h1>Tweets</h1>
-                <a className="twitter-timeline" data-width="220" data-height="599" data-dnt="true" data-link-color="#19CF86" href="https://twitter.com/TheWellNestUK?ref_src=twsrc%5Etfw">Tweets by TheWellNestUK</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <Timeline
+                  dataSource={{
+                    sourceType: 'profile',
+                    screenName: 'TheWellNestUK'
+                  }}
+                  options={{
+                    username: 'TheWellNestUK',
+                    height: '400'
+                  }}
+                />
               </div>
             </div>
           </main>
