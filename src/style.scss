@@ -101,7 +101,6 @@ footer {
 // Home page
 .wrapperHome {
   background-color: $white;
-  font-size: 14px;
   color: black;
   .leftSide {
     display: flex;
@@ -116,11 +115,12 @@ footer {
       height: auto;
       margin: 30px 30px 30px 60px;
       overflow: scroll;
+      padding: 10px;
+      font-size: 16px;
       h1 {
         text-align: center;
       }
       ul {
-        font-size: 14px;
         a:hover {
           color: $red;
         }
@@ -141,10 +141,24 @@ footer {
     justify-content: space-between;
     margin: 30px 60px 30px 30px;
     .search {
+      padding: 10px;
       height: 300px;
       background-color: rgba(253, 244, 169, 0.4);
       border-radius: 20px;
       text-align: center;
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+        padding-top: 10px;
+      }
+      .search-button {
+        display: flex;
+        justify-content: row;
+        align-items: center;
+        justify-content: center;
+      }
       .searchInput {
         height: 30px;
         width: 50%;
@@ -185,17 +199,30 @@ footer {
       text-align: center;
       overflow: scroll;
       height: 350px;
-
+      i {
+        margin-right: 10px;
+      }
     }
   }
   .latestBlogs {
     background-color: rgba(123, 204, 186, 0.2);
     border-radius: 20px;
-    width: 50%;
+    width: 70%;
     margin: 30px;
     height: auto;
     text-align: center;
     overflow: scroll;
+    padding: 10px;
+    h2 {
+      padding-top: 10px;
+      font-size: 18px;
+    }
+    h2:hover {
+      color: $red;
+    }
+    p {
+
+    }
   }
 }
 

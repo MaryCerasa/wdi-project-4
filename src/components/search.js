@@ -48,15 +48,17 @@ class Search extends React.Component {
   render() {
     return(
       <div className="search">
-        <h2>Search for Primary Cares/Hospitals/Healthcare professionals</h2>
-        <h4>Type below name or the location of a healthcare professional, hospital, primary care or the name of the service that you need.</h4>
-        <input className="searchInput" placeholder="Type here..."
-          onChange={this.handleChange}
-        />
-        <div className="buttonDiv"
-          onClick={this.handleClick}>
-          <button className="searchButton">Search
-          </button>
+        <h2>Search for Primary Cares/ Hospitals/Healthcare professionals</h2>
+        <p>Type below name or the location of a healthcare professional, hospital, primary care or the name of the service that you need.</p>
+        <div className="search-button">
+          <input className="searchInput" placeholder="Type here..."
+            onChange={this.handleChange}
+          />
+          <div className="buttonDiv"
+            onClick={this.handleClick}>
+            <button className="searchButton">Search
+            </button>
+          </div>
         </div>
         <Popup className="search-popup"
           show={this.state.isOpen}
