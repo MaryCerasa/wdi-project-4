@@ -25,7 +25,7 @@ class Contact extends React.Component {
               <br/>
               <p>Or you can email us at: WellNestUk@email.com</p>
               <br/>
-              <p>Follow us on social media: Twitter, Facebook, Instagram</p>
+              <p>Follow us on social media: Twitter, Facebook, Instagram.</p>
             </div>
             <br/>
           </div>
