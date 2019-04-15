@@ -23,29 +23,32 @@ class Nav extends React.Component {
       <div className="navbar">
         <div className="links">
           <div className="navbarHome">
-            <Link to="/">Home</Link>
+            <Link className="navbarHomeLink" to="/">Home</Link>
+          </div>
+          <div>
+            <Link className="navbarMain" to="/hero">Main</Link>
           </div>
           <div className="navbarAbout">
-            <Link to="/about">About</Link>
+            <Link className="navbarAboutLink" to="/about">About</Link>
           </div>
           {Auth.isAuthenticated() &&
             <div className="navbarProfile">
-              <Link to="/profile">My Profile</Link>
+              <Link className="navbarProfileLink" to="/profile">My Profile</Link>
             </div>
           }
 
           {!Auth.isAuthenticated() &&
             <div className="navbarLogin">
-              <Link to="/login">Login</Link>
+              <Link className="navbarLoginLink" to="/login">Login</Link>
             </div>
           }
           {!Auth.isAuthenticated() &&
             <div className="navbarLogin">
-              <Link to="/register">Register</Link>
+              <Link className="navbarRegisterLink" to="/register">Register</Link>
             </div>
           }
           <div className="navbarLogin">
-            <Link to="/contact">Contact</Link>
+            <Link className="navbarContactLink" to="/contact">Contact</Link>
           </div>
 
           {Auth.isAuthenticated() &&
