@@ -23,10 +23,10 @@ class Nav extends React.Component {
       <div className="navbar">
         <div className="links">
           <div className="navbarHome">
-            <Link className="navbarHomeLink" to="/">Home</Link>
+            <Link className="navbarHomeLink" to="/home">Home</Link>
           </div>
           <div>
-            <Link className="navbarMain" to="/hero">Main</Link>
+            <Link className="navbarMain" to="/">Main</Link>
           </div>
           <div className="navbarAbout">
             <Link className="navbarAboutLink" to="/about">About</Link>

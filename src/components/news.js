@@ -37,7 +37,7 @@ class News extends React.Component {
             <div className = "title">
               <h1>{this.state.article && this.state.article.headline}</h1>
             </div>
-            <div dangerouslySetInnerHTML={{__html: this.state.article && this.state.article.mainContentOfPage[0].text}} />
+            <div className="article" dangerouslySetInnerHTML={{__html: this.state.article && this.state.article.mainContentOfPage[0].text}} />
           </div>
         </main>
       </div>

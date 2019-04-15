@@ -112,11 +112,13 @@ class Profile extends React.Component {
               <div className="aboutMe">
                 <h1>About Me</h1>
                 {this.state.profile &&
-                  <h4 className="userName">{this.state.profile.creator.username}</h4>
+                  <h2 className="userName">{this.state.profile.creator.username}</h2>
                 }
+                
                 <div className="profileImage">
+
                   {this.state.profile &&
-                    <img src={this.state.profile.image_url}
+                    <img src={this.state.profile.image_url} alt="profile photo"
                       className="img"/>
                   }
                 </div>

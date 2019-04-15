@@ -36,14 +36,15 @@ class Header extends React.Component {
       <div className = "headerWrapper">
         <header>
           <div className="welcomeback">
-            {Auth.isAuthenticated() &&
+            <h4>Welcome back,
+              {Auth.isAuthenticated() &&
             <Link to={{
               pathname: '/profile'
             }}>
-              <h4>Welcome back, {this.state.user && this.state.user.username}!</h4>
+              <span> {this.state.user && this.state.user.username}</span>
             </Link>
-            }
-
+              }
+            </h4>
           </div>
           <div className="contains-title">
             <h1>WellNest</h1>

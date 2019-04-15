@@ -4,6 +4,7 @@ $blue: #D8F0FA;
 $green: #7BCCBA;
 $red: #EC3739;
 $dark-green: #136E37;
+$nhs-blue: #007AC3;
 
 * {
   text-decoration: none;
@@ -43,23 +44,28 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 60vh;
-  display: flex;
-  background-color: $blue;
   height: 110px;
+  background-color: $blue;
   font-size: 24px;
   .contains-title {
-
+    margin-left: 44%;
+    margin-top: 11px;
+    position: absolute;
   }
   .welcomeback {
     padding-left: 30px;
+    margin-top: 22px;
+    span {
+      text-transform: capitalize;;
+      color: $nhs-blue
+    }
   }
   .contains-logo {
     margin-top: 20px;
     margin-right: 30px;
     img {
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 160px;
+    max-width: 160px;
   }
 }
 }
@@ -85,9 +91,9 @@ footer {
       padding: 5px;
     }
     img {
-      width: 50px;
-      height: 50px;
-      padding-top: 9px;
+      width: 60px;
+      height: 60px;
+      padding-top: 8px;
     }
   }
   .social-media {
@@ -169,12 +175,12 @@ footer {
         margin: 10px;
         border: 3px solid rgba(123, 204, 186, 0.2);
         padding-left: 10px;
-        font-family: inherit;
       }
       .searchButton {
         width: 60px;
         height: 30px;
         font-size: 12px;
+        border: 3px solid rgba(123, 204, 186, 0.2);
       }
       .popup {
         border: 3px solid rgba(123, 204, 186, 0.2);
@@ -190,8 +196,14 @@ footer {
         }
         button {
           width: 60px;
-          height: 20px;
+          height: 30px;
           font-size: 12px;
+          border: 3px solid rgba(236, 55, 57, 0.4);
+          margin: 3px;
+          text-align: center;
+        }
+        button:hover {
+          background-color: rgba(236, 55, 57, 0.4);
         }
 
       }
@@ -336,6 +348,7 @@ footer {
   .wrapperProfile {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     background-color: $white;
     font-size: 10px;
     .leftSide {
@@ -349,29 +362,41 @@ footer {
       width: 33%;
     }
     .aboutMe {
-      border: 5px solid $blue;
-      width: 75%;
-      height: 500px;
-      margin: 30px;
+      background: rgba(253, 244, 169, 0.4);
+      border-radius: 20px;
+      width: 80%;
+      height: 100%;
+      margin: 30px 0 30px 60px;
       text-align: center;
+      h1 {
+        padding: 10px;
+      }
+      h2 {
+        padding: 10px;
+        font-size: 22px;
+        text-transform: capitalize;
+      }
     }
     .myBlogPosts {
-      border: 5px solid $blue;
-      width: 75%;
-      margin: 30px;
+      background: rgba(123, 204, 186, 0.2);
+      border-radius: 20px;
+      width: 50%;
+      margin: 30px auto;
       height: auto;
       text-align: center;
       overflow: scroll;
     }
     .faveBlogs {
-      border: 5px solid $blue;
+      background: rgba(123, 204, 186, 0.2);
+      border-radius: 20px;
       width: 75%;
       margin: 30px;
       height: 600px;
       text-align: center;
     }
     .mySocial {
-      border: 5px solid $blue;
+      background: rgba(123, 204, 186, 0.2);
+      border-radius: 20px;;
       width: 75%;
       margin: 30px;
       height: 600px;
@@ -383,7 +408,7 @@ footer {
 .aboutPage {
   margin: 0 auto;
   background-color: $white;
-  width: 50%;
+  width: 60%;
   padding: 10px;
   p {
     color: black;
@@ -402,8 +427,9 @@ footer {
 }
 
 .img {
-  width: 140px;
-  height: 180px;
+  border-radius: 20px;
+  width: 280px;
+  height: 360px;
 }
 
 .editBlog {
@@ -423,14 +449,20 @@ footer {
 }
 
 .newsPage {
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  height: 95%;
-  margin: auto;
-  border-radius: 20px;
+
   padding: 20px;
   background: rgba(123, 204, 186, 0.2);
-  overflow: scroll;
-  h1 {
+  .title {
     text-align: center;
+    h1 {
+      color: $nhs-blue;
+    }
+  }
+  .article {
+    overflow: scroll;
+    padding-top: 15px;
   }
 }
