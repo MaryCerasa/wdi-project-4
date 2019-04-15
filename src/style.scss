@@ -2,6 +2,8 @@ $white: whitesmoke;
 $grey: lightgrey;
 $blue: #D8F0FA;
 $green: #7BCCBA;
+$red: #EC3739;
+$dark-green: #136E37;
 
 * {
   text-decoration: none;
@@ -10,20 +12,21 @@ $green: #7BCCBA;
   font-family: 'Exo 2', sans-serif;
   color: black;
   resize: none;
-}
-
-body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
   background-color: $white;
+
 }
 
 main {
   width: 100%;
   height: 80vh;
   background-size: cover;
-
+  overflow: scroll;
   display: flex;
 }
 
@@ -65,12 +68,23 @@ footer {
   font-size: 10px;
   color: white;
   padding: 20px;
-  height: 2vh;
+  height: 60px;
   .captions {
-  float: left;
+  }
+  .nhs-logo {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    span {
+      padding: 5px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      padding-top: 9px;
+    }
   }
   .social-media {
-  float: right;
   margin: 10px;
   }
   .fab.fa-twitter, .fab.fa-facebook, .fab.fa-instagram {
@@ -79,60 +93,70 @@ footer {
 }
 
 // Home page
-.wrapper {
+.wrapperHome {
   display: flex;
   flex-direction: row;
   background-color: $white;
-  font-size: 10px;
+  font-size: 14px;
   color: black;
   .leftSide {
     display: flex;
     flex-direction: column;
-    width: 33%;
+    margin-left: 30px;
+    .news{
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(236, 55, 57, 0.2);
+      border-radius: 20px;
+      height: auto;
+      margin: 30px;
+      overflow: scroll;
+      h1 {
+        text-align: center;
+      }
+      ul {
+        font-size: 14px;
+        a:hover {
+          color: $red;
+        }
+        .news-page {
+          color:red;
+        }
+        i {
+          font-size: 14px;
+          padding-right: 10px;
+          color: $red;
+        }
+      }
+    }
   }
   .rightSide {
     display: flex;
     flex-direction: column;
     width: 33%;
-  }
-
-  .news{
-    border: 5px solid $blue;
-    width: 75%;
-    height: 500px;
-    margin: 30px;
-    overflow: scroll;
-    h1 {
+    .mapsOffices {
+      width: 75%;
+      margin: 30px;
+      height: 75%;
       text-align: center;
     }
-    ul {
-      font-size: 12px;
-      a:hover {
-        color: red;
-      }
+    .tweets {
+      background-color: rgba(216, 240, 250, 0.5);
+      border-radius: 20px;
+      width: 75%;
+      margin: 30px;
+      height: 25%;
+      text-align: center;
     }
   }
   .latestBlogs {
-    border: 5px solid $blue;
-    width: 75%;
+    background-color: rgba(123, 204, 186, 0.2);
+    border-radius: 20px;
+    width: 50%;
     margin: 30px;
     height: auto;
     text-align: center;
     overflow: scroll;
-  }
-  .mapsOffices {
-    border: 5px solid $blue;
-    width: 75%;
-    margin: 30px;
-    height: 600px;
-    text-align: center;
-  }
-  .tweets {
-    border: 5px solid $blue;
-    width: 75%;
-    margin: 30px;
-    height: 600px;
-    text-align: center;
   }
 }
 
@@ -143,7 +167,6 @@ footer {
   justify-content: space-evenly;
   border: 5px solid $blue;
   width: 50%;
-  margin: 50px;
   height: 100%;
   align-items: center;
   background-color: $white;
@@ -172,60 +195,6 @@ footer {
   height: 60%;
 }
 
- // Buttons
-.imageUpload {
-  background-color: $blue;
-  color: black;
-}
-
-.imageUpload:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.registerLink:hover {
-  cursor: pointer;
-  background: pink;
-}
-.loginLink:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.searchButton {
-  background-color: $blue;
-  color: black;
-}
-
-.searchButton:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.logInButton {
-  background-color: $blue;
-  color: black;
-}
-
-.logInButtonClick:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.registerButtonClick {
-  background-color: $blue;
-  color: black;
-}
-.registerButtonClick:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-button {
-  background-color: $blue;
-  color: black;
-}
-
 // Navigation
 .navbar {
   background: $blue;
@@ -239,38 +208,8 @@ button {
   }
 
 }
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  background-color: $white;
-  font-size: 10px;
-
-  .leftSide {
-    display: flex;
-    flex-direction: column;
-    width: 33%;
-  }
-  .rightSide {
-    display: flex;
-    flex-direction: column;
-    width: 33%;
-  }
-  .searchBar {
-    border: 5px solid $blue;
-    width: 75%;
-    height: 400px;
-    margin: 30px;
-    text-align: center;
-    .searchInput {
-          margin: 5px;
-    }
-    .buttonDiv {
-      margin: 5px;
-    }
-  }
-}
-// Profile page
-  .wrapper {
+//viewProfile
+  .viewProfile {
     display: flex;
     flex-direction: row;
     background-color: $white;
@@ -280,46 +219,99 @@ button {
       flex-direction: column;
       width: 33%;
     }
-.aboutMe {
-  border: 5px solid $blue;
-    width: 75%;
-  height: 500px;
-  margin: 30px;
-  text-align: center;
-}
-.myBlogPosts {
-  border: 5px solid $blue;
-  width: 75%;
-  margin: 30px;
-  height: auto;
-  text-align: center;
-  overflow: scroll;
-}
-.faveBlogs {
-  border: 5px solid $blue;
-  width: 75%;
-  margin: 30px;
-  height: 600px;
-  text-align: center;
-}
-.mySocial {
-  border: 5px solid $blue;
-  width: 75%;
-  margin: 30px;
-  height: 600px;
-  text-align: center;
-}
-}
+    .rightSide {
+      display: flex;
+      flex-direction: column;
+      width: 33%;
+    }
+    .aboutMe {
+      border: 5px solid $blue;
+      width: 75%;
+      height: 500px;
+      margin: 30px;
+      text-align: center;
+    }
+    .myBlogPosts {
+      border: 5px solid $blue;
+      width: 75%;
+      margin: 30px;
+      height: auto;
+      text-align: center;
+      overflow: scroll;
+    }
+    .faveBlogs {
+      border: 5px solid $blue;
+      width: 75%;
+      margin: 30px;
+      height: 600px;
+      text-align: center;
+    }
+    .mySocial {
+      border: 5px solid $blue;
+      width: 75%;
+      margin: 30px;
+      height: 600px;
+      text-align: center;
+    }
+
+  }
+// Profile page
+  .wrapperProfile {
+    display: flex;
+    flex-direction: row;
+    background-color: $white;
+    font-size: 10px;
+    .leftSide {
+      display: flex;
+      flex-direction: column;
+      width: 33%;
+    }
+    .rightSide {
+      display: flex;
+      flex-direction: column;
+      width: 33%;
+    }
+    .aboutMe {
+      border: 5px solid $blue;
+      width: 75%;
+      height: 500px;
+      margin: 30px;
+      text-align: center;
+    }
+    .myBlogPosts {
+      border: 5px solid $blue;
+      width: 75%;
+      margin: 30px;
+      height: auto;
+      text-align: center;
+      overflow: scroll;
+    }
+    .faveBlogs {
+      border: 5px solid $blue;
+      width: 75%;
+      margin: 30px;
+      height: 600px;
+      text-align: center;
+    }
+    .mySocial {
+      border: 5px solid $blue;
+      width: 75%;
+      margin: 30px;
+      height: 600px;
+      text-align: center;
+    }
+  }
 
 // search bar
 .search {
-  border: 3px solid $blue;
+  background-color: rgba(253, 244, 169, 0.4);
+  border-radius: 20px;
   width: 75%;
   height: 400px;
   margin: 30px;
   text-align: center;
   .searchInput {
-        margin: 5px;
+    margin: 5px;
   }
   .buttonDiv {
     margin: 5px;

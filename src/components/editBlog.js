@@ -76,7 +76,7 @@ class EditBlog extends React.Component {
               <h1>Edit your blog</h1>
             }
 
-            { !this.state.blog &&
+            { !this.state.blog.id &&
               <h1>Create your blog</h1>
             }
 

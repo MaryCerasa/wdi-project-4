@@ -6,7 +6,6 @@ import axios from 'axios'
 import './style.scss'
 
 import Home from './components/home'
-import Header from './components/headerFooter/header'
 import Register from './components/auth/register'
 import Login from './components/auth/login'
 import Profile from './components/profile'
@@ -14,7 +13,6 @@ import News from './components/news'
 import NotFound from './components/notFound'
 import About from './components/about'
 import Footer from './components/headerFooter/footer'
-import Nav from './components/lib/nav'
 import ViewProfile from './components/viewProfile'
 import Blog from './components/blog'
 import Contact from './components/contact'
@@ -36,6 +34,7 @@ class App extends React.Component {
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/news" component={News}/>
             <Route path="/about" component={About}/>
             <Route path="/view-profile" component={ViewProfile}/>
             <Route path="/blog" component={Blog}/>

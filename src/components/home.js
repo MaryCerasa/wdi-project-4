@@ -49,25 +49,25 @@ class Home extends React.Component {
       <div>
         <Header />
         <Nav />
-        <div className="wrapper">
+        <div className="wrapperHome">
           <main>
             <div className="leftSide">
-              <div className="searchBar">
-                <Search />
-              </div>
               <div className="news">
                 <h1>News</h1>
                 <ul>
                   {this.state.articles && this.state.articles.map((item) =>
                     <li key={item.url}>
-                      <Link to={{
-                        pathname: '/news',
-                        state: {
-                          articleURL: item.url
-                        }
-                      }}>
-                        {item.name}
-                      </Link>
+                      <i className="fas fa-heartbeat"></i>
+                      <div className="news-page">
+                        <Link to={{
+                          pathname: '/news',
+                          state: {
+                            articleURL: item.url
+                          }
+                        }}>
+                          {item.name}
+                        </Link>
+                      </div>
                     </li>
                   )}
                 </ul>
@@ -104,15 +104,16 @@ class Home extends React.Component {
                   --------------------------------------------------
                     </Link>
                     }
-
                   </li>
                 )}
               </ul>
             </div>
+
             <div className="rightSide">
-              <div className="mapsOffices">
-                <h1>Maps</h1>
+              <div className="searchBar">
+                <Search />
               </div>
+
               <div className="tweets">
                 <h1>Tweets</h1>
               </div>
