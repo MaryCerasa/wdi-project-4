@@ -12,6 +12,12 @@ $green: #7BCCBA;
   resize: none;
 }
 
+// Buttons
+button:hover {
+  cursor: pointer;
+  background: #7BCCBA;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -172,60 +178,6 @@ footer {
   height: 60%;
 }
 
- // Buttons
-.imageUpload {
-  background-color: $blue;
-  color: black;
-}
-
-.imageUpload:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.registerLink:hover {
-  cursor: pointer;
-  background: pink;
-}
-.loginLink:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.searchButton {
-  background-color: $blue;
-  color: black;
-}
-
-.searchButton:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.logInButton {
-  background-color: $blue;
-  color: black;
-}
-
-.logInButtonClick:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-.registerButtonClick {
-  background-color: $blue;
-  color: black;
-}
-.registerButtonClick:hover {
-  cursor: pointer;
-  background: pink;
-}
-
-button {
-  background-color: $blue;
-  color: black;
-}
-
 // Navigation
 .navbar {
   background: $blue;
@@ -237,7 +189,11 @@ button {
   justify-content: space-between;
   margin-left: 30px;
   }
-
+.navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
+.navbarContactLink:hover {
+  cursor: pointer;
+  color: #7BCCBA;
+}
 }
 .wrapper {
   display: flex;
@@ -333,9 +289,9 @@ button {
 
 // about page
 .aboutPage {
+  margin: 0 auto;
   background-color: $white;
-  border: 10px solid $blue;
-  margin: 20px;
+  width: 50%;
   padding: 10px;
   p {
     color: black;
@@ -357,4 +313,24 @@ button {
 
   width: 140px;
   height: 180px;
+}
+
+.editBlog {
+  border: 5px solid $blue;
+  width: 75%;
+  margin: 30px;
+  height: 600px;
+  text-align: center;
+}
+
+.heroPage {
+img {
+  background-size: contain;
+  // width: 1094px;
+  // height: 729px;
+}
+}
+
+.heroTitle {
+font-size: 10px;
 }

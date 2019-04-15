@@ -115,6 +115,7 @@ class Home extends React.Component {
               </div>
               <div className="tweets">
                 <h1>Tweets</h1>
+                <a className="twitter-timeline" data-width="220" data-height="599" data-dnt="true" data-link-color="#19CF86" href="https://twitter.com/TheWellNestUK?ref_src=twsrc%5Etfw">Tweets by TheWellNestUK</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
             </div>
           </main>
