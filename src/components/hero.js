@@ -12,13 +12,17 @@ class Hero extends React.Component {
 
   render() {
     return (
+
       <div>
         <Header />
         <Nav />
-        <div className="heroPage">
-          <img src="./assets/bluebirdsky.jpg"/>
-        </div>
+        <main>
+          <div className="heroPage">
+            <img src="./assets/bluebirdsky.jpg"/>
+          </div>
+        </main>
       </div>
+
     )
   }
 }
