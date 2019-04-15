@@ -17,17 +17,23 @@ $dark-green: #136E37;
   padding: 0;
 }
 
+// Buttons
+button:hover {
+  cursor: pointer;
+  background: #7BCCBA;
+}
+
 body {
   background-color: $white;
 }
 
 main {
   display: flex;
+  justify-content: space-evenly;
   width: 100%;
   height: 80vh;
-  background-size: cover;
   overflow: scroll;
-
+  overflow: hidden;
 }
 
 // header
@@ -100,14 +106,14 @@ footer {
   .leftSide {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+
     .news{
       display: flex;
       flex-direction: column;
       background-color: rgba(236, 55, 57, 0.1);
       border-radius: 20px;
       height: auto;
-      margin: 30px;
+      margin: 30px 30px 30px 60px;
       overflow: scroll;
       h1 {
         text-align: center;
@@ -131,18 +137,25 @@ footer {
   .rightSide {
     display: flex;
     flex-direction: column;
-    width: 33%;
-    .mapsOffices {
-      width: 75%;
-      margin: 30px;
-      height: 75%;
+    align-content: center;
+    margin: 30px 60px 30px 30px;
+    .search {
+      background-color: rgba(253, 244, 169, 0.4);
+      border-radius: 20px;
+      height: 400px;
       text-align: center;
+      .searchInput {
+        margin: 5px;
+      }
+      .buttonDiv {
+        margin: 5px;
+      }
     }
     .tweets {
       background-color: rgba(216, 240, 250, 0.5);
       border-radius: 20px;
+      margin: 30px 60px 30px 30px;
       width: 75%;
-      margin: 30px;
       height: 25%;
       text-align: center;
     }
@@ -301,20 +314,7 @@ footer {
   }
 
 // search bar
-.search {
-  background-color: rgba(253, 244, 169, 0.4);
-  border-radius: 20px;
-  width: 75%;
-  height: 400px;
-  margin: 30px;
-  text-align: center;
-  .searchInput {
-    margin: 5px;
-  }
-  .buttonDiv {
-    margin: 5px;
-  }
-}
+
 
 // popup
 .popup {
@@ -323,9 +323,9 @@ footer {
 
 // about page
 .aboutPage {
+  margin: 0 auto;
   background-color: $white;
-  border: 10px solid $blue;
-  margin: 20px;
+  width: 50%;
   padding: 10px;
   p {
     color: black;
@@ -347,4 +347,26 @@ footer {
 
   width: 140px;
   height: 180px;
+}
+
+.navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
+.navbarContactLink:hover {
+  cursor: pointer;
+  color: #7BCCBA;
+}
+
+.editBlog {
+  border: 5px solid $blue;
+  width: 75%;
+  margin: 30px;
+  height: 600px;
+  text-align: center;
+}
+
+.heroPage {
+  img {
+    background-size: cover;
+  // width: 1094px;
+  // height: 729px;
+  }
 }
