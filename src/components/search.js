@@ -49,7 +49,7 @@ class Search extends React.Component {
     return(
       <div className="search">
         <h2>Search for Primary Cares/Hospitals/Healthcare professionals</h2>
-        <h4>Type below name or the location of a healthcare professional, hospital or primary care.</h4>
+        <h4>Type below name or the location of a healthcare professional, hospital, primary care or the name of the service that you need.</h4>
         <input className="searchInput" placeholder="Type here..."
           onChange={this.handleChange}
         />
@@ -57,12 +57,12 @@ class Search extends React.Component {
           onClick={this.handleClick}>
           <button className="searchButton">Search
           </button>
-          <Popup
-            show={this.state.isOpen}
-            search={this.state.results}
-            onClose={this.closePopup}>
-          </Popup>
         </div>
+        <Popup className="search-popup"
+          show={this.state.isOpen}
+          search={this.state.results}
+          onClose={this.closePopup}>
+        </Popup>
       </div>
     )
   }
