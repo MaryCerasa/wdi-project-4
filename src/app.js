@@ -20,9 +20,6 @@ import EditBlog from './components/editBlog'
 import Main from './components/main'
 
 class App extends React.Component {
-  componentDidMount() {
-
-  }
 
   render() {
     return (
