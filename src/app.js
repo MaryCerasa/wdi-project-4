@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Browser, Route, Switch } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 
 import './style.scss'
 
@@ -18,8 +18,6 @@ import Blog from './components/blog'
 import Contact from './components/contact'
 import EditBlog from './components/editBlog'
 import Main from './components/main'
-
-axios.defaults.baseURL = 'http://localhost:5000'
 
 class App extends React.Component {
   componentDidMount() {
