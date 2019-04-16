@@ -245,7 +245,7 @@ footer {
 }
 
 // Register page
-.formWrapper {
+.formWrapperRegister {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -253,7 +253,6 @@ footer {
   width: 90%;
   height: 100%;
   .registerForm {
-    // margin-top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -276,6 +275,9 @@ footer {
       background-color: rgba(123, 204, 186, 0.2);
       border: none;
     }
+    .registerButtonClick:hover {
+      background-color: $green;
+    }
     .registerLink {
       color: $nhs-blue;
     }
@@ -291,39 +293,80 @@ footer {
       border: 3px solid rgba(123, 204, 186, 0.2);
       padding-left: 10px;
     }
-    p {
-      padding: 10px;
-    }
+      p {
+        padding: 10px;
+        span {
+          color: $nhs-blue
+        }
+        span:hover {
+          color: $green;
+        }
+
+      }
     }
   }
 }
 
 // Login page
-
-.loginForm {
+.formWrapperLogin {
   display: flex;
-  flex-direction: column;
-  border: 2px solid $green;
-  width: 50%;
-  height: 100%;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: $blue;
+  width: 90%;
+  height: 100%;
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    width: 30%;
+    height: 60%;
+    background-color: rgba(216, 240, 250, 0.5);
+    border-radius: 20px;
+    h2 {
+      text-align: center;
+      color: $nhs-blue;
+    }
+    h3 {
+      text-align: center;
+    }
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+      height: 30px;
+      width: 50%;
+      font-size: 14px;
+      margin: 10px;
+      border: 3px solid rgba(123, 204, 186, 0.2);
+      padding-left: 10px;
+    }
+
+      p {
+        padding: 10px;
+        span {
+          color: $nhs-blue;
+        }
+        span:hover {
+          color: $green;
+        }
+      }
+    }
+    .logInButtonClick {
+      margin: 0 auto;
+      width: 60px;
+      height: 30px;
+      font-size: 12px;
+      background-color: rgba(123, 204, 186, 0.2);
+      border: none;
+    }
+    .logInButtonClick:hover {
+      background-color: $green;
+    }
+  }
 }
-
-.logInButtonClick {
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
-}
-
-.loginLink {
-  color: $nhs-blue;
-}
-
-
-
-
 
 // Navigation
 .navbar {

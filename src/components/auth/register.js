@@ -46,7 +46,7 @@ class Register extends React.Component {
         <Header />
         <Nav />
         <main>
-          <form className="formWrapper" onSubmit={this.handleSubmit}>
+          <form className="formWrapperRegister" onSubmit={this.handleSubmit}>
             <div className="registerForm">
               <h2>Welcome to WellNest!</h2>
               <h3>To sign up, please fill in the details below.</h3>
@@ -92,7 +92,7 @@ class Register extends React.Component {
                 <div className="submitButton">
                   <button className="registerButtonClick">Submit</button>
                 </div>
-                <p> Already signed up? Click <Link className="loginLink" to='/login'>here</Link> to login! </p>
+                <p> Already signed up? Click <Link className="loginLink" to='/login'><span>here</span></Link> to login! </p>
               </div>
 
             </div>
