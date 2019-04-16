@@ -51,7 +51,7 @@ class Register extends React.Component {
               <h2>Welcome to WellNest!</h2>
               <h3>To sign up, please fill in the details below.</h3>
 
-              <div className="username"><i className="fas fa-user"></i>Username:
+              <div className="username"><i className="fas fa-user"></i> &nbsp; Username:
               </div>
               <input
                 className="usernameInput"
@@ -60,7 +60,7 @@ class Register extends React.Component {
                 onChange={this.handleChange}
               />
 
-              <div className="email"><i className="fas fa-envelope"></i>Email:
+              <div className="email"><i className="fas fa-envelope"></i> &nbsp; Email:
               </div>
               <input
                 className="emailInput"
@@ -69,7 +69,7 @@ class Register extends React.Component {
                 onChange={this.handleChange}
               />
 
-              <div className="password"><i className="fas fa-lock"></i>Password:
+              <div className="password"><i className="fas fa-lock"></i> &nbsp; Password:
               </div>
               <input
                 className="passInput"
@@ -79,7 +79,7 @@ class Register extends React.Component {
                 onChange={this.handleChange}
               />
 
-              <div className="password-confirmation"><i className="fas fa-lock"></i>Confirm Password:
+              <div className="password-confirmation"><i className="fas fa-lock"></i> &nbsp; Confirm Password:
               </div>
               <input
                 className="passconfirmInput"

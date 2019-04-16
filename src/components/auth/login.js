@@ -46,7 +46,7 @@ class Login extends React.Component {
             <div className="loginForm">
               <h2>Welcome to WellNest!</h2>
               <h3>Please sign in below.</h3>
-              <div className="email"><i className="fas fa-envelope"></i>Email:
+              <div className="email"><i className="fas fa-envelope"></i> &nbsp; Email:
               </div>
               <input
                 className="emailInput"
@@ -55,7 +55,7 @@ class Login extends React.Component {
                 onChange={this.handleChange}
               >
               </input>
-              <div className="password"><i className="fas fa-lock"></i>Password:
+              <div className="password"><i className="fas fa-lock"></i> &nbsp; Password:
               </div>
               <input
                 className="passInput"

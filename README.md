@@ -73,3 +73,75 @@ You must:
 * __Code Quality__: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors as we have in class?
 
 * __Problem Solving__: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.)_
+
+_README_
+
+### WellNest - MERN Full Stack App
+---
+### About WellNest - An Overview
+
+Wellnest is a platform created to provide a safe space for fostering mental health awareness and understanding of depression and other disorders.
+
+Our goal is to help you find your wings by initiating and maintaining a positive dialogue among peer support networks. This effort hopes to encourage communication surrounding mental health and wellness in order to break the stigma.
+
+Guests can stay up to date with relevant news provided by the NHS or write posts about their experiences and receive positive encouragement and support from their peers.  If you prefer, seek advice from practicing therapists and mental health professionals through our verified accounts instead.
+
+### Timeframe
+
+* 7 days
+
+### Technologies Used
+
+* React
+* Node.js
+* Python
+* SQL
+* Express
+* Redux
+* JavaScript (ES6) + jQuery
+* HTML5
+* CSS
+* GitHub
+
+### Technical Requirements
+
+---
+### Wireframes
+
+During the planning phase, the team came up with the following rough sketches of how the app could possibly look:
+
+
+After implementation began, the wireframes were further developed to reflect the final product design, below:
+
+
+---
+### App Overview
+
+_User Example_
+
+
+_Functionality_
+
+
+---
+### Frontend Overview
+
+_Login & Register Boxes_
+
+
+### Installation instructions
+
+
+### Unsolved Problems
+Seeds mess up the individual profile pages.
+We will add functionality to the button for the like page.
+---
+### Backend Overview
+
+### URL Structure
+
+
+---
+## Database - WellNest
+
+The database is broken down into the following Schemas:

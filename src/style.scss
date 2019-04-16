@@ -261,23 +261,23 @@ footer {
     background-color: $blue;
     // padding: 15px;
     .username {
+      .fas.fa-lock, .fas.fa-envelope, .fas.fa.user {
 
+      }
     }
   }
   .registerButtonClick {
     width: 60px;
     height: 30px;
     font-size: 12px;
+
   }
   .registerLink {
     color: $nhs-blue;
   }
-  .fas.fa-lock, .fas.fa-envelope, .fas.fa.user {
-    margin: 10px;
-    padding: 15px;
-  }
-  .email, .password, .username, .password-confirmation {
 
+  .email, .password, .username, .password-confirmation {
+ padding: 10px;
   }
 }
 
