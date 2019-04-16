@@ -72,14 +72,14 @@ class Blog extends React.Component {
         <div className="blogs">
           <main>
             <div className="myBlogPosts">
-              {this.state.blog.title}
-              {this.state.blog.text}
+              <h1>{this.state.blog.title}</h1>
+              <p>{this.state.blog.text}</p>
               <br/>
 
               {this.state.blog.comments &&
                 this.state.blog.comments.map((comment) =>
                   <li key={comment.id}>
-                    <p>{comment.creator && comment.creator.username}: {comment.content}</p>
+                    <p className="comments">{comment.creator && comment.creator.username}: {comment.content}</p>
 
                     {this.state.user &&
                       this.state.user.id === comment.creator.id &&
@@ -90,12 +90,12 @@ class Blog extends React.Component {
                       </div>
                     }
 
-
                   </li>
 
                 )}
               <form onSubmit={this.handleSubmitComment}>
                 <h3>Comments</h3>
+                
                 <textarea
                   onChange={this.handleChange}
                   name='content'

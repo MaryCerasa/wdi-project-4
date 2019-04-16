@@ -91,7 +91,7 @@ class ViewProfile extends React.Component {
                       <h2>{item.title}</h2>
                       <p>{item.text}</p>
                     </Link>
-                    --------------------------------------------------
+                    <p className="dots">--------------------------------------------------</p>
                   </ul>
                 )}
               </ul>
@@ -99,6 +99,14 @@ class ViewProfile extends React.Component {
             <div className="rightSide">
               <div className="faveBlogs">
                 <h1>Favorite Blogs</h1>
+                <p><i className="far fa-thumbs-up"></i>Will Using Less Of My Phone Help My Mental Health?
+                </p>
+                <p><i className="far fa-thumbs-up"></i>Self Confidence Tips: How To Bring Your Confidence To The Next Level
+                </p>
+                <p><i className="far fa-thumbs-up"></i>Ask Twice: How We  Can Better Support People Struggling
+                </p>
+                <p><i className="far fa-thumbs-up"></i>Tips for a Mentally Healthy 2019
+                </p>
               </div>
               <div className="mySocial">
                 <h1>My Social Media</h1>
