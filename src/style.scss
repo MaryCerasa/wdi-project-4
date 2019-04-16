@@ -402,8 +402,8 @@ footer {
           height: 300px;
         }
         .imageUpload {
-          width: 120px;
-          height: 30px;
+          width: 100px;
+          height: 20px;
           font-size: 12px;
           background: rgba(123, 204, 186, 0.2);
           margin: 5px;
@@ -416,19 +416,22 @@ footer {
           flex-direction: column;
           align-items: center;
           .content {
-            background: rgba(123, 204, 186, 0.2);
-            width: 50%;
+            width: 233px;
             margin: 5px;
+            text-align: left;
+            padding: 5px;
+            font-size: 14px;
           }
           .text-aboutme {
+            font-size: 14px;
             margin-top: 20px;
             width: 233px;
             height: 100px;
             border: 1px solid rgba(123, 204, 186, 0.2);
           }
           button {
-            width: 120px;
-            height: 30px;
+            width: 100px;
+            height: 20px;
             font-size: 12px;
             background: rgba(123, 204, 186, 0.2);
             margin: 5px;
@@ -443,13 +446,87 @@ footer {
     }
 
     .myBlogPosts {
+      display: flex;
+      flex-direction: column;
+      margin: 30px auto;
       background: rgba(123, 204, 186, 0.2);
       border-radius: 20px;
       width: 50%;
       margin: 30px auto;
       height: auto;
-      text-align: center;
       overflow: scroll;
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        font-size: 28px;
+        margin: 10px;
+        text-align: center;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .create-myblog {
+          display: flex;
+          
+          justify-content: center;
+          width: 140px;
+          height: 40px;
+          font-size: 12px;
+          background: rgba(253, 244, 169, 0.4);
+          margin: 0 auto;
+          font-size: 14px;
+          border: 1px solid rgba(253, 244, 169, 0.4);
+        }
+
+        .create-myblog:hover {
+          background-color: $green;
+        }
+        li {
+          h2 {
+            text-align: center;
+            font-size: 24px;
+            margin: 10px 20px;
+          }
+          p {
+            font-size: 14px;
+            margin: 10px 20px;
+            text-align: justify;
+            max-height: 200px;
+            overflow: scroll;
+          }
+          .edit-myblog {
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+            background: rgba(253, 244, 169, 0.4);
+            margin-left: 20px;
+            margin-right: 10px;
+            font-size: 14px;
+            border: 1px solid rgba(253, 244, 169, 0.4);
+
+          }
+          .edit-myblog:hover {
+            background-color: $green;
+          }
+          .delete-myblog {
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+            background: rgba(236, 55, 57, 0.4);
+            margin: 5px;
+            font-size: 14px;
+            border: none;
+          }
+          .delete-myblog:hover {
+            background-color: $red;
+          }
+        }
+
+      }
+
+
     }
     .faveBlogs {
       background: rgba(123, 204, 186, 0.2);
