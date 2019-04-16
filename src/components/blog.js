@@ -15,7 +15,6 @@ class Blog extends React.Component {
 
     this.handleSubmitComment = this.handleSubmitComment.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleDeleteComment = this.handleDeleteComment.bind(this)
   }
 
   handleDeleteComment(commentId) {
@@ -95,7 +94,7 @@ class Blog extends React.Component {
                 )}
               <form onSubmit={this.handleSubmitComment}>
                 <h3>Comments</h3>
-                
+
                 <textarea
                   onChange={this.handleChange}
                   name='content'

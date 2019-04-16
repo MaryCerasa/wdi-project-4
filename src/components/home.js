@@ -54,7 +54,7 @@ class Home extends React.Component {
           <main>
             <div className="leftSide">
               <div className="news">
-                <h1><i className="far fa-newspaper"></i>News</h1>
+                <h1><i className="far fa-newspaper"></i>&nbsp;News</h1>
                 <ul>
                   {this.state.articles && this.state.articles.map((item) =>
                     <li key={item.url}>
@@ -75,7 +75,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="latestBlogs">
-              <h1><i className="fas fa-rss"></i>Latest Blogs</h1>
+              <h1><i className="fas fa-rss"></i>&nbsp;Latest Blogs</h1>
               <ul>
                 {this.state.blogs && this.state.blogs.map((item) =>
                   <li key={item.id}>
@@ -117,7 +117,7 @@ class Home extends React.Component {
 
               <div className="tweets">
 
-                <h1><i className="fab fa-twitter"></i>Tweets</h1>
+                <h1><i className="fab fa-twitter"></i>&nbsp;Tweets</h1>
                 <Timeline
                   dataSource={{
                     sourceType: 'profile',
