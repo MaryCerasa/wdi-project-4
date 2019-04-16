@@ -129,23 +129,27 @@ class Profile extends React.Component {
                   onClick={this.handleImageUpload}>
                   Upload Image
                 </button>
+                <div className="bottom">
 
-                {this.state.profile &&
-                  <div className="content">
-                    {this.state.profile.content}
+                  {this.state.profile &&
+                    <div className="content">
+                      {this.state.profile.content}
+                    </div>
+                  }
+                  <div className="textarea-aboutme">
+                    <form onSubmit={this.handleSubmit}>
+                      <textarea className="text-aboutme"
+                        name="about_me"
+                        onChange={this.handleChange}
+                        placeholder="Type here..."
+                      />
+                      <div className="button-aboutme">
+                        <button>
+                        Update
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                }
-                <div className="textarea-aboutme">
-                  <form onSubmit={this.handleSubmit}>
-                    <textarea className="text-aboutme"
-                      name="about_me"
-                      onChange={this.handleChange}
-                      placeholder="Type here..."
-                    />
-                    <button className="button-aboutme">
-                      Update
-                    </button>
-                  </form>
                 </div>
               </div>
             </div>
