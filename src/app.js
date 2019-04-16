@@ -19,7 +19,7 @@ import Contact from './components/contact'
 import EditBlog from './components/editBlog'
 import Main from './components/main'
 
-axios.defaults.baseURL = 'http://localhost:5000'
+
 
 class App extends React.Component {
   componentDidMount() {

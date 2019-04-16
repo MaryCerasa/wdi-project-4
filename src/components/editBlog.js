@@ -71,50 +71,52 @@ class EditBlog extends React.Component {
         <Nav />
         <div className="editBlog">
           <main>
-            { this.state.blog &&
+            <div className="edit">
+              { this.state.blog &&
               this.state.blog.id &&
               <h1>Edit your blog</h1>
-            }
+              }
 
-            { !this.state.blog.id &&
+              { !this.state.blog.id &&
               <h1>Create your blog</h1>
-            }
+              }
 
-            <div className="textarea-blogs">
-              <form onSubmit={this.handleBlogSubmit}>
-                Title:
-                {this.state.blog &&
+              <div className="textarea-blogs">
+                <form onSubmit={this.handleBlogSubmit}>
+                  <h3 className ="title">Title:</h3>
+                  {this.state.blog &&
                   <input type="text"
                     name="blogTitle"
                     defaultValue={this.state.blog.title}
                     onChange={this.handleTitleChange} />}
 
-                {!this.state.blog &&
+                  {!this.state.blog &&
                     <input type="text"
                       name="blogTitle"
                       onChange={this.handleTitleChange} />}
+                  <h3 className ="blog-title">Blog:</h3>
 
-                Blog:
-                {this.state.blog &&
+                  {this.state.blog &&
                   <textarea
                     name="blogText"
                     defaultValue={this.state.blog.text}
                     onChange={this.handleTextChange}
                     placeholder="Type here..."
                   />
-                }
+                  }
 
-                {!this.state.blog &&
+                  {!this.state.blog &&
                   <textarea
                     name="blogText"
                     onChange={this.handleTextChange}
                     placeholder="Type here..."
                   />
-                }
-                <button>
+                  }
+                  <button className="submit">
                   Submit
-                </button>
-              </form>
+                  </button>
+                </form>
+              </div>
             </div>
           </main>
         </div>
