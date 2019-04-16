@@ -22,11 +22,11 @@ class Nav extends React.Component {
     return(
       <div className="navbar">
         <div className="links">
+          <div>
+            <Link className="navbarMain" to="/main">Main</Link>
+          </div>
           <div className="navbarHome">
             <Link className="navbarHomeLink" to="/">Home</Link>
-          </div>
-          <div>
-            <Link className="navbarMain" to="/hero">Main</Link>
           </div>
           <div className="navbarAbout">
             <Link className="navbarAboutLink" to="/about">About</Link>

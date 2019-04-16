@@ -163,7 +163,6 @@ footer {
     .tweets {
       background-color: rgba(216, 240, 250, 0.5);
       border-radius: 20px;
-      margin: 30px 60px 30px 30px;
       text-align: center;
       overflow: scroll;
       height: 400px;
@@ -185,24 +184,25 @@ footer {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 5px solid $blue;
+  border: 2px solid $green;
   width: 50%;
-  height: 100%;
+  height: 135%;
+  margin: 25px;
   align-items: center;
-  background-color: $white;
+  background-color: $blue;
 }
 
 // Login page
 .loginForm {
   display: inline-flex;
   flex-direction: column;
-  border: 5px solid $blue;
+  border: 2px solid $green;
   width: 50%;
-  margin: 50px;
+  margin: 25px;
   height: 100%;
   align-items: center;
   justify-content: space-evenly;
-  background-color: $white;
+  background-color: $blue;
 }
 
 .formWrapper {
@@ -356,7 +356,7 @@ footer {
 }
 
 .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
-.navbarContactLink:hover {
+.navbarContactLink:hover, .loginLink:hover, .registerLink:hover {
   cursor: pointer;
   color: #7BCCBA;
 }
@@ -374,5 +374,38 @@ footer {
     background-size: cover;
   // width: 1094px;
   // height: 729px;
+  }
+}
+
+.logInButtonClick {
+  width: 60px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.registerButtonClick {
+  width: 60px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.emailInput, .passInput, .usernameInput, .passconfirmInput {
+  height: 30px;
+  width: 50%;
+  font-size: 14px;
+  margin: 10px;
+  border: 3px solid rgba(123, 204, 186, 0.2);
+  padding-left: 10px;
+  font-family: inherit;
+}
+
+.email, .password, .username, .password-confirmation {
+  align-content: left;
+  text-align: left;
+}
+
+.aboutPic {
+  img {
+    background-size: contain;
   }
 }

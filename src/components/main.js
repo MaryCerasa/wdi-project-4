@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from './lib/nav'
 import Header from './headerFooter/header'
 
-class Hero extends React.Component {
+class Main extends React.Component {
   constructor() {
     super()
 
@@ -12,19 +12,15 @@ class Hero extends React.Component {
 
   render() {
     return (
-
       <div>
         <Header />
         <Nav />
-        <main>
-          <div className="heroPage">
-            <img src="./assets/bluebirdsky.jpg"/>
-          </div>
-        </main>
+        <div className="heroPage">
+          <img src="./assets/bluebirdsky.jpg"/>
+        </div>
       </div>
-
     )
   }
 }
 
-export default Hero
+export default Main
