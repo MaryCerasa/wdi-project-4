@@ -76,7 +76,7 @@ You must:
 
 _README_
 
-### WellNest - MERN Full Stack App
+### WellNest - A Flack and React App
 ---
 ### About WellNest - An Overview
 
