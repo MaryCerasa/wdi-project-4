@@ -57,7 +57,7 @@ header {
     margin-top: 22px;
     span {
       text-transform: capitalize;;
-      color: $nhs-blue
+      color: $dark-green;
     }
   }
   .contains-logo {
@@ -355,28 +355,54 @@ footer {
       display: flex;
       flex-direction: column;
       width: 33%;
+      .aboutMe {
+        background: rgba(253, 244, 169, 0.4);
+        border-radius: 20px;
+        width: 80%;
+        height: 100%;
+        margin: 30px 0 30px 60px;
+        text-align: center;
+        h1 {
+          padding: 10px;
+        }
+        h2 {
+          padding: 10px;
+          font-size: 22px;
+          text-transform: capitalize;
+        }
+        .profileImg{
+          border-radius: 20px;
+          width: 233px;
+          height: 300px;
+        }
+        .imageUpload {
+          width: 120px;
+          height: 30px;
+          font-size: 12px;
+          background: rgba(123, 204, 186, 0.2);
+          margin: 5px;
+        }
+        .imageUpload:hover {
+          background-color: #7BCCBA;
+        }
+        .content {
+          background: rgba(123, 204, 186, 0.2);
+          width: 50%;
+          margin: 5px;
+        }
+        .text-aboutme {
+          width: 50%;
+          height: 100px;
+          border: 1px solid rgba(123, 204, 186, 0.2);
+        }
+      }
     }
     .rightSide {
       display: flex;
       flex-direction: column;
       width: 33%;
     }
-    .aboutMe {
-      background: rgba(253, 244, 169, 0.4);
-      border-radius: 20px;
-      width: 80%;
-      height: 100%;
-      margin: 30px 0 30px 60px;
-      text-align: center;
-      h1 {
-        padding: 10px;
-      }
-      h2 {
-        padding: 10px;
-        font-size: 22px;
-        text-transform: capitalize;
-      }
-    }
+
     .myBlogPosts {
       background: rgba(123, 204, 186, 0.2);
       border-radius: 20px;
@@ -426,11 +452,7 @@ footer {
   }
 }
 
-.img {
-  border-radius: 20px;
-  width: 280px;
-  height: 360px;
-}
+
 
 .editBlog {
   border: 5px solid $blue;
@@ -443,8 +465,7 @@ footer {
 .heroPage {
   img {
     background-size: cover;
-  // width: 1094px;
-  // height: 729px;
+    width: 180vh;
   }
 }
 

@@ -112,15 +112,16 @@ class Profile extends React.Component {
               <div className="aboutMe">
                 <h1>About Me</h1>
                 {this.state.profile &&
-                  <h2 className="userName">{this.state.profile.creator.username}</h2>
+                  <h2 className="userName"> {this.state.profile.creator.username}</h2>
                 }
-                
+
                 <div className="profileImage">
 
                   {this.state.profile &&
                     <img src={this.state.profile.image_url} alt="profile photo"
-                      className="img"/>
+                      className="profileImg"/>
                   }
+
                 </div>
 
                 <button className="imageUpload"
@@ -129,13 +130,13 @@ class Profile extends React.Component {
                 </button>
 
                 {this.state.profile &&
-                  <div>
+                  <div className="content">
                     {this.state.profile.content}
                   </div>
                 }
                 <div className="textarea-aboutme">
                   <form onSubmit={this.handleSubmit}>
-                    <textarea
+                    <textarea className="text-aboutme"
                       name="about_me"
                       onChange={this.handleChange}
                       placeholder="Type here..."
@@ -185,10 +186,13 @@ class Profile extends React.Component {
               </ul>
             </div>
 
-
             <div className="rightSide">
               <div className="faveBlogs">
                 <h1>Favorite Blogs</h1>
+                <p><i className="far fa-thumbs-up"></i></p>
+                <p><i className="far fa-thumbs-up"></i></p>
+                <p><i className="far fa-thumbs-up"></i></p>
+                <p><i className="far fa-thumbs-up"></i></p>
               </div>
               <div className="mySocial">
                 <h1>My Social Media</h1>
