@@ -245,26 +245,48 @@ footer {
 }
 
 // Register page
-.registerForm {
-  display: inline-flex;
+.formWrapper {
+  display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  border: 2px solid $green;
-  width: 50%;
-  height: 135%;
-  margin: 25px;
-  align-items: center;
-  background-color: $blue;
+
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid $green;
+    width: 35%;
+    height: 135%;
+    margin: 25px;
+    background-color: $blue;
+    // padding: 15px;
+    .username {
+
+    }
+  }
+  .registerButtonClick {
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .registerLink {
+    color: $nhs-blue;
+  }
+  .fas.fa-lock, .fas.fa-envelope, .fas.fa.user {
+    margin: 10px;
+    padding: 15px;
+  }
+  .email, .password, .username, .password-confirmation {
+
+  }
 }
-.registerButtonClick {
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
-}
+
+
+
 
 // Login page
 .loginForm {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   border: 2px solid $green;
   width: 50%;
@@ -281,6 +303,10 @@ footer {
   font-size: 12px;
 }
 
+.loginLink {
+  color: $nhs-blue;
+}
+
 .emailInput, .passInput, .usernameInput, .passconfirmInput {
   height: 30px;
   width: 50%;
@@ -289,11 +315,6 @@ footer {
   border: 3px solid rgba(123, 204, 186, 0.2);
   padding-left: 10px;
   font-family: inherit;
-}
-
-.email, .password, .username, .password-confirmation {
-  align-content: left;
-  text-align: left;
 }
 
 .formWrapper {
@@ -317,6 +338,7 @@ footer {
   background: $blue;
   justify-content: space-between;
   margin-left: 30px;
+  // padding: 40px;
     .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
     .navbarContactLink:hover, .loginLink:hover, .registerLink:hover {
       cursor: pointer;
@@ -483,6 +505,14 @@ footer {
 .img {
   width: 140px;
   height: 180px;
+}
+
+.twitterContact, .fbContact, .instaContact {
+  color: $nhs-blue
+}
+.twitterContact:hover, .fbContact:hover, .instaContact:hover {
+  cursor: pointer;
+  color: #7BCCBA;
 }
 
 .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
