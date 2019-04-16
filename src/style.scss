@@ -667,13 +667,7 @@ footer {
 }
 
 
-.mainPage {
-  background-color: #99C4E6;
-  img {
-    background-size: cover;
 
-  }
-}
 
 .newsPage {
   display: flex;
@@ -794,4 +788,15 @@ footer {
     background-color: $green;
   }
 
+}
+
+.mainPage {
+  // background-color: #91B5D5;
+  // width: 100%;
+  // height: 80vh;
+  img {
+
+    // background-size: 200px 500px;
+    // margin-left: 100px;
+  }
 }
