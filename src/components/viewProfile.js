@@ -60,8 +60,10 @@ class ViewProfile extends React.Component {
             <div className="leftSide">
               <div className="aboutMe">
                 <h1>About Me</h1>
-                <img className="avatar" src={this.state.image} />
-                <h4 className="userName"> </h4>
+                {this.state.profile &&
+                  <h2 className="userName"> {this.state.profile.creator.username}</h2>
+                }
+                
                 <div className="profileImg">
                   {this.state.profile &&
                     <img src={this.state.profile.image_url}
