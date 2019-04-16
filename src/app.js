@@ -17,7 +17,7 @@ import ViewProfile from './components/viewProfile'
 import Blog from './components/blog'
 import Contact from './components/contact'
 import EditBlog from './components/editBlog'
-import Hero from './components/hero'
+import Main from './components/main'
 
 axios.defaults.baseURL = 'http://localhost:5000'
 
@@ -31,7 +31,7 @@ class App extends React.Component {
       <Browser>
         <div>
           <Switch>
-            <Route exact path="/" component={Hero}/>
+            <Route exact path="/" component={Main}/>
             <Route path="/home" component={Home}/>
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login}/>

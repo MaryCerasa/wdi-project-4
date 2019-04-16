@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Nav from './lib/nav'
 import Header from './headerFooter/header'
+import { Timeline } from 'react-twitter-widgets'
 
 import { withRouter } from 'react-router-dom'
 
@@ -196,6 +197,16 @@ class Profile extends React.Component {
               </div>
               <div className="mySocial">
                 <h1>My Social Media</h1>
+                <Timeline
+                  dataSource={{
+                    sourceType: 'profile',
+                    screenName: 'TheWellNestUK'
+                  }}
+                  options={{
+                    username: 'TheWellNestUK',
+                    height: '400'
+                  }}
+                />
               </div>
             </div>
           </main>

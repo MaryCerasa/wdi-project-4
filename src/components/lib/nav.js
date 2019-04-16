@@ -25,9 +25,6 @@ class Nav extends React.Component {
           <div className="navbarHome">
             <Link className="navbarHomeLink" to="/home">Home</Link>
           </div>
-          <div>
-            <Link className="navbarMain" to="/">Main</Link>
-          </div>
           <div className="navbarAbout">
             <Link className="navbarAboutLink" to="/about">About</Link>
           </div>

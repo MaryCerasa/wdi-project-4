@@ -22,6 +22,7 @@ class About extends React.Component {
             <br/>
             <p>Guests can stay up to date with relevant news provided by the NHS or write posts about their experiences and recieve positive encouragement and support from their peers as well as seek advice from practicing therapists and mental health professionals through verified accounts..</p>
             <br/>
+            <img className="aboutPic" src="./assets/mh-logo.png"/>
           </div>
         </main>
       </div>
