@@ -369,6 +369,7 @@ footer {
       margin: 30px;
       height: 600px;
       text-align: center;
+
     }
 
   }
@@ -439,12 +440,6 @@ footer {
         }
       }
     }
-    .rightSide {
-      display: flex;
-      flex-direction: column;
-      width: 33%;
-    }
-
     .myBlogPosts {
       display: flex;
       flex-direction: column;
@@ -469,7 +464,7 @@ footer {
         justify-content: center;
         .create-myblog {
           display: flex;
-          
+
           justify-content: center;
           width: 140px;
           height: 40px;
@@ -525,26 +520,39 @@ footer {
         }
 
       }
-
-
     }
+    .rightSide {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 30px 60px 30px 30px;
+
     .faveBlogs {
-      background: rgba(123, 204, 186, 0.2);
+      background: rgba(236, 55, 57, 0.4);
       border-radius: 20px;
-      width: 75%;
-      margin: 30px;
-      height: 600px;
+      overflow: scroll;
+      height: 50%;
       text-align: center;
+      h1 {
+        padding: 10px;
+        font-size: 22px;
+      }
+      p {
+        text-align: left;
+        margin: 10px;
+        font-size: 14px
+      }
     }
     .mySocial {
-      background: rgba(123, 204, 186, 0.2);
-      border-radius: 20px;;
-      width: 75%;
-      margin: 30px;
-      height: 600px;
+      background: rgba(216, 240, 250, 0.5);
+      border-radius: 20px;
       text-align: center;
+      overflow: scroll;
+      height: 300px;
+
     }
   }
+}
 
 // about page
 .aboutPage {
