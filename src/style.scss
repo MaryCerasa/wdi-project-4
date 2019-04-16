@@ -191,6 +191,11 @@ footer {
   align-items: center;
   background-color: $blue;
 }
+.registerButtonClick {
+  width: 60px;
+  height: 30px;
+  font-size: 12px;
+}
 
 // Login page
 .loginForm {
@@ -203,6 +208,27 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   background-color: $blue;
+}
+
+.logInButtonClick {
+  width: 60px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.emailInput, .passInput, .usernameInput, .passconfirmInput {
+  height: 30px;
+  width: 50%;
+  font-size: 14px;
+  margin: 10px;
+  border: 3px solid rgba(123, 204, 186, 0.2);
+  padding-left: 10px;
+  font-family: inherit;
+}
+
+.email, .password, .username, .password-confirmation {
+  align-content: left;
+  text-align: left;
 }
 
 .formWrapper {
@@ -350,7 +376,6 @@ footer {
 }
 
 .img {
-
   width: 140px;
   height: 180px;
 }
@@ -369,39 +394,12 @@ footer {
   text-align: center;
 }
 
-.heroPage {
+.mainPage {
   img {
     background-size: cover;
   // width: 1094px;
   // height: 729px;
   }
-}
-
-.logInButtonClick {
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
-}
-
-.registerButtonClick {
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
-}
-
-.emailInput, .passInput, .usernameInput, .passconfirmInput {
-  height: 30px;
-  width: 50%;
-  font-size: 14px;
-  margin: 10px;
-  border: 3px solid rgba(123, 204, 186, 0.2);
-  padding-left: 10px;
-  font-family: inherit;
-}
-
-.email, .password, .username, .password-confirmation {
-  align-content: left;
-  text-align: left;
 }
 
 .aboutPic {

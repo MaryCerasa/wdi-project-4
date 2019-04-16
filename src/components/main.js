@@ -15,7 +15,7 @@ class Main extends React.Component {
       <div>
         <Header />
         <Nav />
-        <div className="heroPage">
+        <div className="mainPage">
           <img src="./assets/bluebirdsky.jpg"/>
         </div>
       </div>

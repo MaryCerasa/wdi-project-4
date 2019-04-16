@@ -28,6 +28,7 @@ class Contact extends React.Component {
               <p>Follow us on social media: Twitter, Facebook, Instagram.</p>
             </div>
             <br/>
+            <img className="aboutPic" src="./assets/mh-logo.png"/>
           </div>
         </main>
       </div>
