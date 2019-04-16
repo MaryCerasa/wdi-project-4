@@ -61,7 +61,7 @@ class ViewProfile extends React.Component {
                 <h1>About Me</h1>
                 <img className="avatar" src={this.state.image} />
                 <h4 className="userName"> </h4>
-                <div className="profileImage">
+                <div className="profileImg">
                   {this.state.profile &&
                     <img src={this.state.profile.image_url}
                       className="img"/>
@@ -69,7 +69,7 @@ class ViewProfile extends React.Component {
                 </div>
 
                 {this.state.profile &&
-                  <div>
+                  <div className="content">
                     {this.state.profile.content}
                   </div>
                 }

@@ -335,19 +335,35 @@ footer {
       display: flex;
       flex-direction: column;
       width: 33%;
+      .aboutMe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(253, 244, 169, 0.4);
+        border-radius: 20px;
+        width: 80%;
+        height: 92%;
+        margin: 30px 0 30px 60px;
+        text-align: center;
+        h1 {
+          padding: 10px;
+        }
+        .img {
+          border-radius: 20px;
+          width: 233px;
+          height: 300px;
+        }
+        .content {
+          font-size: 14px;
+        }
+      }
     }
     .rightSide {
       display: flex;
       flex-direction: column;
       width: 33%;
     }
-    .aboutMe {
-      border: 5px solid $blue;
-      width: 75%;
-      height: 500px;
-      margin: 30px;
-      text-align: center;
-    }
+
     .myBlogPosts {
       border: 5px solid $blue;
       width: 75%;
