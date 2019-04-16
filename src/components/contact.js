@@ -15,7 +15,7 @@ class Contact extends React.Component {
       <div>
         <Header />
         <Nav />
-        <br/>
+      
         <main>
           <div className="contacts">
             <div className="contactPage">

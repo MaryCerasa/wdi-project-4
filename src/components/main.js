@@ -13,11 +13,14 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+
         <Header />
         <Nav />
-        <div className="mainPage">
-          <img src="./assets/bluebirdsky.jpg"/>
-        </div>
+        <main>
+          <div className="mainPage">
+            <img src="./assets/bluebirdsky.jpg"/>
+          </div>
+        </main>
       </div>
     )
   }
