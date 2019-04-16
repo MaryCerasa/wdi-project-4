@@ -247,42 +247,56 @@ footer {
 // Register page
 .formWrapper {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
   .registerForm {
+    // margin-top: 10%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
-    border: 2px solid $green;
-    width: 35%;
-    height: 135%;
-    margin: 25px;
-    background-color: $blue;
-    // padding: 15px;
-    .username {
-      .fas.fa-lock, .fas.fa-envelope, .fas.fa.user {
-
-      }
+    width: 30%;
+    height: 60%;
+    background-color: rgba(216, 240, 250, 0.5);
+    border-radius: 20px;
+    h2 {
+      text-align: center;
+      color: $nhs-blue;
+    }
+    h3 {
+      text-align: center;
+    }
+    .registerButtonClick {
+      margin: 0 auto;
+      width: 60px;
+      height: 30px;
+      font-size: 12px;
+      background-color: rgba(123, 204, 186, 0.2);
+      border: none;
+    }
+    .registerLink {
+      color: $nhs-blue;
+    }
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+      height: 30px;
+      width: 50%;
+      font-size: 14px;
+      margin: 10px;
+      border: 3px solid rgba(123, 204, 186, 0.2);
+      padding-left: 10px;
+    }
+    p {
+      padding: 10px;
+    }
     }
   }
-  .registerButtonClick {
-    width: 60px;
-    height: 30px;
-    font-size: 12px;
-
-  }
-  .registerLink {
-    color: $nhs-blue;
-  }
-
-  .email, .password, .username, .password-confirmation {
- padding: 10px;
-  }
 }
-
-
-
 
 // Login page
 
@@ -307,25 +321,9 @@ footer {
   color: $nhs-blue;
 }
 
-.emailInput, .passInput, .usernameInput, .passconfirmInput {
-  height: 30px;
-  width: 50%;
-  font-size: 14px;
-  margin: 10px;
-  border: 3px solid rgba(123, 204, 186, 0.2);
-  padding-left: 10px;
-  font-family: inherit;
-}
 
-.formWrapper {
-  justify-content: center;
-  display: inline-flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  margin: 100px;
-  height: 60%;
-}
+
+
 
 // Navigation
 .navbar {
