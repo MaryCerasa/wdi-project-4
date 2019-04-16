@@ -1,5 +1,4 @@
 import React from 'react'
-import Blog from '../components/blog'
 import Auth from './lib/auth'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -7,14 +6,6 @@ import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 import Nav from './lib/nav'
 import Header from './headerFooter/header'
-
-
-// import Auth from '../lib/auth'
-
-// const apikey = process.env.REACT_APP_FILE_STACK_API
-//
-// import * as filestack from 'filestack-js'
-// const client = filestack.init(apikey)
 
 class ViewProfile extends React.Component {
   constructor() {
@@ -70,7 +61,6 @@ class ViewProfile extends React.Component {
                 <h1>About Me</h1>
                 <img className="avatar" src={this.state.image} />
                 <h4 className="userName"> </h4>
-
                 <div className="profileImage">
                   {this.state.profile &&
                     <img src={this.state.profile.image_url}

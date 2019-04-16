@@ -4,6 +4,7 @@ $blue: #D8F0FA;
 $green: #7BCCBA;
 $red: #EC3739;
 $dark-green: #136E37;
+$nhs-blue: #007AC3;
 
 * {
   text-decoration: none;
@@ -43,23 +44,28 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 60vh;
-  display: flex;
-  background-color: $blue;
   height: 110px;
+  background-color: $blue;
   font-size: 24px;
   .contains-title {
-
+    margin-left: 44%;
+    margin-top: 11px;
+    position: absolute;
   }
   .welcomeback {
     padding-left: 30px;
+    margin-top: 22px;
+    span {
+      text-transform: capitalize;;
+      color: $dark-green;
+    }
   }
   .contains-logo {
     margin-top: 20px;
     margin-right: 30px;
     img {
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 160px;
+    max-width: 160px;
   }
 }
 }
@@ -85,9 +91,9 @@ footer {
       padding: 5px;
     }
     img {
-      width: 50px;
-      height: 50px;
-      padding-top: 9px;
+      width: 60px;
+      height: 60px;
+      padding-top: 8px;
     }
   }
   .social-media {
@@ -101,7 +107,6 @@ footer {
 // Home page
 .wrapperHome {
   background-color: $white;
-  font-size: 14px;
   color: black;
   .leftSide {
     display: flex;
@@ -116,16 +121,17 @@ footer {
       height: auto;
       margin: 30px 30px 30px 60px;
       overflow: scroll;
+      padding: 10px;
+      font-size: 16px;
+      i {
+        padding-right: 10px;
+      }
       h1 {
         text-align: center;
       }
       ul {
-        font-size: 14px;
         a:hover {
           color: $red;
-        }
-        .news-page {
-          color:red;
         }
         i {
           font-size: 14px;
@@ -138,13 +144,30 @@ footer {
   .rightSide {
     display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: space-between;
     margin: 30px 60px 30px 30px;
     .search {
+      padding: 10px;
       height: 300px;
       background-color: rgba(253, 244, 169, 0.4);
       border-radius: 20px;
       text-align: center;
+      i {
+        padding-right: 5px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+        padding-top: 10px;
+      }
+      .search-button {
+        display: flex;
+        justify-content: row;
+        align-items: center;
+        justify-content: center;
+      }
       .searchInput {
         height: 30px;
         width: 50%;
@@ -152,12 +175,37 @@ footer {
         margin: 10px;
         border: 3px solid rgba(123, 204, 186, 0.2);
         padding-left: 10px;
-        font-family: inherit;
       }
       .searchButton {
         width: 60px;
         height: 30px;
         font-size: 12px;
+        border: 3px solid rgba(123, 204, 186, 0.2);
+      }
+      .popup {
+        border: 3px solid rgba(123, 204, 186, 0.2);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        cursor: pointer;
+        height: 110px;
+        width: 80%;
+        margin: 10px auto;
+        background: $white;
+        li:hover {
+          color: $red;
+        }
+        button {
+          width: 60px;
+          height: 30px;
+          font-size: 12px;
+          border: 3px solid rgba(236, 55, 57, 0.4);
+          margin: 3px;
+          text-align: center;
+        }
+        button:hover {
+          background-color: rgba(236, 55, 57, 0.4);
+        }
+
       }
     }
     .tweets {
@@ -165,17 +213,34 @@ footer {
       border-radius: 20px;
       text-align: center;
       overflow: scroll;
-      height: 400px;
+      height: 350px;
+      i {
+        margin-right: 10px;
+      }
     }
   }
   .latestBlogs {
     background-color: rgba(123, 204, 186, 0.2);
     border-radius: 20px;
-    width: 50%;
+    width: 70%;
     margin: 30px;
     height: auto;
     text-align: center;
     overflow: scroll;
+    padding: 10px;
+    i {
+      padding-right: 10px;
+    }
+    h2 {
+      padding-top: 10px;
+      font-size: 18px;
+    }
+    h2:hover {
+      color: $red;
+    }
+    p {
+
+    }
   }
 }
 
@@ -247,12 +312,18 @@ footer {
   .links {
   display: flex;
   flex-direction: row;
+  font-size: 18px;
   width: 30%;
   background: $blue;
   justify-content: space-between;
   margin-left: 30px;
+    .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
+    .navbarContactLink:hover, .loginLink:hover, .registerLink:hover {
+      cursor: pointer;
+      color: #7BCCBA;
   }
 
+  }
 }
 //viewProfile
   .viewProfile {
@@ -305,42 +376,81 @@ footer {
   .wrapperProfile {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     background-color: $white;
     font-size: 10px;
     .leftSide {
       display: flex;
       flex-direction: column;
       width: 33%;
+      .aboutMe {
+        background: rgba(253, 244, 169, 0.4);
+        border-radius: 20px;
+        width: 80%;
+        height: 100%;
+        margin: 30px 0 30px 60px;
+        text-align: center;
+        h1 {
+          padding: 10px;
+        }
+        h2 {
+          padding: 10px;
+          font-size: 22px;
+          text-transform: capitalize;
+        }
+        .profileImg{
+          border-radius: 20px;
+          width: 233px;
+          height: 300px;
+        }
+        .imageUpload {
+          width: 120px;
+          height: 30px;
+          font-size: 12px;
+          background: rgba(123, 204, 186, 0.2);
+          margin: 5px;
+        }
+        .imageUpload:hover {
+          background-color: #7BCCBA;
+        }
+        .content {
+          background: rgba(123, 204, 186, 0.2);
+          width: 50%;
+          margin: 5px;
+        }
+        .text-aboutme {
+          width: 50%;
+          height: 100px;
+          border: 1px solid rgba(123, 204, 186, 0.2);
+        }
+      }
     }
     .rightSide {
       display: flex;
       flex-direction: column;
       width: 33%;
     }
-    .aboutMe {
-      border: 5px solid $blue;
-      width: 75%;
-      height: 500px;
-      margin: 30px;
-      text-align: center;
-    }
+
     .myBlogPosts {
-      border: 5px solid $blue;
-      width: 75%;
-      margin: 30px;
+      background: rgba(123, 204, 186, 0.2);
+      border-radius: 20px;
+      width: 50%;
+      margin: 30px auto;
       height: auto;
       text-align: center;
       overflow: scroll;
     }
     .faveBlogs {
-      border: 5px solid $blue;
+      background: rgba(123, 204, 186, 0.2);
+      border-radius: 20px;
       width: 75%;
       margin: 30px;
       height: 600px;
       text-align: center;
     }
     .mySocial {
-      border: 5px solid $blue;
+      background: rgba(123, 204, 186, 0.2);
+      border-radius: 20px;;
       width: 75%;
       margin: 30px;
       height: 600px;
@@ -348,16 +458,11 @@ footer {
     }
   }
 
-// popup
-.popup {
-  border: 1px solid $blue;
-}
-
 // about page
 .aboutPage {
   margin: 0 auto;
   background-color: $white;
-  width: 50%;
+  width: 60%;
   padding: 10px;
   p {
     color: black;
@@ -397,8 +502,26 @@ footer {
 .mainPage {
   img {
     background-size: cover;
-  // width: 1094px;
-  // height: 729px;
+    width: 180vh;
+  }
+}
+
+.newsPage {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  padding: 20px;
+  background: rgba(123, 204, 186, 0.2);
+  .title {
+    text-align: center;
+    h1 {
+      color: $nhs-blue;
+    }
+  }
+  .article {
+    overflow: scroll;
+    padding-top: 15px;
   }
 }
 

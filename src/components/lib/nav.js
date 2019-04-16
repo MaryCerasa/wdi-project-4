@@ -22,11 +22,8 @@ class Nav extends React.Component {
     return(
       <div className="navbar">
         <div className="links">
-          <div>
-            <Link className="navbarMain" to="/main">Main</Link>
-          </div>
           <div className="navbarHome">
-            <Link className="navbarHomeLink" to="/">Home</Link>
+            <Link className="navbarHomeLink" to="/home">Home</Link>
           </div>
           <div className="navbarAbout">
             <Link className="navbarAboutLink" to="/about">About</Link>
