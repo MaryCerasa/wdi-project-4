@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link, withRouter, Redirect } from 'react-router-dom'
-
-import axios from 'axios'
+import {withRouter} from 'react-router-dom'
 
 class Popup extends React.Component {
   constructor() {

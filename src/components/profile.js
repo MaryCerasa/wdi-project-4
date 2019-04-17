@@ -9,7 +9,7 @@ import { Timeline } from 'react-twitter-widgets'
 
 import { withRouter } from 'react-router-dom'
 
-const apikey = 'Arty0sPVQwOloa7ilF8fSz'
+const apikey = process.env.REACT_APP_FILE_STACK_API
 
 import * as filestack from 'filestack-js'
 const client = filestack.init(apikey)
@@ -29,7 +29,23 @@ class Profile extends React.Component {
   }
 
   handleImageUpload(){
-    this.addUserImage()
+    const options = {
+      accept: ['image/*'],
+      onFileUploadFinished: file => {
+        this.setState({...this.state, image: file.url}, () => {
+          axios.post('/api/wellnest/profile/image',
+            {image_url: file.url},
+            {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+            .then((res) => {
+              console.log('test')
+              console.log(res.data)
+              this.setState({profile: res.data})
+            })
+            .then(console.log(this.state))
+        })
+      }
+    }
+    client.picker(options).open()
   }
 
   handleDeleteBlog(blogId) {
@@ -79,26 +95,6 @@ class Profile extends React.Component {
         this.setState({profile: res.data})
       })
       .then(console.log(this.state))
-  }
-
-  addUserImage() {
-    const options = {
-      accept: ['image/*'],
-      onFileUploadFinished: file => {
-        this.setState({...this.state, image: file.url}, () => {
-          axios.post('/api/wellnest/profile/image',
-            {image_url: file.url},
-            {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
-            .then((res) => {
-              console.log('test')
-              console.log(res.data)
-              this.setState({profile: res.data})
-            })
-            .then(console.log(this.state))
-        })
-      }
-    }
-    client.picker(options).open()
   }
 
 

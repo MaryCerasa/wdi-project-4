@@ -111,7 +111,6 @@ footer {
   .leftSide {
     display: flex;
     flex-direction: column;
-
     .news{
       display: flex;
       flex-direction: column;
@@ -123,19 +122,11 @@ footer {
       overflow: scroll;
       padding: 10px;
       font-size: 16px;
-      i {
-        padding-right: 10px;
-      }
       h1 {
         text-align: center;
       }
       ul {
         a:hover {
-          color: $red;
-        }
-        i {
-          font-size: 14px;
-          padding-right: 10px;
           color: $red;
         }
       }
@@ -245,86 +236,127 @@ footer {
 }
 
 // Register page
-.formWrapper {
+.formWrapperRegister {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
   .registerForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
-    border: 2px solid $green;
-    width: 35%;
-    height: 135%;
-    margin: 25px;
-    background-color: $blue;
-    // padding: 15px;
-    .username {
-      .fas.fa-lock, .fas.fa-envelope, .fas.fa.user {
+    width: 30%;
+    height: 60%;
+    background-color: rgba(216, 240, 250, 0.5);
+    border-radius: 20px;
+    h2 {
+      text-align: center;
+      color: $nhs-blue;
+    }
+    h3 {
+      text-align: center;
+    }
+    .registerButtonClick {
+      margin: 0 auto;
+      width: 60px;
+      height: 30px;
+      font-size: 12px;
+      background-color: rgba(123, 204, 186, 0.2);
+      border: none;
+    }
+    .registerButtonClick:hover {
+      background-color: $green;
+    }
+    .registerLink {
+      color: $nhs-blue;
+    }
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+      height: 30px;
+      width: 50%;
+      font-size: 14px;
+      margin: 10px;
+      border: 3px solid rgba(123, 204, 186, 0.2);
+      padding-left: 10px;
+    }
+      p {
+        padding: 10px;
+        span {
+          color: $nhs-blue
+        }
+        span:hover {
+          color: $green;
+        }
 
       }
     }
   }
-  .registerButtonClick {
-    width: 60px;
-    height: 30px;
-    font-size: 12px;
-
-  }
-  .registerLink {
-    color: $nhs-blue;
-  }
-
-  .email, .password, .username, .password-confirmation {
- padding: 10px;
-  }
 }
-
-
-
 
 // Login page
-
-.loginForm {
+.formWrapperLogin {
   display: flex;
-  flex-direction: column;
-  border: 2px solid $green;
-  width: 50%;
-  height: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: $blue;
-}
-
-.logInButtonClick {
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
-}
-
-.loginLink {
-  color: $nhs-blue;
-}
-
-.emailInput, .passInput, .usernameInput, .passconfirmInput {
-  height: 30px;
-  width: 50%;
-  font-size: 14px;
-  margin: 10px;
-  border: 3px solid rgba(123, 204, 186, 0.2);
-  padding-left: 10px;
-  font-family: inherit;
-}
-
-.formWrapper {
+  flex-direction: row;
   justify-content: center;
-  display: inline-flex;
   align-items: center;
-  flex-direction: column;
-  width: 100%;
-  margin: 100px;
-  height: 60%;
+  width: 90%;
+  height: 100%;
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    width: 30%;
+    height: 60%;
+    background-color: rgba(216, 240, 250, 0.5);
+    border-radius: 20px;
+    h2 {
+      text-align: center;
+      color: $nhs-blue;
+    }
+    h3 {
+      text-align: center;
+    }
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+      height: 30px;
+      width: 50%;
+      font-size: 14px;
+      margin: 10px;
+      border: 3px solid rgba(123, 204, 186, 0.2);
+      padding-left: 10px;
+    }
+
+      p {
+        padding: 10px;
+        span {
+          color: $nhs-blue;
+        }
+        span:hover {
+          color: $green;
+        }
+      }
+    }
+    .logInButtonClick {
+      margin: 0 auto;
+      width: 60px;
+      height: 30px;
+      font-size: 12px;
+      background-color: rgba(123, 204, 186, 0.2);
+      border: none;
+    }
+    .logInButtonClick:hover {
+      background-color: $green;
+    }
+  }
 }
 
 // Navigation
@@ -370,6 +402,11 @@ footer {
         h1 {
           padding: 10px;
         }
+        h2 {
+          padding: 10px;
+          font-size: 22px;
+          text-transform: capitalize;
+        }
         .img {
           border-radius: 20px;
           width: 233px;
@@ -377,6 +414,7 @@ footer {
         }
         .content {
           font-size: 14px;
+          margin: 10px;
         }
       }
     }
@@ -535,17 +573,14 @@ footer {
         justify-content: center;
         .create-myblog {
           display: flex;
-
           justify-content: center;
           width: 140px;
           height: 40px;
-          font-size: 12px;
           background: rgba(253, 244, 169, 0.4);
           margin: 0 auto;
           font-size: 14px;
           border: 1px solid rgba(253, 244, 169, 0.4);
         }
-
         .create-myblog:hover {
           background-color: $green;
         }
@@ -580,7 +615,7 @@ footer {
             width: 50px;
             height: 20px;
             font-size: 10px;
-            background: rgba(236, 55, 57, 0.4);
+            background: rgba(236, 55, 57, 0.2);
             margin: 5px;
             font-size: 14px;
             border: none;
@@ -666,15 +701,6 @@ footer {
   color: #7BCCBA;
 }
 
-
-.mainPage {
-  background-color: #99C4E6;
-  img {
-    background-size: cover;
-
-  }
-}
-
 .newsPage {
   display: flex;
   flex-direction: column;
@@ -722,7 +748,7 @@ footer {
     width: 50px;
     height: 20px;
     font-size: 10px;
-    background: rgba(236, 55, 57, 0.4);
+    background: rgba(236, 55, 57, 0.2);
     margin: 10px;
     font-size: 14px;
     border: none;
@@ -775,6 +801,7 @@ footer {
     border: 1px solid rgba(123, 204, 186, 0.2);
   }
   textarea {
+    font-size: 14px;
     width: 100%;
     height: 550px;
     font-size: 14px;
@@ -784,7 +811,6 @@ footer {
   .submit {
     width: 50px;
     height: 20px;
-    font-size: 10px;
     background: rgba(253, 244, 169, 0.4);
     margin: 10px;
     font-size: 14px;
@@ -794,4 +820,15 @@ footer {
     background-color: $green;
   }
 
+}
+
+.mainPage {
+  // background-color: #91B5D5;
+  // width: 100%;
+  // height: 80vh;
+  img {
+
+    // background-size: 200px 500px;
+    // margin-left: 100px;
+  }
 }

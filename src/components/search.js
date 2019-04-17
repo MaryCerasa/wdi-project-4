@@ -48,7 +48,7 @@ class Search extends React.Component {
   render() {
     return(
       <div className="search">
-        <h2><i className="fas fa-search"></i>Search for Primary Cares/ Hospitals/Healthcare professionals</h2>
+        <h2><i className="fas fa-search"></i>&nbsp;Search for Primary Cares/ Hospitals/Healthcare professionals</h2>
         <p>Type below name or the location of a healthcare professional, hospital, primary care or the name of the service that you need.</p>
         <div className="search-button">
           <input className="searchInput" placeholder="Type here..."
