@@ -9,7 +9,7 @@ import { Timeline } from 'react-twitter-widgets'
 
 import { withRouter } from 'react-router-dom'
 
-const apikey = 'Arty0sPVQwOloa7ilF8fSz'
+const apikey = process.env.REACT_APP_FILE_STACK_API
 
 import * as filestack from 'filestack-js'
 const client = filestack.init(apikey)
@@ -29,7 +29,23 @@ class Profile extends React.Component {
   }
 
   handleImageUpload(){
-    this.addUserImage()
+    const options = {
+      accept: ['image/*'],
+      onFileUploadFinished: file => {
+        this.setState({...this.state, image: file.url}, () => {
+          axios.post('/api/wellnest/profile/image',
+            {image_url: file.url},
+            {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+            .then((res) => {
+              console.log('test')
+              console.log(res.data)
+              this.setState({profile: res.data})
+            })
+            .then(console.log(this.state))
+        })
+      }
+    }
+    client.picker(options).open()
   }
 
   handleDeleteBlog(blogId) {
@@ -81,26 +97,6 @@ class Profile extends React.Component {
       .then(console.log(this.state))
   }
 
-  addUserImage() {
-    const options = {
-      accept: ['image/*'],
-      onFileUploadFinished: file => {
-        this.setState({...this.state, image: file.url}, () => {
-          axios.post('/api/wellnest/profile/image',
-            {image_url: file.url},
-            {headers: { Authorization: `Bearer ${Auth.getToken()}`}})
-            .then((res) => {
-              console.log('test')
-              console.log(res.data)
-              this.setState({profile: res.data})
-            })
-            .then(console.log(this.state))
-        })
-      }
-    }
-    client.picker(options).open()
-  }
-
 
   render() {
     return (
@@ -129,23 +125,27 @@ class Profile extends React.Component {
                   onClick={this.handleImageUpload}>
                   Upload Image
                 </button>
+                <div className="bottom">
 
-                {this.state.profile &&
-                  <div className="content">
-                    {this.state.profile.content}
+                  {this.state.profile &&
+                    <div className="content">
+                      {this.state.profile.content}
+                    </div>
+                  }
+                  <div className="textarea-aboutme">
+                    <form onSubmit={this.handleSubmit}>
+                      <textarea className="text-aboutme"
+                        name="about_me"
+                        onChange={this.handleChange}
+                        placeholder="Type here..."
+                      />
+                      <div className="button-aboutme">
+                        <button>
+                        Update
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                }
-                <div className="textarea-aboutme">
-                  <form onSubmit={this.handleSubmit}>
-                    <textarea className="text-aboutme"
-                      name="about_me"
-                      onChange={this.handleChange}
-                      placeholder="Type here..."
-                    />
-                    <button className="button-aboutme">
-                      Update
-                    </button>
-                  </form>
                 </div>
               </div>
             </div>
@@ -190,10 +190,14 @@ class Profile extends React.Component {
             <div className="rightSide">
               <div className="faveBlogs">
                 <h1>Favorite Blogs</h1>
-                <p><i className="far fa-thumbs-up"></i></p>
-                <p><i className="far fa-thumbs-up"></i></p>
-                <p><i className="far fa-thumbs-up"></i></p>
-                <p><i className="far fa-thumbs-up"></i></p>
+                <p><i className="far fa-thumbs-up"></i>Will Using Less Of My Phone Help My Mental Health?
+                </p>
+                <p><i className="far fa-thumbs-up"></i>Self Confidence Tips: How To Bring Your Confidence To The Next Level
+                </p>
+                <p><i className="far fa-thumbs-up"></i>Ask Twice: How We  Can Better Support People Struggling
+                </p>
+                <p><i className="far fa-thumbs-up"></i>Tips for a Mentally Healthy 2019
+                </p>
               </div>
               <div className="mySocial">
                 <h1>My Social Media</h1>

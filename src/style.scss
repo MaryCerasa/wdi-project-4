@@ -111,7 +111,6 @@ footer {
   .leftSide {
     display: flex;
     flex-direction: column;
-
     .news{
       display: flex;
       flex-direction: column;
@@ -123,19 +122,11 @@ footer {
       overflow: scroll;
       padding: 10px;
       font-size: 16px;
-      i {
-        padding-right: 10px;
-      }
       h1 {
         text-align: center;
       }
       ul {
         a:hover {
-          color: $red;
-        }
-        i {
-          font-size: 14px;
-          padding-right: 10px;
           color: $red;
         }
       }
@@ -245,86 +236,127 @@ footer {
 }
 
 // Register page
-.formWrapper {
+.formWrapperRegister {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
   .registerForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
-    border: 2px solid $green;
-    width: 35%;
-    height: 135%;
-    margin: 25px;
-    background-color: $blue;
-    // padding: 15px;
-    .username {
-      .fas.fa-lock, .fas.fa-envelope, .fas.fa.user {
+    width: 30%;
+    height: 60%;
+    background-color: rgba(216, 240, 250, 0.5);
+    border-radius: 20px;
+    h2 {
+      text-align: center;
+      color: $nhs-blue;
+    }
+    h3 {
+      text-align: center;
+    }
+    .registerButtonClick {
+      margin: 0 auto;
+      width: 60px;
+      height: 30px;
+      font-size: 12px;
+      background-color: rgba(123, 204, 186, 0.2);
+      border: none;
+    }
+    .registerButtonClick:hover {
+      background-color: $green;
+    }
+    .registerLink {
+      color: $nhs-blue;
+    }
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+      height: 30px;
+      width: 50%;
+      font-size: 14px;
+      margin: 10px;
+      border: 3px solid rgba(123, 204, 186, 0.2);
+      padding-left: 10px;
+    }
+      p {
+        padding: 10px;
+        span {
+          color: $nhs-blue
+        }
+        span:hover {
+          color: $green;
+        }
 
       }
     }
   }
-  .registerButtonClick {
-    width: 60px;
-    height: 30px;
-    font-size: 12px;
-
-  }
-  .registerLink {
-    color: $nhs-blue;
-  }
-
-  .email, .password, .username, .password-confirmation {
- padding: 10px;
-  }
 }
-
-
-
 
 // Login page
-.loginForm {
+.formWrapperLogin {
   display: flex;
-  flex-direction: column;
-  border: 2px solid $green;
-  width: 50%;
-  margin: 25px;
-  height: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: $blue;
-}
-
-.logInButtonClick {
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
-}
-
-.loginLink {
-  color: $nhs-blue;
-}
-
-.emailInput, .passInput, .usernameInput, .passconfirmInput {
-  height: 30px;
-  width: 50%;
-  font-size: 14px;
-  margin: 10px;
-  border: 3px solid rgba(123, 204, 186, 0.2);
-  padding-left: 10px;
-  font-family: inherit;
-}
-
-.formWrapper {
+  flex-direction: row;
   justify-content: center;
-  display: inline-flex;
   align-items: center;
-  flex-direction: column;
-  width: 100%;
-  margin: 100px;
-  height: 60%;
+  width: 90%;
+  height: 100%;
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    width: 30%;
+    height: 60%;
+    background-color: rgba(216, 240, 250, 0.5);
+    border-radius: 20px;
+    h2 {
+      text-align: center;
+      color: $nhs-blue;
+    }
+    h3 {
+      text-align: center;
+    }
+    .input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+      height: 30px;
+      width: 50%;
+      font-size: 14px;
+      margin: 10px;
+      border: 3px solid rgba(123, 204, 186, 0.2);
+      padding-left: 10px;
+    }
+
+      p {
+        padding: 10px;
+        span {
+          color: $nhs-blue;
+        }
+        span:hover {
+          color: $green;
+        }
+      }
+    }
+    .logInButtonClick {
+      margin: 0 auto;
+      width: 60px;
+      height: 30px;
+      font-size: 12px;
+      background-color: rgba(123, 204, 186, 0.2);
+      border: none;
+    }
+    .logInButtonClick:hover {
+      background-color: $green;
+    }
+  }
 }
 
 // Navigation
@@ -357,59 +389,113 @@ footer {
       display: flex;
       flex-direction: column;
       width: 33%;
+      .aboutMe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(253, 244, 169, 0.4);
+        border-radius: 20px;
+        width: 80%;
+        height: 92%;
+        margin: 30px 0 30px 60px;
+        text-align: center;
+        h1 {
+          padding: 10px;
+        }
+        h2 {
+          padding: 10px;
+          font-size: 22px;
+          text-transform: capitalize;
+        }
+        .img {
+          border-radius: 20px;
+          width: 233px;
+          height: 300px;
+        }
+        .content {
+          font-size: 14px;
+          margin: 10px;
+        }
+      }
+    }
+    .myBlogPosts {
+      display: flex;
+      flex-direction: column;
+      margin: 30px auto;
+      background: rgba(123, 204, 186, 0.2);
+      border-radius: 20px;
+      width: 50%;
+      margin: 30px auto;
+      height: auto;
+      overflow: scroll;
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        font-size: 28px;
+        margin: 10px;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        font-size: 24px;
+        margin: 10px 20px;
+      }
+      p {
+        font-size: 14px;
+        margin: 10px 20px;
+        text-align: justify;
+        max-height: 200px;
+        overflow: scroll;
+      }
+      .dots {
+        text-align: center;
+      }
     }
     .rightSide {
       display: flex;
       flex-direction: column;
-      width: 33%;
+      justify-content: space-between;
+      margin: 30px 60px 30px 30px;
+      .faveBlogs {
+        background: rgba(236, 55, 57, 0.2);
+        border-radius: 20px;
+        overflow: scroll;
+        height: 50%;
+        text-align: center;
+        h1 {
+          padding: 10px;
+          font-size: 22px;
+        }
+        p {
+          text-align: left;
+          margin: 10px;
+          font-size: 14px
+        }
+      }
+      .mySocial {
+        background: rgba(216, 240, 250, 0.5);
+        border-radius: 20px;
+        text-align: center;
+        overflow: scroll;
+        height: 300px;
+      }
     }
-    .aboutMe {
-      border: 5px solid $blue;
-      width: 75%;
-      height: 500px;
-      margin: 30px;
-      text-align: center;
-    }
-    .myBlogPosts {
-      border: 5px solid $blue;
-      width: 75%;
-      margin: 30px;
-      height: auto;
-      text-align: center;
-      overflow: scroll;
-    }
-    .faveBlogs {
-      border: 5px solid $blue;
-      width: 75%;
-      margin: 30px;
-      height: 600px;
-      text-align: center;
-    }
-    .mySocial {
-      border: 5px solid $blue;
-      width: 75%;
-      margin: 30px;
-      height: 600px;
-      text-align: center;
-    }
-
   }
 // Profile page
   .wrapperProfile {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     background-color: $white;
     font-size: 10px;
     .leftSide {
-      display: flex;
-      flex-direction: column;
       width: 33%;
       .aboutMe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background: rgba(253, 244, 169, 0.4);
         border-radius: 20px;
         width: 80%;
-        height: 100%;
+        height: 92%;
         margin: 30px 0 30px 60px;
         text-align: center;
         h1 {
@@ -426,8 +512,8 @@ footer {
           height: 300px;
         }
         .imageUpload {
-          width: 120px;
-          height: 30px;
+          width: 100px;
+          height: 20px;
           font-size: 12px;
           background: rgba(123, 204, 186, 0.2);
           margin: 5px;
@@ -435,57 +521,151 @@ footer {
         .imageUpload:hover {
           background-color: #7BCCBA;
         }
-        .content {
-          background: rgba(123, 204, 186, 0.2);
-          width: 50%;
-          margin: 5px;
-        }
-        .text-aboutme {
-          width: 50%;
-          height: 100px;
-          border: 1px solid rgba(123, 204, 186, 0.2);
+        .bottom {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .content {
+            width: 233px;
+            margin: 5px;
+            text-align: left;
+            padding: 5px;
+            font-size: 14px;
+          }
+          .text-aboutme {
+            font-size: 14px;
+            margin-top: 20px;
+            width: 233px;
+            height: 100px;
+            border: 1px solid rgba(123, 204, 186, 0.2);
+          }
+          button {
+            width: 100px;
+            height: 20px;
+            font-size: 12px;
+            background: rgba(123, 204, 186, 0.2);
+            margin: 5px;
+          }
         }
       }
     }
-    .rightSide {
+    .myBlogPosts {
       display: flex;
       flex-direction: column;
-      width: 33%;
-    }
-
-    .myBlogPosts {
+      margin: 30px auto;
       background: rgba(123, 204, 186, 0.2);
       border-radius: 20px;
       width: 50%;
       margin: 30px auto;
       height: auto;
-      text-align: center;
       overflow: scroll;
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        font-size: 28px;
+        margin: 10px;
+        text-align: center;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .create-myblog {
+          display: flex;
+          justify-content: center;
+          width: 140px;
+          height: 40px;
+          background: rgba(253, 244, 169, 0.4);
+          margin: 0 auto;
+          font-size: 14px;
+          border: 1px solid rgba(253, 244, 169, 0.4);
+        }
+        .create-myblog:hover {
+          background-color: $green;
+        }
+        li {
+          h2 {
+            text-align: center;
+            font-size: 24px;
+            margin: 10px 20px;
+          }
+          p {
+            font-size: 14px;
+            margin: 10px 20px;
+            text-align: justify;
+            max-height: 200px;
+            overflow: scroll;
+          }
+          .edit-myblog {
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+            background: rgba(253, 244, 169, 0.4);
+            margin-left: 20px;
+            margin-right: 10px;
+            font-size: 14px;
+            border: 1px solid rgba(253, 244, 169, 0.4);
+
+          }
+          .edit-myblog:hover {
+            background-color: $green;
+          }
+          .delete-myblog {
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+            background: rgba(236, 55, 57, 0.2);
+            margin: 5px;
+            font-size: 14px;
+            border: none;
+          }
+          .delete-myblog:hover {
+            background-color: $red;
+          }
+        }
+
+      }
     }
+    .rightSide {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 30px 60px 30px 30px;
+
     .faveBlogs {
-      background: rgba(123, 204, 186, 0.2);
+      background: rgba(236, 55, 57, 0.2);
       border-radius: 20px;
-      width: 75%;
-      margin: 30px;
-      height: 600px;
+      overflow: scroll;
+      height: 50%;
       text-align: center;
+      h1 {
+        padding: 10px;
+        font-size: 22px;
+      }
+      p {
+        text-align: left;
+        margin: 10px;
+        font-size: 14px
+      }
     }
     .mySocial {
-      background: rgba(123, 204, 186, 0.2);
-      border-radius: 20px;;
-      width: 75%;
-      margin: 30px;
-      height: 600px;
+      background: rgba(216, 240, 250, 0.5);
+      border-radius: 20px;
       text-align: center;
+      overflow: scroll;
+      height: 300px;
+
     }
   }
+}
 
 // about page
 .aboutPage {
   margin: 0 auto;
   background-color: $white;
-  width: 60%;
-  padding: 10px;
+  width: 50%;
+  padding: 20px;
   p {
     color: black;
   }
@@ -496,7 +676,7 @@ footer {
   margin: 0 auto;
   background-color: $white;
   width: 50%;
-  padding: 10px;
+  padding: 40px;
   p {
     color: black;
   }
@@ -514,33 +694,17 @@ footer {
   cursor: pointer;
   color: #7BCCBA;
 }
-
+;
 .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
 .navbarContactLink:hover, .loginLink:hover, .registerLink:hover {
   cursor: pointer;
   color: #7BCCBA;
 }
 
-.editBlog {
-  border: 5px solid $blue;
-  width: 75%;
-  margin: 30px;
-  height: 600px;
-  text-align: center;
-}
-
-.mainPage {
-  img {
-    background-size: cover;
-    width: 180vh;
-  }
-}
-// NewsPage
 .newsPage {
   display: flex;
   flex-direction: column;
   width: 50%;
-
   padding: 20px;
   background: rgba(123, 204, 186, 0.2);
   .title {
@@ -558,5 +722,113 @@ footer {
 .aboutPic {
   img {
     background-size: contain;
+  }
+}
+
+.myBlogPosts {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+  background: rgba(123, 204, 186, 0.2);
+  overflow: scroll;
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    margin: 10px;
+  }
+  p {
+    text-align: justify;
+    margin: 10px;
+
+
+  }
+  .delete-comment {
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
+    background: rgba(236, 55, 57, 0.2);
+    margin: 10px;
+    font-size: 14px;
+    border: none;
+  }
+  .delete-comment:hover {
+    background-color: $red;
+  }
+  h3 {
+    padding: 10px;
+  }
+  textarea {
+    width: 300px;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  button {
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
+    background: rgba(253, 244, 169, 0.4);
+    margin: 10px;
+    font-size: 14px;
+    border: none;
+  }
+  button:hover {
+    background-color: $green;
+  }
+}
+
+.edit {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+  background: rgba(123, 204, 186, 0.2);
+  overflow: scroll;
+  h1 {
+    text-align: center;
+    font-size: 28px;
+  }
+  h3 {
+    margin: 5px;
+  }
+  input {
+    width: 100%;
+    height:20px;
+    font-size: 14px;
+    overflow: scroll;
+    border: 1px solid rgba(123, 204, 186, 0.2);
+  }
+  textarea {
+    font-size: 14px;
+    width: 100%;
+    height: 550px;
+    font-size: 14px;
+    overflow: scroll;
+    border: 1px solid rgba(123, 204, 186, 0.2);
+  }
+  .submit {
+    width: 50px;
+    height: 20px;
+    background: rgba(253, 244, 169, 0.4);
+    margin: 10px;
+    font-size: 14px;
+    border: none;
+  }
+  .submit:hover {
+    background-color: $green;
+  }
+
+}
+
+.mainPage {
+  // background-color: #91B5D5;
+  // width: 100%;
+  // height: 80vh;
+  img {
+
+    // background-size: 200px 500px;
+    // margin-left: 100px;
   }
 }
