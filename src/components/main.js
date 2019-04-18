@@ -18,7 +18,7 @@ class Main extends React.Component {
         <Nav />
         <main>
           <div className="mainPage">
-            <img src="./assets/bluebirdsky.jpg" width="1728" height="1152"/>
+            <img src="./assets/bluebirdsky.jpg" />
           </div>
         </main>
       </div>
