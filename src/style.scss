@@ -391,33 +391,33 @@ footer {
     background-color: $white;
     font-size: 10px;
     .leftSide {
-      display: flex;
-      flex-direction: column;
-      width: 33%;
+      margin: 30px;
+      width: 40%;
       .aboutMe {
         display: flex;
         flex-direction: column;
         align-items: center;
         background: rgba(253, 244, 169, 0.4);
         border-radius: 20px;
-        width: 80%;
-        height: 100%;
-        margin: 30px 0 30px 60px;
         text-align: center;
+
+        height: 100%;
+
         h1 {
           padding: 10px;
         }
         h2 {
-          padding: 10px;
+          padding: 5px;
           font-size: 22px;
           text-transform: capitalize;
         }
         .img {
           border-radius: 20px;
-          width: 233px;
-          height: 300px;
+          width: 191px;
+          height: 247px;
         }
         .content {
+          width: 191px;
           font-size: 14px;
           margin: 10px;
         }
@@ -426,13 +426,12 @@ footer {
     .myBlogPosts {
       display: flex;
       flex-direction: column;
-      margin: 30px auto;
       background: rgba(123, 204, 186, 0.2);
       border-radius: 20px;
-      width: 50%;
-      margin: 30px auto;
+      width: 100%;
       height: auto;
       overflow: scroll;
+      margin: 30px 0;
       h1 {
         display: flex;
         justify-content: center;
@@ -461,12 +460,14 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: 30px 60px 30px 30px;
+      margin: 30px;
+      width: 50%;
       .faveBlogs {
         background: rgba(236, 55, 57, 0.2);
         border-radius: 20px;
         overflow: scroll;
         height: 50%;
+        margin-bottom: 30px;
         text-align: center;
         h1 {
           padding: 10px;
@@ -483,7 +484,7 @@ footer {
         border-radius: 20px;
         text-align: center;
         overflow: scroll;
-        height: 300px;
+        height: 50%;
       }
     }
   }
@@ -645,7 +646,6 @@ footer {
       border-radius: 20px;
       overflow: scroll;
       height: 50%;
-
       text-align: center;
       margin-bottom: 30px;
       h1 {
@@ -686,20 +686,14 @@ footer {
 
 // contact page
 .contacts {
-  margin: 0 auto;
+  margin: 20px auto;
   background-color: $white;
   width: 50%;
-  padding: 40px;
-  p {
-    color: black;
-  }
   .contactPic {
     max-height: 150%;
     max-width: 150%;
   }
-
 }
-
 
 .twitterContact, .fbContact, .instaContact {
   color: $nhs-blue
@@ -708,7 +702,7 @@ footer {
   cursor: pointer;
   color: #7BCCBA;
 }
-;
+
 .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
 .navbarContactLink:hover, .loginLink:hover, .registerLink:hover {
   cursor: pointer;
@@ -738,7 +732,8 @@ footer {
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 20px;
+  height: 100%;
+  padding: 10px;
   background: rgba(123, 204, 186, 0.2);
   overflow: scroll;
   h1 {
@@ -758,7 +753,7 @@ footer {
   textarea {
     font-size: 14px;
     width: 100%;
-    height: 550px;
+    height: 450px;
     font-size: 14px;
     overflow: scroll;
     border: 1px solid rgba(123, 204, 186, 0.2);
@@ -774,5 +769,4 @@ footer {
   .submit:hover {
     background-color: $green;
   }
-
 }
