@@ -139,17 +139,14 @@ class Profile extends React.Component {
                         onChange={this.handleChange}
                         placeholder="Type here..."
                       />
-                      <div className="button-aboutme">
-                        <button>
+                      <button className="updateProfile">
                         Update
-                        </button>
-                      </div>
+                      </button>
                     </form>
                   </div>
                 </div>
               </div>
             </div>
-
 
             <div className="myBlogPosts">
               <h1>My Blog Posts</h1>
