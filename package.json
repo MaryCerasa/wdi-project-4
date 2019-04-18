@@ -29,6 +29,7 @@
     "axios": "^0.18.0",
     "copy-webpack-plugin": "^5.0.2",
     "dotenv": "^7.0.0",
+    "dotenv-webpack": "^1.7.0",
     "filestack-js": "^2.0.5",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
