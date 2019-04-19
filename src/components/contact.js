@@ -28,7 +28,7 @@ class Contact extends React.Component {
               <p>Follow us on social media: <a className="twitterContact" target='_blank' href='https://twitter.com/TheWellNestUK'>Twitter</a>, <a className="fbContact" target='_blank' href='https://www.facebook.com'>Facebook</a>, <a className="instaContact" target='_blank' href='http://www.instagram.com'>Instagram</a></p>
             </div>
             <br/>
-            <img className="contactPic" src="./assets/mh-logo.png"/>
+            <img className="contactPic" src="./assets/cropped-logo.png"/>
           </div>
         </main>
       </div>

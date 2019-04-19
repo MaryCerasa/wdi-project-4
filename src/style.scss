@@ -671,36 +671,33 @@ footer {
 
 // about page
 .aboutPage {
-  margin: 0 auto;
+  margin-top: -20px;
   background-color: $white;
   width: 50%;
   padding: 20px;
-  p {
-    color: black;
-  }
   .aboutPic {
-    max-height: 150%;
-    max-width: 150%;
+    margin-top: 2px;
+    width: 120%;
   }
 }
 
 // contact page
 .contacts {
-  margin: 20px auto;
+  margin: 0 auto;
   background-color: $white;
   width: 50%;
-  .contactPic {
-    max-height: 150%;
-    max-width: 150%;
+  padding: 20px;
+  .twitterContact, .fbContact, .instaContact {
+    color: $nhs-blue
   }
-}
-
-.twitterContact, .fbContact, .instaContact {
-  color: $nhs-blue
-}
-.twitterContact:hover, .fbContact:hover, .instaContact:hover {
-  cursor: pointer;
-  color: #7BCCBA;
+  .twitterContact:hover, .fbContact:hover, .instaContact:hover {
+    cursor: pointer;
+    color: #7BCCBA;
+  }
+  .contactPic {
+    margin-top: 39px;
+    width: 120%;
+  }
 }
 
 .navbarHomeLink:hover, .navbarMain:hover, .navbarAboutLink:hover, .navbarProfileLink:hover, .navbarLoginLink:hover, .navbarRegisterLink:hover, .navbarLogout:hover,
@@ -719,6 +716,7 @@ footer {
     text-align: center;
     h1 {
       color: $nhs-blue;
+      font-size: 28px;
     }
   }
   .article {
