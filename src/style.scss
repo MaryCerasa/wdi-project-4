@@ -400,7 +400,7 @@ footer {
         background: rgba(253, 244, 169, 0.4);
         border-radius: 20px;
         text-align: center;
-
+        overflow: scroll;
         height: 100%;
 
         h1 {
@@ -504,6 +504,7 @@ footer {
         width: 100%;
         height: 100%;
         text-align: center;
+        overflow: scroll;
         h1 {
           padding: 5px;
         }
@@ -767,4 +768,50 @@ footer {
   .submit:hover {
     background-color: $green;
   }
+}
+
+.viewBlogPosts {
+  background-color: rgba(123, 204, 186, 0.2);
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: scroll;
+  h1 {
+    font-size: 28px;
+    padding-bottom: 10px;
+  }
+  .delete-comment {
+    height: 20px;
+    width: 40px;
+    background: rgba(236, 55, 57, 0.2);
+    margin: 10px;
+  }
+  .delete-comment:hover {
+    background-color: $red;
+  }
+  .comments-blog {
+    display: flex;
+    flex-direction: column;
+    textarea {
+      border: 1px solid rgba(123, 204, 186, 0.2);
+      margin-top: 10px;
+      width: 50%;
+      height: 50px;
+      font-size: 14px;
+    }
+    .submit-comment {
+      margin-top: 10px;
+      height: 20px;
+      width: 40px;
+      border: 1px solid rgba(253, 244, 169, 0.4);
+      background: rgba(253, 244, 169, 0.4)
+    }
+    .submit-comment:hover {
+      background-color: $green;
+    }
+
+  }
+
+
+
 }

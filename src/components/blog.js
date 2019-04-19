@@ -70,7 +70,7 @@ class Blog extends React.Component {
         <Nav />
         <div className="blogs">
           <main>
-            <div className="myBlogPosts">
+            <div className="viewBlogPosts">
               <h1>{this.state.blog.title}</h1>
               <p>{this.state.blog.text}</p>
               <br/>
@@ -93,14 +93,16 @@ class Blog extends React.Component {
 
                 )}
               <form onSubmit={this.handleSubmitComment}>
-                <h3>Comments</h3>
+                <div className="comments-blog">
+                  <h3>Comments</h3>
 
-                <textarea
-                  onChange={this.handleChange}
-                  name='content'
-                  placeholder="Type here..."
-                />
-                <button>Submit</button>
+                  <textarea
+                    onChange={this.handleChange}
+                    name='content'
+                    placeholder="Type here..."
+                  />
+                  <button className="submit-comment">Submit</button>
+                </div>
               </form>
             </div>
           </main>
