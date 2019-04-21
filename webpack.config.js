@@ -46,7 +46,9 @@ module.exports = {
       { from: './src/assets', to: 'assets' }
     ]),
 
-    new Dotenv()
+    new Dotenv(),
+
+    new webpack.EnvironmentPlugin({...process.env})
 
   ]
 }
