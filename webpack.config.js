@@ -41,14 +41,10 @@ module.exports = {
       filename: 'index.html',
       inject: 'body'
     }),
-
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ]),
-
     new Dotenv(),
-
     new webpack.EnvironmentPlugin({...process.env})
-
   ]
 }
