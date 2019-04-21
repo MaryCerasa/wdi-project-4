@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Browser, Route, Switch } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 
 import './style.scss'
 
@@ -19,12 +19,7 @@ import Contact from './components/contact'
 import EditBlog from './components/editBlog'
 import Main from './components/main'
 
-
-
 class App extends React.Component {
-  componentDidMount() {
-
-  }
 
   render() {
     return (
