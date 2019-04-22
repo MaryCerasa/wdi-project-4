@@ -3,14 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-// const Dotenv = require('dotenv-webpack')
-
 require('dotenv').config()
-
-var constants = {
-  'NHS_NEWS_KEY': process.env.NHS_NEWS_KEY,
-  'REACT_APP_FILE_STACK_API': process.env.REACT_APP_FILE_STACK_API
-}
 
 module.exports = {
   entry: './src/app.js',
@@ -50,8 +43,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ]),
-    // new webpack.DefinePlugin(constants),
-    // new Dotenv(),
     new webpack.EnvironmentPlugin({...process.env})
   ]
 }
