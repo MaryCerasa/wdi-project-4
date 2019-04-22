@@ -50,7 +50,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ]),
-    new webpack.DefinePlugin(constants),
+    // new webpack.DefinePlugin(constants),
     // new Dotenv(),
     new webpack.EnvironmentPlugin({...process.env})
   ]
