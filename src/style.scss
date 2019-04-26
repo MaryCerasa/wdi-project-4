@@ -32,11 +32,10 @@ main {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  height: 80vh;
+  height: 82vh;
   overflow: scroll;
 }
 
-// header
 header {
   display: flex;
   flex-direction: row;
@@ -81,6 +80,9 @@ footer {
   color: white;
   padding: 20px;
   height: 60px;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
   .captions {
   }
   .nhs-logo {
@@ -539,22 +541,27 @@ footer {
             padding: 5px;
             font-size: 14px;
           }
-          .text-aboutme {
-            font-size: 12px;
-            margin: 4px;
+          .textarea-aboutme {
+            display: flex;
+            flex-direction: row;
             width: 233px;
-            height: 75px;
-            border: 1px solid rgba(123, 204, 186, 0.2);
-          }
-          .updateProfile {
-            width: 100px;
-            height: 20px;
-            font-size: 12px;
-            background: rgba(123, 204, 186, 0.2);
-            margin: 5px;
-          }
-          .updateProfile:hover {
-              background-color: #7BCCBA;
+            .text-aboutme {
+              font-size: 12px;
+              margin: 4px;
+              width: 233px;
+              height: 75px;
+              border: 1px solid rgba(123, 204, 186, 0.2);
+            }
+            .updateProfile {
+              width: 100px;
+              height: 20px;
+              font-size: 12px;
+              background: rgba(123, 204, 186, 0.2);
+              margin: 5px;
+            }
+            .updateProfile:hover {
+                background-color: #7BCCBA;
+            }
           }
         }
       }
@@ -673,22 +680,30 @@ footer {
 
 // about page
 .aboutPage {
-  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: $white;
   width: 50%;
-  padding: 20px;
+  height: 82vh;
+
   .aboutPic {
-    margin-top: 2px;
     width: 120%;
+
   }
 }
 
 // contact page
-.contacts {
-  margin: 0 auto;
+.contactsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: $white;
   width: 50%;
-  padding: 20px;
+  height: 82vh;
+  .contacts {
+    margin-top: 20px;
+  }
   .twitterContact, .fbContact, .instaContact {
     color: $nhs-blue
   }
@@ -810,9 +825,19 @@ footer {
     .submit-comment:hover {
       background-color: $green;
     }
-
   }
+}
 
+.mainPage {
+  background-size: cover;
 
+}
 
+@media screen and (min-width: 1400px) {
+  .mainPage {
+    img {
+    width: 1944px;
+    height: 1296px;
+    }
+  }
 }

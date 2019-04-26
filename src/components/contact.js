@@ -17,8 +17,8 @@ class Contact extends React.Component {
         <Nav />
 
         <main>
-          <div className="contacts">
-            <div className="contactPage">
+          <div className="contactsPage">
+            <div className="contacts">
               <p>We would love to from you – whether it be a general  question or if you are interested to work together on a sponsorship or partnership.</p>
               <br/>
               <p>Please reach out on XX- XX- XXX. Otherwise, please email us. Our support team will respond within 48 working hours (does not include weekends).</p>
@@ -27,8 +27,10 @@ class Contact extends React.Component {
               <br/>
               <p>Follow us on social media: <a className="twitterContact" target='_blank' href='https://twitter.com/TheWellNestUK'>Twitter</a>, <a className="fbContact" target='_blank' href='https://www.facebook.com'>Facebook</a>, <a className="instaContact" target='_blank' href='http://www.instagram.com'>Instagram</a></p>
             </div>
-            <br/>
-            <img className="contactPic" src="./assets/cropped-logo.png"/>
+            <div className="image">
+              <br/>
+              <img className="contactPic" src="./assets/cropped-logo.png"/>
+            </div>
           </div>
         </main>
       </div>
