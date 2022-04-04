@@ -1,10 +1,12 @@
 # WellNest
 
-![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project Brief (SEI Project 4): A Flask + React App
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) ## Project Brief (SEI Project 4): A Flask + React App
+
+**Task:**
 
 Build a full-stack application with a backend and front-end by using a Python Flask API and serving data from a Postgres database. 
 
-*Requirements:*
+**Requirements:**
 
 * Build a full-stack application by making your own backend and your own front-end ✓
 * Use an Express API to serve your data from a Mongo database. ✓
@@ -22,7 +24,7 @@ Build a full-stack application with a backend and front-end by using a Python Fl
 
 [WellNest App](https://wellnest-mh.herokuapp.com/ "WellNest App")
 
-## App Overview:
+## App Overview: 🧠
 
 **Overview:** WellNest is an app dedicated to fostering mental health awareness and understanding of mental health disorders.
 
@@ -30,7 +32,7 @@ Our goal is to help you find your wings by initiating and maintaining a positive
 
 Guests can stay up to date with relevant news provided by the NHS or write blogs about their experiences.
 
-## Tech Stack
+## Tech Stack :computer:
 
 **Client:** React, JavaScript (ES6), Python, PostgreSQL, HTML5, CSS-SASS,
 Insomnia, FileStack
@@ -44,17 +46,17 @@ Insomnia, FileStack
 **Approach:**
 Our goal was to aim for a smooth and friendly user experience. We wanted to create different views for users who created accounts versus regular site visitors. We sought out inspiration from similiar mental health webites.
 
-## Process & Walkthrough:
+## Process & Walkthrough: :runner:
 
 **Home:**
 Users can access to the news, search functionality and the tweets on the home page without registering to the website. The titles of the blogs latest 20 blogs are visible on the home page, however to view a blog, the user must be registered to the website. The users can search for primary cares, hospitals and healthcare professionals by using the search function 
 
-https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/home.png
+https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/home.png
 
 **News Page:**
 This is how the news page looks when the user clicks to read an article on the home page. 
 
-https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/news.png
+https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/news.png
 
 **Register:**
 Users can register to the website by clicking "register" on the navbar. Username and the email must be unique to be able to register to the website.
@@ -91,7 +93,7 @@ This is how others profile look like. Only the owner of that profile page can up
 
 https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/view-other-profiles.png
 
-## Look Back:
+## Look Back: :eyes:
 
 **Styling:**
 
@@ -103,9 +105,7 @@ Getting the news article as a text in a different route. The news article was wr
 
 Search functionality at home page also proved to be difficult.
 
-**Solutions:**
-
-**Wins:**
+**Wins:** :boom:
 
 Created a fully functioning mental health blog/ app, working with React components.
 Backend fully completed and successfully tested all RESTFUL routes using Insomnia.
@@ -168,7 +168,7 @@ class News extends React.Component {
 export default News
 ```
 
-## Roadmap:
+## Roadmap: :telescope:
 
 **Future Features:** 
 
@@ -180,10 +180,10 @@ We would like to add "written by" into "view a blog" page.
 
 We would like to have a better user walk through experience.
 
-**Key Learnings:**
+**Key Learnings:** 
 This project served as a learning curve for my developer skills, including time management as well as fine tuning our collaborative coding skills.
 
-**Task Management:**
+**Task Management:** :hourglass:
 
 Throughout the project, we used Trello to manage our tasks and list our priorities. This helped us tackle the most important issues first and allowed us to lay down a strong foundation.
 
@@ -223,9 +223,10 @@ This API is accessed through HTTP and returns data in a JSON format.
 ![Logo](https://www.nhs.uk/nhscwebservices/documents/logo1.jpg)
 
 **Social Media:**
+
 [Follow Our WellNest Twitter Account](https://twitter.com/TheWellNestUK "WellNest Twitter")
 
-## Authors :pencil:
+## Authors :pencil2:
 
 - [@marycerasa](https://www.github.com/marycerasa)
 - [@buseuslu](https://www.github.com/buseuslu)
