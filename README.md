@@ -1,147 +1,243 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #4: A Flack + React App
+# WellNest
 
-## Overview
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project Brief (SEI Project 4): A Flask + React App
 
-**You’ve come a long way
-, and it's time to show it.** This will be your most advanced project to date. It is __IMPORTANT__ to note that when we say _advanced_, the project doesn't necessarily need to have lots more functionality.
+**The Task:**
 
-**Remember:** simple code is stable code, so always favour refactoring and bug fixing over adding more functionality.
+Build a full-stack application with a backend and front-end by using a Python Flask API and serving data from a Postgres database. 
 
-With this in mind, you need to be smart about how you plan, limit your project scope to be achievable (in terms of functionality) and focus on quality rather than quantity.
+**Requirements:**
 
-**Solo or Group?**
-You are free to work alone or in a group. Both ways have their pros and cons. Remember if you are working in a team that you are all on the same page and working towards the same goal.
+* Build a full-stack application by making your own backend and your own front-end ✓
+* Use an Express API to serve your data from a Mongo database. ✓
+* Consume your API with a separate front-end built with React. ✓
+* Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models. ✓
+* Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut. ✓
+* Have a visually impressive design ✓
+* Be deployed online so it's publicly accessible. ✓
+    
+**Timeframe:** 8 days
 
-Make sure you review your project proposal with your instructor so you can make sure it's **something you can accomplish in the limited time we have**. You will have some time after the project to add extra functionality before your Meet & Hire!
+**Team:** We worked in a team of two on this project.
 
----
+**Deployed Project Link:** [WellNest App](https://wellnest-mh.herokuapp.com/ "WellNest App")
 
-## Technical Requirements
+## App Overview: 🧠
 
-You must:
-
-* **Build a full-stack application** by making your own backend and your own front-end
-* **Use a Python Flask API** to serve your data from a Postgres database
-* **Consume your API with a separate front-end** built with React
-* **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models
-* **Implement thoughtful user stories/wireframes** that are significant enough to help you know which features are core MVP and which you can cut
-* **Have a visually impressive design** to kick your portfolio up a notch and have something to wow future clients & employers. **ALLOW** time for this.
-* **Be deployed online** so it's publicly accessible.
----
-
-## Necessary Deliverables
-
-* A **working app** hosted on the internet
-* A **link to your hosted working app** in the URL section of your Github repo
-* A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the _very beginning_ of the project
-* **A `readme.md` file** with:
-    * An embedded screenshot of the app
-    * Explanations of the **technologies** used
-    * A couple paragraphs about the **general approach you took**
-    * **Installation instructions** for any dependencies
-    * Link to your **user stories/wireframes** – sketches of major views / interfaces in your application
-    * Link to your **pitch deck/presentation** – documentation of your wireframes, user stories, and proposed architecture
-    * Descriptions of any **unsolved problems** or **major hurdles** you had to overcome
-
----
-
-## Suggested Ways to Get Started
-
-* **Don’t get too caught up in too many awesome features** – simple is always better. Build something impressive that does one thing well.
-* **Design first.** Planning with user stories & wireframes before writing code means you won't get distracted changing your mind – you'll know what to build, and you can spend your time wisely by just building it.
-* **Don’t hesitate to write throwaway code** to solve short term problems.
-* **Read the docs for whatever technologies / frameworks / API’s you use**.
-* **Write your code DRY** and **build your APIs RESTful**.
-* **Be consistent with your code style.** You're working in teams, but you're only making one app per team. Make sure it looks like a unified effort.
-* **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
-* **Keep user stories small and well-defined**, and remember – user stories focus on what a user needs, not what development tasks need accomplishing.
-* **Write code another developer wouldn't have to ask you about**. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
-* **Make it all well-formatted.** Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc?
-* **Comment your code.** Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
-* **Write pseudocode before you write actual code.** Thinking through the logic of something helps.
-
----
-
-## Project Feedback + Evaluation
-
-* __Project Workflow__: Did you complete the user stories, wireframes, task tracking, and/or ERDs, as specified above? Did you use source control as expected for the phase of the program you’re in (detailed above)?
-
-* __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
-
-* __Creativity__: Did you added a personal spin or creative element into your project submission? Did you deliver something of value to the end user (not just a login button and an index page)?
-
-* __Code Quality__: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors as we have in class?
-
-* __Problem Solving__: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.)_
-
-_README_
-
-### WellNest - A Flack and React App
----
-### About WellNest - An Overview
-
-Wellnest is a platform created to provide a safe space for fostering mental health awareness and understanding of depression and other disorders.
+WellNest is an app dedicated to fostering mental health awareness and understanding of mental health disorders.
 
 Our goal is to help you find your wings by initiating and maintaining a positive dialogue among peer support networks. This effort hopes to encourage communication surrounding mental health and wellness in order to break the stigma.
 
-Guests can stay up to date with relevant news provided by the NHS or write posts about their experiences and receive positive encouragement and support from their peers.  If you prefer, seek advice from practicing therapists and mental health professionals through our verified accounts instead.
+Guests can stay up to date with relevant news provided by the NHS or write blogs about their experiences.
 
-### Timeframe
+## Tech Stack :computer:
 
-* 7 days
+**Client:** React, JavaScript (ES6), Python, PostgreSQL, HTML5, CSS-SASS,
+Insomnia, FileStack
 
-### Technologies Used
+**Server:** Node,js, Express
 
-* React
-* Node.js
-* Python
-* SQL
-* Express
-* Redux
-* JavaScript (ES6) + jQuery
-* HTML5
-* CSS
-* GitHub
+**Tools:** Git, Bash, Yarn, GitHub, Trello, Slack, Heroku
 
-### Technical Requirements
+**API:** NHS API
 
----
-### Wireframes
+## Approach:
 
-During the planning phase, the team came up with the following rough sketches of how the app could possibly look:
+Our goal was to aim for a smooth and friendly user experience. 
+
+We wanted to create different views for users who created accounts versus regular site visitors. 
+
+We sought out inspiration from similiar mental health webites.
+
+## Process & Walkthrough: :runner:
+
+**Home:**
+Users can access to the news, search functionality and the tweets on the home page without registering to the website. The titles of the blogs latest 20 blogs are visible on the home page, however to view a blog, the user must be registered to the website. The users can search for primary cares, hospitals and healthcare professionals by using the search function.
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/home.png)
+
+**News Page:**
+This is how the news page looks when the user clicks to read an article on the home page.
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/news.png)
+
+**Register:**
+Users can register to the website by clicking "register" on the navbar. Username and the email must be unique to be able to register to the website.
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/register.png)
+
+**Login:**
+Once registered, users can log in to the website. 
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/login.png)
+
+**Users' Profile:**
+Once logged-in, the users are allowed to create their own profile page. They can add a profile photo. We used filestack for this function. They can update their "about-me" section. They will be able to view their favourite blogs (currently hard coded in). They will also be able to share their own tweets on their page if they want (currently showing the twitter page of the website). 
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/my-profile.png)
+
+**Create a Blog:**
+Once logged-in, the users can create a blog via their profile page. When "create a blog" button is clicked, the users will be navigated to the "create your blog" page. Here they can create a new blog. Once a blog is created and submitted, it will come up on the home page as well as users own profile.
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/create-a-blog.png)
+
+**Edit a Blog:**
+Users can edit their own blogs if they click the "edit" button for each blog. This will navigate the website to the "edit your blog" page which will populate the previous data from the blog. Only the owner of the blogs can edit and delete their blogs.
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/edit-blog.png)
+
+**View a Blog:**
+Users can view other users' profile pages and blogs if they are logged-in. They can view other profiles/blogs by clicking their name on the home page.
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/view-blog.png)
+
+**View Others' Profiles:**
+This is how others profile look like. Only the owner of that profile page can update their "about-me" section, can edit and delete their blogs. Other users are only allowed to comment and to delete their own comments from other blogs.
+
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/view-other-profiles.png)
+
+## Look Back: :eyes:
+
+**Styling:** :art:
+
+We used a CSS-SASS combination to create a color palette that was visually pleasing and soothing, as the goal of the design was to create a "safe space" where people feel comfortable sharing stories.
+
+**Challenges:** 🚫
+
+Getting the news article as a text in a different route. The news article was written in HTML in the API. We managed to to change this into text.
+
+Search functionality at home page also proved to be difficult.
+
+**Wins:** :boom:
+
+Created a fully functioning mental health blog/ app, working with React components. ✓
+
+Backend fully completed and successfully tested all RESTFUL routes using Insomnia. ✓
+
+Used React Router for routing in the web app. ✓
+
+Interacted with external web API for the news feed. ✓
+
+Completed user authentication. ✓
+
+Deployed to Heroku. ✓
+
+## Code Snippets: 
+
+Showing a news article in a different tab. 
+
+We used the code below to convert the article that was written in HTML into text:
+
+```
+import React from 'react'
+import Nav from './lib/nav'
+import Header from './headerFooter/header'
+
+import axios from 'axios'
+
+class News extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {}
+
+  }
+
+  news() {
+    console.log('getting the newss')
+    axios.post('/api/news-article', {url: this.props.location.state.articleURL})
+      .then(res => {
+        console.log('HERE')
+        console.log(res.data)
+        this.setState({article: res.data})
+      })
+      .catch(err => this.setState({ error: err.messsage }))
+  }
+
+  componentDidMount() {
+    this.news()
+  }
+
+  render() {
+    return(
+      <div>
+        <Header />
+        <Nav />
+        <main>
+          <div className="newsPage">
+            <div className = "title">
+              <h1>{this.state.article && this.state.article.headline}</h1>
+            </div>
+            <div className="article" dangerouslySetInnerHTML={{__html: this.state.article && this.state.article.mainContentOfPage[0].text}} />
+          </div>
+        </main>
+      </div>
+    )
+  }
+}
 
 
-After implementation began, the wireframes were further developed to reflect the final product design, below:
+export default News
+```
+## Roadmap: :telescope:
 
+**Future Features:** 🔮
 
----
-### App Overview
+* We would like to add a like button for the articles. Whenever a user likes an article, this article will populate in their "favourite articles" section on their profile page. Favourite articles are currently hard coded in.
 
-_User Example_
+* We would like to add a search functionality to the blogs on home page, as it is limited to show the latest 20 blogs.
 
+* We would like to add "written by" into "view a blog" page.
 
-_Functionality_
+* We would like to have a better user walk through experience.
 
+**Key Learnings:** :key:
 
----
-### Frontend Overview
+This project served as a learning curve for my developer skills, including time management as well as fine tuning our collaborative coding skills.
 
-_Login & Register Boxes_
+**Task Management:** :hourglass:
 
+Throughout the project, we used Trello to manage our tasks and list our priorities. This helped us tackle the most important issues first and allowed us to lay down a strong foundation.
 
-### Installation instructions
+**Trello Process:**
 
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/trello.png)
 
-### Unsolved Problems
-Seeds mess up the individual profile pages.
-We will add functionality to the button for the like page.
----
-### Backend Overview
+## API Reference
 
-### URL Structure
+https://api.nhs.uk/mental-health
 
+This API is accessed through HTTP and returns data in a JSON format.
 
----
-## Database - WellNest
+#### Get Mental Health Guide:
 
-The database is broken down into the following Schemas:
+```http
+  GET /api/items
+```
+
+| Parameter          | Type     | Description                |
+| :--------          | :------- | :------------------------- |
+| `subscription-key` | `string` | **Required**. Your API key |
+
+#### Get Mental Health Topic:
+
+```http
+  GET /api/items/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+**Social Media:**
+
+[Follow Our WellNest Twitter Account](https://twitter.com/TheWellNestUK "WellNest Twitter")
+
+## Authors :pencil2:
+
+- [@marycerasa](https://www.github.com/marycerasa)
+- [@buseuslu](https://www.github.com/buseuslu)
+
+## Acknowledgements
+
+![Logo](https://www.nhs.uk/nhscwebservices/documents/logo1.jpg)
