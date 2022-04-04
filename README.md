@@ -2,7 +2,7 @@
 
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project Brief (SEI Project 4): A Flask + React App
 
-**Task:**
+**The Task:**
 
 Build a full-stack application with a backend and front-end by using a Python Flask API and serving data from a Postgres database. 
 
@@ -24,7 +24,7 @@ Build a full-stack application with a backend and front-end by using a Python Fl
 
 ## App Overview: 🧠
 
-**Overview:** WellNest is an app dedicated to fostering mental health awareness and understanding of mental health disorders.
+WellNest is an app dedicated to fostering mental health awareness and understanding of mental health disorders.
 
 Our goal is to help you find your wings by initiating and maintaining a positive dialogue among peer support networks. This effort hopes to encourage communication surrounding mental health and wellness in order to break the stigma.
 
@@ -41,56 +41,60 @@ Insomnia, FileStack
 
 **API:** NHS API
 
-**Approach:**
+## Approach:
 
-Our goal was to aim for a smooth and friendly user experience. We wanted to create different views for users who created accounts versus regular site visitors. We sought out inspiration from similiar mental health webites.
+Our goal was to aim for a smooth and friendly user experience. 
+
+We wanted to create different views for users who created accounts versus regular site visitors. 
+
+We sought out inspiration from similiar mental health webites.
 
 ## Process & Walkthrough: :runner:
 
 **Home:**
-Users can access to the news, search functionality and the tweets on the home page without registering to the website. The titles of the blogs latest 20 blogs are visible on the home page, however to view a blog, the user must be registered to the website. The users can search for primary cares, hospitals and healthcare professionals by using the search function 
+Users can access to the news, search functionality and the tweets on the home page without registering to the website. The titles of the blogs latest 20 blogs are visible on the home page, however to view a blog, the user must be registered to the website. The users can search for primary cares, hospitals and healthcare professionals by using the search function.
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/home.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/home.png)
 
 **News Page:**
-This is how the news page looks when the user clicks to read an article on the home page. 
+This is how the news page looks when the user clicks to read an article on the home page.
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/news.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/news.png)
 
 **Register:**
 Users can register to the website by clicking "register" on the navbar. Username and the email must be unique to be able to register to the website.
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/register.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/register.png)
 
 **Login:**
 Once registered, users can log in to the website. 
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/login.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/login.png)
 
 **Users' Profile:**
-Once logged-in, the users are allowed to create their own profile page. They can add a profile photo. We used filestack for this function. They can update their "about-me" section. They will be able to view their favourite blogs(currently hard coded in). They will also be able to share their own tweets on their page if they want(currently showing the twitter page of the website). 
+Once logged-in, the users are allowed to create their own profile page. They can add a profile photo. We used filestack for this function. They can update their "about-me" section. They will be able to view their favourite blogs (currently hard coded in). They will also be able to share their own tweets on their page if they want (currently showing the twitter page of the website). 
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/my-profile.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/my-profile.png)
 
 **Create a Blog:**
-Once logged-in, the users can create a blog via their profile page. When "create a blog" button is clicked, the users will be navigated to the "create your blog" page. Here they can create a new blog. Once a blog is created and submitted, it will come up on the home page as well as users own profile. 
+Once logged-in, the users can create a blog via their profile page. When "create a blog" button is clicked, the users will be navigated to the "create your blog" page. Here they can create a new blog. Once a blog is created and submitted, it will come up on the home page as well as users own profile.
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/create-a-blog.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/create-a-blog.png)
 
 **Edit a Blog:**
-Users can edit their own blogs if they click the "edit" button for each blog. This will navigate the website to the "edit your blog" page which will populate the previous data from the blog. Only the owner of the blogs can edit and delete their blogs. 
+Users can edit their own blogs if they click the "edit" button for each blog. This will navigate the website to the "edit your blog" page which will populate the previous data from the blog. Only the owner of the blogs can edit and delete their blogs.
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/edit-blog.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/edit-blog.png)
 
 **View a Blog:**
-Users can view other users' profile pages and blogs if they are logged-in. They can view other profiles/blogs by clicking their name on the home page. 
+Users can view other users' profile pages and blogs if they are logged-in. They can view other profiles/blogs by clicking their name on the home page.
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/view-blog.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/view-blog.png)
 
 **View Others' Profiles:**
-This is how others profile look like. Only the owner of that profile page can update their "about-me" section, can edit and delete their blogs. Other users are only allowed to comment and to delete their own comments from other blogs. 
+This is how others profile look like. Only the owner of that profile page can update their "about-me" section, can edit and delete their blogs. Other users are only allowed to comment and to delete their own comments from other blogs.
 
-![screenshot](https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/view-other-profiles.png)
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/view-other-profiles.png)
 
 ## Look Back: :eyes:
 
@@ -106,14 +110,23 @@ Search functionality at home page also proved to be difficult.
 
 **Wins:** :boom:
 
-Created a fully functioning mental health blog/ app, working with React components.
-Backend fully completed and successfully tested all RESTFUL routes using Insomnia.
-Used React Router for routing in the web app.
-Interacted with external web API for the news feed.
-Completed user authentication.
-Deployed to Heroku
+Created a fully functioning mental health blog/ app, working with React components. ✓
 
-Showing a news article in a different tab. We used the code below to convert the article that was written in HTML into text:
+Backend fully completed and successfully tested all RESTFUL routes using Insomnia. ✓
+
+Used React Router for routing in the web app. ✓
+
+Interacted with external web API for the news feed. ✓
+
+Completed user authentication. ✓
+
+Deployed to Heroku. ✓
+
+## Code Snippets: 
+
+Showing a news article in a different tab. 
+
+We used the code below to convert the article that was written in HTML into text:
 
 ```
 import React from 'react'
@@ -188,7 +201,7 @@ Throughout the project, we used Trello to manage our tasks and list our prioriti
 
 **Trello Process:**
 
-https://github.com/marycerasa/wdi-project-4/blob/master/src/assets/screenshots/trello.png
+![screenshot](https://github.com/marycerasa/wdi-project-4/blob/readme-edits/src/assets/screenshots/trello.png)
 
 ## API Reference
 
